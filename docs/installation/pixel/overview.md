@@ -53,10 +53,12 @@ Google Pixel 6 and newer devices use Google's custom Tensor processors. These ch
 Tensor chips prioritize machine learning and image processing workloads. For general CPU-bound tasks like compiling code, running development servers, or text editing in a Linux desktop, Tensor performs well but may not match the raw single-core throughput of flagship Snapdragon chips from the same generation.
 
 Where Tensor excels:
+
 - **Multithreaded workloads**: The chip handles parallel compilation and background tasks efficiently.
 - **Sustained performance**: Tensor's thermal management is generally conservative, which means less aggressive throttling during extended sessions.
 
 Where Tensor is slower:
+
 - **Single-threaded compilation**: Build times for single-threaded compilers may be slightly longer compared to Snapdragon 8 Gen 2 or newer.
 - **GPU-accelerated rendering**: Tensor uses Mali GPUs, which have less mature open-source driver support than Adreno GPUs in Snapdragon chips. This affects GPU-accelerated applications inside the Linux environment.
 

@@ -120,7 +120,7 @@ To make the swap file persist across reboots, add it to fstab:
   },
   {
     problem: "Java or Electron applications fail to start",
-    solution: "These applications often require more memory than lightweight native applications. Java's default heap size may exceed available memory. Set a conservative heap size with the _JAVA_OPTIONS environment variable. Electron apps (VS Code, Atom) are particularly resource-heavy and may not be practical on devices with under 6 GB of RAM."
+    solution: "These applications often require more memory than lightweight native applications. Java's default heap size may exceed available memory. Set a conservative heap size with the_JAVA_OPTIONS environment variable. Electron apps (VS Code, Atom) are particularly resource-heavy and may not be practical on devices with under 6 GB of RAM."
   }
 ]} />
 

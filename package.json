@@ -2,6 +2,16 @@
   "name": "adl-docs",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Bhaskar Pandey",
+    "url": "https://www.bhaskarpandey.com"
+  },
+  "license": "MIT",
+  "homepage": "https://thebpandey.github.io/ADL/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thebpandey/ADL.git"
+  },
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",

@@ -33,6 +33,7 @@ Microsoft provides an official ARM64 `.deb` package at [code.visualstudio.com](h
 ```bash
 curl -L -o /tmp/vscode.deb 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-arm64'
 ```
+
 <CopyCommand command="apt install -y /tmp/vscode.deb" />
 <CopyCommand command="rm /tmp/vscode.deb" />
 
@@ -74,6 +75,7 @@ Set your identity. These values appear in every commit you create.
 ```bash
 git config --global user.name "Your Name"
 ```
+
 ```bash
 git config --global user.email "you@example.com"
 ```

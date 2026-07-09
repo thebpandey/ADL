@@ -45,14 +45,18 @@ graph TD
 ADL chose Ubuntu for several important reasons:
 
 ### 1. Largest Community
+
 Ubuntu has the largest user base of any Linux distribution. This means:
+
 - More people have solved the problem you are encountering
 - More tutorials, guides, and forum posts exist
 - More questions have been answered on sites like Ask Ubuntu and Stack Overflow
 - More eyes on bugs means faster fixes
 
 ### 2. Most Packages Available
+
 Ubuntu's repositories contain over **60,000 packages**. If a piece of Linux software exists, it is almost certainly available for Ubuntu. This includes:
+
 - Office suites (LibreOffice)
 - Web browsers (Firefox, Chromium)
 - Development tools (VS Code, Git, Python, Node.js)
@@ -61,7 +65,9 @@ Ubuntu's repositories contain over **60,000 packages**. If a piece of Linux soft
 - And thousands more
 
 ### 3. Best Documentation
+
 Ubuntu has the most extensive documentation of any Linux distribution:
+
 - Official Ubuntu documentation
 - Community wiki
 - Ask Ubuntu (Q&A site with millions of answers)
@@ -71,12 +77,15 @@ Ubuntu has the most extensive documentation of any Linux distribution:
 When you search for how to do something on Linux, the Ubuntu answer is usually the first result.
 
 ### 4. ARM Support
+
 Ubuntu has excellent support for ARM processors, which is the architecture used by virtually all Android phones. Many distributions have limited or experimental ARM support. Ubuntu's ARM packages are well-tested and maintained.
 
 ### 5. proot-distro Support
+
 proot-distro has first-class support for Ubuntu. The Ubuntu rootfs (root filesystem) provided by proot-distro is well-tested and regularly updated.
 
 ### 6. LTS Releases
+
 Ubuntu offers **Long Term Support (LTS)** releases every two years. LTS releases receive security updates for five years, giving you a stable and secure base. ADL uses the latest LTS release.
 
 <BestPractice>
@@ -126,11 +135,13 @@ Here is how Ubuntu compares to other distributions you might consider:
 Debian is Ubuntu's parent distribution — Ubuntu is actually based on Debian. Debian prioritizes stability above all else.
 
 **Choose Debian if:**
+
 - You want an even more stable (but older) base
 - You are experienced with Linux and do not need the latest packages
 - You prefer a purely community-driven project
 
 **Stick with Ubuntu if:**
+
 - You are new to Linux
 - You want more recent software versions
 - You want the largest community support
@@ -140,11 +151,13 @@ Debian is Ubuntu's parent distribution — Ubuntu is actually based on Debian. D
 Fedora is backed by Red Hat and features the latest Linux technologies. It uses the DNF package manager instead of APT.
 
 **Choose Fedora if:**
+
 - You specifically need cutting-edge Linux features
 - You are familiar with RPM-based systems
 - You want the newest kernel and desktop environment versions
 
 **Stick with Ubuntu if:**
+
 - You want better compatibility with online guides and tutorials
 - You want APT (most Linux guides assume APT)
 - You want better ARM support in proot
@@ -154,11 +167,13 @@ Fedora is backed by Red Hat and features the latest Linux technologies. It uses 
 Arch Linux follows a "rolling release" model where software is continuously updated. It provides a minimal base that you build up yourself.
 
 **Choose Arch if:**
+
 - You are an experienced Linux user
 - You want complete control over every package installed
 - You enjoy learning by building your system from scratch
 
 **Stick with Ubuntu if:**
+
 - You want a system that works out of the box
 - You want easier troubleshooting (more answers exist for Ubuntu)
 - You do not want to spend time on system maintenance
@@ -194,12 +209,14 @@ Arch Linux follows a "rolling release" model where software is continuously upda
 When you install Ubuntu through proot-distro, you get a minimal base system. ADL's setup scripts then install additional packages to create a complete desktop environment. Here is what the layers look like:
 
 ### Base Ubuntu (from proot-distro)
+
 - Core system utilities (ls, cp, mv, cat, etc.)
 - APT package manager
 - Basic networking tools
 - User management tools
 
 ### Added by ADL Setup
+
 - XFCE desktop environment
 - Web browser (Firefox or Chromium)
 - File manager (Thunar)
@@ -218,6 +235,7 @@ After ADL setup is complete, you can install any Ubuntu package using APT. If it
 Ubuntu's package ecosystem is one of its strongest features:
 
 ### Official Repositories
+
 Ubuntu maintains four official repositories:
 
 | Repository | Contents |
@@ -230,6 +248,7 @@ Ubuntu maintains four official repositories:
 In a proot environment, you will primarily use **main** and **universe**, which together contain tens of thousands of packages.
 
 ### PPAs (Personal Package Archives)
+
 PPAs let developers distribute their own packages outside the official repositories. They are useful for getting newer versions of software or applications not yet in the official repos.
 
 <Warning>

@@ -103,9 +103,11 @@ For ADL, you need **Termux** and **Termux:X11**. The others are optional enhance
 ## Advantages of Termux
 
 ### No Root Required
+
 Termux runs entirely within Android's normal user permissions. You do not need to unlock your bootloader, flash custom firmware, or void your warranty. Install it like any other app.
 
 ### Real Package Manager
+
 Termux includes APT, the same package manager used by Debian and Ubuntu. You can install thousands of real Linux packages:
 
 ```bash
@@ -113,17 +115,21 @@ pkg install git python nodejs rust golang
 ```
 
 ### Native Performance
+
 Because Termux runs programs natively (not through emulation), performance is excellent. Your compiled code runs at full speed on your phone's processor.
 
 ### Active Development
+
 Termux is actively maintained with regular updates. The community is large and helpful, and issues get addressed promptly.
 
 ### Excellent Hardware Support
+
 Termux works on virtually all Android devices running Android 7 or later. It supports both ARM and x86 processors.
 
 ## Disadvantages of Termux
 
 ### Android Sandbox Limitations
+
 Android restricts what apps can do for security reasons. This means Termux cannot:
 
 - Access system directories without proot
@@ -132,9 +138,11 @@ Android restricts what apps can do for security reasons. This means Termux canno
 - Run as a true system service
 
 ### Storage Restrictions
+
 On newer Android versions, Termux has limited access to shared storage due to Android's scoped storage policies. You may need to grant additional permissions.
 
 ### Background Process Limits
+
 Android aggressively kills background processes to save battery. Long-running Termux processes may be terminated. You need to configure battery optimization exclusions for Termux.
 
 <BestPractice>
@@ -142,6 +150,7 @@ Always exclude Termux from battery optimization in your Android settings. Go to 
 </BestPractice>
 
 ### No Init System
+
 Termux does not have a traditional init system (like systemd). Services must be started manually or through scripts.
 
 ## Termux vs. Alternatives

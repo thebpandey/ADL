@@ -111,6 +111,11 @@ const config: Config = {
         content:
           "Run desktop Linux environments on Android phones and tablets. No root required. Complete documentation for Android Desktop Linux (ADL).",
       },
+      { name: "author", content: "Bhaskar Pandey" },
+      {
+        name: "publisher",
+        content: "Android Desktop Linux Project - Almora Technology",
+      },
       { property: "og:type", content: "website" },
       {
         property: "og:title",
@@ -195,6 +200,7 @@ const config: Config = {
         {
           title: "Project",
           items: [
+            { label: "About", to: "/docs/about" },
             {
               label: "GitHub",
               href: `https://github.com/${organizationName}/${projectName}`,
@@ -203,10 +209,39 @@ const config: Config = {
               label: "License",
               href: `https://github.com/${organizationName}/${projectName}/blob/main/LICENSE`,
             },
+            {
+              label: "Contributing",
+              href: `https://github.com/${organizationName}/${projectName}/blob/main/CONTRIBUTING.md`,
+            },
+            {
+              label: "Security",
+              href: `https://github.com/${organizationName}/${projectName}/blob/main/SECURITY.md`,
+            },
+          ],
+        },
+        {
+          title: "Author",
+          items: [
+            {
+              label: "GitHub — @thebpandey",
+              href: "https://github.com/thebpandey",
+            },
+            {
+              label: "LinkedIn",
+              href: "https://www.linkedin.com/in/pandeybhaskar",
+            },
+            {
+              label: "bhaskarpandey.com",
+              href: "https://www.bhaskarpandey.com",
+            },
+            {
+              label: "Almora Technology",
+              href: "https://almora.tech",
+            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Android Desktop Linux. Built with Docusaurus.`,
+      copyright: `Created by Bhaskar Pandey · Android Desktop Linux Project - Almora Technology<br />Copyright © 2026 Bhaskar Pandey. Released under the MIT License. Built with Docusaurus.`,
     },
 
     prism: {

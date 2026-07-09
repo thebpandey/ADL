@@ -89,6 +89,7 @@ GNOME and KDE Plasma may work on high-end phones (8GB+ RAM, flagship processor) 
 XFCE is a lightweight, full-featured desktop environment that offers the best balance of performance and functionality for ADL.
 
 **Strengths:**
+
 - Low memory footprint (~300-400 MB)
 - Fast and responsive on ARM processors
 - Highly customizable (panels, themes, keyboard shortcuts)
@@ -97,6 +98,7 @@ XFCE is a lightweight, full-featured desktop environment that offers the best ba
 - Excellent documentation
 
 **Weaknesses:**
+
 - Appearance is more traditional (not as "modern" as GNOME)
 - Fewer animations and visual effects
 - Some settings require more clicks to find
@@ -108,11 +110,13 @@ XFCE is a lightweight, full-featured desktop environment that offers the best ba
 LXDE is even lighter than XFCE but less feature-rich.
 
 **Strengths:**
+
 - Lowest memory usage of any full DE
 - Very fast on low-spec hardware
 - Simple and straightforward
 
 **Weaknesses:**
+
 - Fewer customization options
 - Less active development (LXQt is its successor)
 - Fewer built-in utilities
@@ -123,12 +127,14 @@ LXDE is even lighter than XFCE but less feature-rich.
 MATE is a continuation of the GNOME 2 desktop, offering a traditional layout with more features than XFCE.
 
 **Strengths:**
+
 - Familiar traditional desktop layout
 - More built-in tools than XFCE
 - Active development
 - Good customization options
 
 **Weaknesses:**
+
 - Uses more RAM than XFCE
 - Slightly heavier on CPU
 - Some components are resource-intensive
@@ -138,12 +144,14 @@ MATE is a continuation of the GNOME 2 desktop, offering a traditional layout wit
 KDE Plasma is the most customizable desktop environment available, with a Windows-like interface.
 
 **Strengths:**
+
 - Extremely customizable — change almost anything
 - Modern and polished appearance
 - Excellent application suite (Dolphin, Kate, Konsole)
 - Windows-like default layout
 
 **Weaknesses:**
+
 - Higher memory and CPU usage
 - Can feel sluggish on mid-range phones
 - More complex settings

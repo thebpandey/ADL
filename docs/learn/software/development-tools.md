@@ -70,6 +70,7 @@ Set your name and email. These appear in every commit you make.
 ```bash
 git config --global user.name "Your Name"
 ```
+
 ```bash
 git config --global user.email "your.email@example.com"
 ```

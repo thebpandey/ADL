@@ -10,6 +10,8 @@ This guide walks you through setting up a complete Linux desktop environment on 
 
 By the end, you'll have a fully functional XFCE desktop running inside Ubuntu on your Android device --- complete with a file manager, terminal, and access to thousands of Linux packages.
 
+<InstallFlowDiagram />
+
 ## What You Need
 
 <Requirements items={[

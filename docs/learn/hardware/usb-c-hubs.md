@@ -10,6 +10,8 @@ A USB-C hub is the bridge between your phone and your desktop setup. It takes th
 
 Without a hub, you are limited to Bluetooth peripherals and screen mirroring. With the right hub, your phone becomes a full desktop workstation.
 
+<DeviceSetupDiagram />
+
 ## DisplayPort Alt Mode
 
 **DisplayPort Alt Mode** (DP Alt Mode) is the technology that allows a video signal to travel over a USB-C cable. When your phone supports DP Alt Mode, it can send a display output directly to a monitor through the USB-C port — no wireless casting, no compression, no lag.

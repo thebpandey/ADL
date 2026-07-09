@@ -115,6 +115,7 @@ Before installing anything else, bring all existing Termux packages up to date. 
 <CopyCommand command="pkg update && pkg upgrade -y" />
 
 This command does two things:
+
 - `pkg update` refreshes the list of available packages from the Termux repositories.
 - `pkg upgrade -y` upgrades all installed packages to their latest versions. The `-y` flag automatically answers "yes" to confirmation prompts.
 

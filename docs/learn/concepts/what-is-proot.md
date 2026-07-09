@@ -10,6 +10,8 @@ description: Understanding proot — the tool that lets you run a full Linux dis
 
 In the ADL stack, proot is the layer that makes it possible to run Ubuntu and a full desktop environment inside Termux.
 
+<StackDiagram />
+
 ## Understanding Containers First
 
 Before explaining proot, let us talk about containers, because proot creates something similar.
@@ -131,6 +133,7 @@ Back up your proot-distro environment regularly using `proot-distro backup ubunt
 proot does add some overhead because it intercepts and translates system calls. Here is what to expect:
 
 ### What Runs Well
+
 - Web browsing
 - Text editing and office applications
 - Programming (writing and editing code)
@@ -139,6 +142,7 @@ proot does add some overhead because it intercepts and translates system calls. 
 - Terminal-based applications
 
 ### What Runs Slower
+
 - **I/O-heavy operations** — file copying, package installation, and database operations are slower because every file access goes through proot's translation layer
 - **Compilation** — building large software projects takes longer due to the overhead on thousands of small file operations
 - **Disk-intensive applications** — anything that reads or writes many files frequently

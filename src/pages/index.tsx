@@ -1,7 +1,34 @@
+import React from "react";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
+import HeroIllustration from "@site/src/components/HeroIllustration";
+import DeviceSetupDiagram from "@site/src/components/DeviceSetupDiagram";
 import styles from "./index.module.css";
+
+const tracks = [
+  {
+    icon: "🚀",
+    title: "Quick Start",
+    description:
+      "The guided path: install Termux, Ubuntu, and a desktop in about an hour.",
+    to: "/docs/quick-start/overview",
+  },
+  {
+    icon: "📚",
+    title: "Learn",
+    description:
+      "Understand the concepts — Termux, proot, display servers, and the hardware.",
+    to: "/docs/category/learn",
+  },
+  {
+    icon: "🔍",
+    title: "Reference",
+    description:
+      "Look things up: commands, configuration files, and compatibility tables.",
+    to: "/docs/category/reference",
+  },
+];
 
 const features = [
   {
@@ -132,30 +159,104 @@ const community = [
 function Hero() {
   return (
     <header className={styles.hero}>
-      <div className={styles.heroInner}>
-        <div className={styles.heroBadge}>Open Source Project</div>
-        <h1 className={styles.heroTitle}>
-          A Full Linux Desktop
-          <br />
-          on Your Android Device
-        </h1>
-        <p className={styles.heroSubtitle}>
-          Run desktop Linux environments on Android phones and tablets. No root
-          required. Works with Samsung DeX for a complete workstation experience.
-        </p>
-        <div className={styles.heroButtons}>
-          <Link className={styles.btnPrimary} to="/docs/quick-start/overview">
-            Quick Start
-          </Link>
-          <Link
-            className={styles.btnSecondary}
-            href="https://github.com/thebpandey/ADL"
-          >
-            GitHub
-          </Link>
+      <div
+        className={styles.heroInner}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "2.5rem",
+          flexWrap: "wrap",
+        }}
+      >
+        <div style={{ flex: "1 1 320px", minWidth: 280 }}>
+          <div className={styles.heroBadge}>Open Source Project</div>
+          <h1 className={styles.heroTitle}>
+            A Full Linux Desktop
+            <br />
+            on Your Android Device
+          </h1>
+          <p className={styles.heroSubtitle}>
+            Run desktop Linux environments on Android phones and tablets. No root
+            required. Works with Samsung DeX for a complete workstation experience.
+          </p>
+          <div className={styles.heroButtons}>
+            <Link className={styles.btnPrimary} to="/docs/quick-start/overview">
+              Quick Start
+            </Link>
+            <Link
+              className={styles.btnSecondary}
+              href="https://github.com/thebpandey/ADL"
+            >
+              GitHub
+            </Link>
+          </div>
+        </div>
+        <div style={{ flex: "1 1 320px", minWidth: 280 }}>
+          <HeroIllustration />
         </div>
       </div>
     </header>
+  );
+}
+
+function Tracks() {
+  return (
+    <section className={styles.section}>
+      <div className={styles.sectionInner}>
+        <span className={styles.sectionLabel}>Documentation</span>
+        <h2 className={styles.sectionTitle}>Three ways in</h2>
+        <p className={styles.sectionDescription}>
+          Follow the guided path, learn how it all works, or jump straight to
+          the reference you need.
+        </p>
+        <div className="adl-card-grid">
+          {tracks.map((t) => (
+            <Link
+              key={t.title}
+              to={t.to}
+              style={{ textDecoration: "none", display: "block" }}
+            >
+              <div
+                className="adl-visual-card"
+                style={{
+                  border: "1px solid var(--adl-border-color)",
+                  borderRadius: 12,
+                  padding: "1.25rem 1.4rem",
+                  background: "var(--adl-card-bg, transparent)",
+                  height: "100%",
+                }}
+              >
+                <div aria-hidden="true" style={{ fontSize: "1.75rem", marginBottom: "0.5rem" }}>
+                  {t.icon}
+                </div>
+                <div style={{ fontWeight: 700, fontSize: "1.0625rem", marginBottom: "0.35rem", color: "var(--ifm-font-color-base)" }}>
+                  {t.title}
+                </div>
+                <p style={{ fontSize: "0.875rem", lineHeight: 1.6, margin: 0, color: "var(--adl-text-muted, var(--ifm-color-emphasis-700))" }}>
+                  {t.description}
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function DeskSetup() {
+  return (
+    <section className={`${styles.section} ${styles.sectionAlt}`}>
+      <div className={styles.sectionInner}>
+        <span className={styles.sectionLabel}>The setup</span>
+        <h2 className={styles.sectionTitle}>One phone, one hub, a whole desk</h2>
+        <p className={styles.sectionDescription}>
+          A USB-C hub connects your phone to a monitor, keyboard, mouse, and
+          power — everything you need for a workstation.
+        </p>
+        <DeviceSetupDiagram />
+      </div>
+    </section>
   );
 }
 
@@ -265,7 +366,7 @@ function Community() {
   );
 }
 
-export default function Home(): JSX.Element {
+export default function Home(): React.JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
@@ -274,7 +375,9 @@ export default function Home(): JSX.Element {
     >
       <Hero />
       <main>
+        <Tracks />
         <Features />
+        <DeskSetup />
         <QuickStart />
         <Roadmap />
         <Community />

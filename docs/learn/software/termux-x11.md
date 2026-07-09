@@ -53,8 +53,9 @@ Termux:X11 requires two components: an Android app and a companion Termux packag
 
 Download the latest Termux:X11 APK from the [GitHub releases page](https://github.com/termux/termux-x11/releases). Look for the file named `app-universal-release.apk` under the most recent release.
 
-<CopyCommand command="# Open this URL in your Android browser to download the APK
-# https://github.com/termux/termux-x11/releases" />
+Open this URL in your Android browser to download the APK:
+
+<CopyCommand command="https://github.com/termux/termux-x11/releases" />
 
 After downloading, tap the APK to install it. You may need to enable "Install from unknown sources" for your browser in Android Settings > Apps > Special access.
 
