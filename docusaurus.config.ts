@@ -16,6 +16,7 @@ const config: Config = {
 
   organizationName,
   projectName,
+  deploymentBranch: "gh-pages",
   trailingSlash: false,
 
   onBrokenLinks: "throw",

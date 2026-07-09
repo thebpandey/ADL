@@ -164,6 +164,28 @@ Your monitor displays your phone's screen, your phone shows a charging indicator
   }
 ]} />
 
+## Recommended USB-C Adapters
+
+These are adapters the project maintainer has personally tested with a Samsung Galaxy S22+ and found to work reliably with ADL.
+
+**If you only need video output** (using Bluetooth keyboard and mouse):
+
+A USB-C to HDMI adapter with PD pass-through is the simplest option. It connects your phone to a monitor while keeping the phone charged — no extra ports needed since your peripherals connect over Bluetooth.
+
+[USB-C to HDMI + PD Charging Adapter](https://amzn.to/4pacjtM)
+
+**If you need wired peripherals and charging:**
+
+A USB-C hub with HDMI, USB-A ports, and PD pass-through lets you connect a wired keyboard, mouse, and monitor while keeping the phone charged — useful when you prefer the lower latency of wired input.
+
+[USB-C Hub with HDMI + USB-A + PD Charging](https://amzn.to/4aEWkOw)
+
+<small>
+
+**Affiliate disclosure:** The links above are Amazon affiliate links. As an Amazon Associate, I may earn a small commission from qualifying purchases at no additional cost to you. These recommendations are based solely on personal testing and experience — they are not sponsored or biased. Individual results may vary depending on your device, cable, and setup. You are under no obligation to purchase through these links.
+
+</small>
+
 ## Next Steps
 
 - Set up your [peripherals](/docs/learn/hardware/peripherals) — keyboards, mice, monitors, and audio
