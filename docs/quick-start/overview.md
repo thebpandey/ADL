@@ -48,16 +48,25 @@ The entire process takes **30-45 minutes**, most of which is waiting for package
       label: "Samsung DeX",
       description: "Best experience for Samsung Galaxy owners. Connects to external monitors, keyboards, and mice for a full desktop workstation. Follow the standard path plus the Samsung DeX guide.",
       recommended: true,
+      details: "Follow steps 1-4 in order (Install Termux through First Launch), then finish with the Samsung DeX guide to move your desktop onto an external monitor.",
+      to: "/docs/quick-start/install-termux",
+      toLabel: "Start with step 1: Install Termux →",
     },
     {
       label: "Standard",
       description: "Works on all Android devices. Full XFCE desktop accessed through Termux:X11 on your phone or tablet screen.",
       recommended: false,
+      details: "Follow steps 1-4 in order (Install Termux through First Launch). You can skip the Samsung DeX step entirely — everything runs on your phone or tablet screen.",
+      to: "/docs/quick-start/install-termux",
+      toLabel: "Start with step 1: Install Termux →",
     },
     {
       label: "Minimal",
       description: "For devices with limited storage (under 4GB free). Uses a lighter window manager instead of XFCE. See the Learn track for lightweight alternatives.",
       recommended: false,
+      details: "Follow steps 1-2 (Install Termux and Install Ubuntu), then read about lightweight desktop alternatives before choosing what to install in step 3.",
+      to: "/docs/learn/concepts/what-is-a-desktop-environment",
+      toLabel: "Read about lightweight desktop options →",
     },
   ]}
 />
