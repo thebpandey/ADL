@@ -1,0 +1,5 @@
+{
+  "label": "Glossary",
+  "position": 11,
+  "link": { "type": "generated-index", "description": "Definitions of technical terms used throughout this documentation." }
+}

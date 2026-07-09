@@ -166,7 +166,10 @@ const config: Config = {
         {
           title: "Documentation",
           items: [
-            { label: "Getting Started", to: "/docs/intro" },
+            { label: "Getting Started", to: "/docs/category/getting-started" },
+            { label: "Installation", to: "/docs/category/installation" },
+            { label: "Desktop Environments", to: "/docs/category/desktop-environments" },
+            { label: "Troubleshooting", to: "/docs/category/troubleshooting" },
           ],
         },
         {
