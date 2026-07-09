@@ -164,6 +164,12 @@ const config: Config = {
           label: "Docs",
         },
         {
+          to: "/docs/support-adl",
+          position: "right",
+          label: "💖 Support",
+          "aria-label": "Support ADL (optional donations)",
+        },
+        {
           href: `https://github.com/${organizationName}/${projectName}`,
           position: "right",
           className: "header-github-link",
@@ -201,6 +207,7 @@ const config: Config = {
           title: "Project",
           items: [
             { label: "About", to: "/docs/about" },
+            { label: "Support ADL", to: "/docs/support-adl" },
             {
               label: "GitHub",
               href: `https://github.com/${organizationName}/${projectName}`,

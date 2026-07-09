@@ -1,0 +1,107 @@
+name: Update sponsors
+
+# Automates donor recognition: fetches the current GitHub Sponsors list and
+# updates (1) the sponsors section in README.md and (2) src/data/sponsors.json,
+# which drives the recognition banner on the documentation homepage.
+#
+# Requires a repository secret SPONSORS_TOKEN — a classic PAT with the
+# read:user and read:org scopes (the default GITHUB_TOKEN cannot read the
+# Sponsors API). Until that secret is added, the job skips gracefully.
+# Buy Me a Coffee and Cash App have no public API; those donors are added
+# manually to src/data/sponsors.json (recognition is opt-in).
+on:
+  schedule:
+    - cron: "0 7 * * 1" # Mondays 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-sponsors:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for SPONSORS_TOKEN
+        id: check
+        env:
+          SPONSORS_TOKEN: ${{ secrets.SPONSORS_TOKEN }}
+        run: |
+          if [ -n "$SPONSORS_TOKEN" ]; then
+            echo "has_token=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_token=false" >> "$GITHUB_OUTPUT"
+            echo "SPONSORS_TOKEN secret not set — skipping sponsor sync."
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.has_token == 'true'
+
+      - name: Fetch sponsors and update files
+        if: steps.check.outputs.has_token == 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.SPONSORS_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const query = `query($login: String!, $after: String) {
+              user(login: $login) {
+                sponsorshipsAsMaintainer(first: 100, after: $after, includePrivate: false) {
+                  pageInfo { hasNextPage endCursor }
+                  nodes {
+                    sponsorEntity {
+                      ... on User { login name url avatarUrl }
+                      ... on Organization { login name url avatarUrl }
+                    }
+                    tier { monthlyPriceInDollars }
+                  }
+                }
+              }
+            }`;
+            let sponsors = [], after = null;
+            do {
+              const res = await github.graphql(query, { login: 'thebpandey', after });
+              const conn = res.user.sponsorshipsAsMaintainer;
+              sponsors.push(...conn.nodes
+                .filter(n => n.sponsorEntity)
+                .map(n => ({
+                  name: n.sponsorEntity.name || n.sponsorEntity.login,
+                  url: n.sponsorEntity.url,
+                  avatar: n.sponsorEntity.avatarUrl,
+                  source: 'github-sponsors',
+                })));
+              after = conn.pageInfo.hasNextPage ? conn.pageInfo.endCursor : null;
+            } while (after);
+
+            // Merge with manually-added donors (source !== 'github-sponsors').
+            const path = 'src/data/sponsors.json';
+            let manual = [];
+            try {
+              manual = JSON.parse(fs.readFileSync(path, 'utf8'))
+                .filter(s => s.source !== 'github-sponsors');
+            } catch (e) {}
+            fs.writeFileSync(path, JSON.stringify([...sponsors, ...manual], null, 2) + '\n');
+
+            // Update README between the sponsor markers.
+            const start = '<!-- sponsors:start -->', end = '<!-- sponsors:end -->';
+            const readme = fs.readFileSync('README.md', 'utf8');
+            const list = sponsors.length
+              ? sponsors.map(s => `- [${s.name}](${s.url})`).join('\n')
+              : '_Become the first sponsor!_';
+            const block = `${start}\n${list}\n${end}`;
+            if (readme.includes(start) && readme.includes(end)) {
+              const updated = readme.replace(new RegExp(`${start}[\\s\\S]*?${end}`), block);
+              fs.writeFileSync('README.md', updated);
+            }
+
+      - name: Commit changes
+        if: steps.check.outputs.has_token == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/sponsors.json README.md
+          if git diff --cached --quiet; then
+            echo "No sponsor changes."
+          else
+            git commit -m "Update sponsors list [skip ci]"
+            git push
+          fi

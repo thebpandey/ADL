@@ -74,6 +74,30 @@ verified by a build-only workflow that never deploys.
 If you fork this project, enable GitHub Pages in **Settings → Pages** with
 **GitHub Actions** as the source.
 
+## Support ADL
+
+ADL is **free and open-source** — donations are entirely optional and never
+required to use the documentation or to get help. If the project saved you
+time and you'd like to support it:
+
+- 💖 **[Sponsor on GitHub](https://github.com/sponsors/thebpandey)**
+- ☕ **[Buy Me a Coffee](https://buymeacoffee.com/thebpandey)**
+- 💵 **[Cash App — $thebpandey](https://cash.app/$thebpandey)**
+
+All payments go through these external platforms; this project never collects
+payment information. You can also support ADL by starring the repo, reporting
+bugs, or [contributing](CONTRIBUTING.md).
+
+### Sponsors
+
+Thank you to everyone supporting ADL! GitHub Sponsors are updated
+automatically; Buy Me a Coffee and Cash App donors are added on request
+(recognition is opt-in).
+
+<!-- sponsors:start -->
+_Become the first sponsor!_
+<!-- sponsors:end -->
+
 ## Attribution
 
 - **Author / project owner:** Bhaskar Pandey ([@thebpandey](https://github.com/thebpandey))
