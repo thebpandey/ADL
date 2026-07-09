@@ -9,7 +9,7 @@ interface FAQProps {
   items: FAQItem[];
 }
 
-export default function FAQ({ items }: FAQProps) {
+export default function FAQ({ items = [], children }: FAQProps & { children?: React.ReactNode }) {
   return (
     <div
       className="adl-faq"
@@ -36,6 +36,7 @@ export default function FAQ({ items }: FAQProps) {
         <span>Frequently Asked Questions</span>
       </div>
       <div style={{ padding: "0.25rem 0" }}>
+        {children}
         {items.map(({ question, answer }, i) => (
           <details
             key={i}

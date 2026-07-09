@@ -59,7 +59,7 @@ const quickStartSteps = [
     step: 3,
     title: "Launch Your Desktop",
     description:
-      "Start the VNC server and connect with a viewer app. You now have a full Linux desktop running on your Android device.",
+      "Start the desktop environment and open Termux:X11. You now have a full Linux desktop running on your Android device.",
   },
 ];
 
@@ -144,8 +144,8 @@ function Hero() {
           required. Works with Samsung DeX for a complete workstation experience.
         </p>
         <div className={styles.heroButtons}>
-          <Link className={styles.btnPrimary} to="/docs/intro">
-            Get Started
+          <Link className={styles.btnPrimary} to="/docs/quick-start/overview">
+            Quick Start
           </Link>
           <Link
             className={styles.btnSecondary}

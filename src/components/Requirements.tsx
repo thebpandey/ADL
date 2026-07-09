@@ -4,7 +4,7 @@ interface RequirementsProps {
   items: string[];
 }
 
-export default function Requirements({ items }: RequirementsProps) {
+export default function Requirements({ items = [] }: RequirementsProps) {
   return (
     <div
       className="adl-requirements"

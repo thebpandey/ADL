@@ -1,5 +1,4 @@
 {
   "label": "Installation",
-  "position": 3,
-  "link": { "type": "generated-index", "description": "Step-by-step installation guides for all supported configurations." }
+  "position": 5
 }

@@ -15,6 +15,11 @@ import Diagram from "@site/src/components/Diagram";
 import ProgressChecklist from "@site/src/components/ProgressChecklist";
 import FAQ from "@site/src/components/FAQ";
 import CollapsibleSection from "@site/src/components/CollapsibleSection";
+import Decision from "@site/src/components/Decision";
+import BestPractice from "@site/src/components/BestPractice";
+import CommonMistake from "@site/src/components/CommonMistake";
+import Compatibility from "@site/src/components/Compatibility";
+import PerformanceNote from "@site/src/components/PerformanceNote";
 
 export default {
   ...MDXComponents,
@@ -34,4 +39,9 @@ export default {
   ProgressChecklist,
   FAQ,
   CollapsibleSection,
+  Decision,
+  BestPractice,
+  CommonMistake,
+  Compatibility,
+  PerformanceNote,
 };

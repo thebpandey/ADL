@@ -1,86 +1,139 @@
 ---
-id: reference-template
-title: "Reference Page Template"
 sidebar_position: 2
+title: "Reference Page Template"
+description: "A starter template for writing reference and documentation pages in the ADL documentation."
 ---
 
 # Reference Page Template
 
-Copy this template when creating a new reference page (application guides, compatibility tables, glossary entries). Replace all placeholder text with actual content.
+This page is a template for writing reference and technical documentation pages. Copy the structure below as a starting point, then replace the placeholder content with your own.
+
+<Note>This is a template, not a real reference page. Do not link to this page from other documentation as if it contains actual technical details.</Note>
 
 ---
 
-````md
+## How to use this template
+
+1. Copy this file to the appropriate directory under `docs/`.
+2. Rename it to match your topic: `your-reference-topic.md`.
+3. Replace all placeholder text with real content.
+4. Update the frontmatter with the correct `sidebar_position`, `title`, and `description`.
+5. Remove the "How to use this template" section before publishing.
+6. Delete all HTML comments once you have filled in each section.
+
 ---
-id: your-page-id
-title: "Your Page Title"
+
+## Template starts below
+
+Copy everything below this line into your new file.
+
+---
+
+````mdx
+---
 sidebar_position: 1
+title: "Your Reference Title"
+description: "A one-sentence description of what this reference page documents."
 ---
 
-# Your Page Title
+<!-- TITLE: Use a single # heading that matches the frontmatter title exactly. -->
+# Your Reference Title
 
-One or two sentences explaining what this reference page covers.
+<!-- OVERVIEW: Write one to two paragraphs summarizing what this reference page
+     covers. State the scope clearly --- what is included and what is not.
+     Reference pages are for looking things up, not for teaching concepts. -->
 
-## Overview
+Write a brief overview of what this reference page documents. State the scope
+and mention any related pages the reader might be looking for instead.
 
-Brief context about this topic and how it fits into ADL.
+<!-- SYNTAX / USAGE: Show the general syntax or invocation pattern. Use fenced
+     code blocks for syntax and CopyCommand for commands the reader can run
+     directly. -->
+## Syntax
 
-## [Item One]
+```bash
+command [options] <required-argument> [optional-argument]
+```
 
-### What is [Item One]?
+### Common flags
 
-**[Item One]** is [plain-language definition].
-
-### Installation
-
-<CopyCommand command="apt install item-one" />
-
-<ExpectedResult>
-  What the reader should see after installation completes.
-</ExpectedResult>
-
-### Configuration
-
-Key configuration details in a table:
-
-| Setting | Default | Description |
+| Flag | Description | Default |
 |---|---|---|
-| `setting-a` | `value` | What this setting controls |
-| `setting-b` | `value` | What this setting controls |
+| `-v`, `--verbose` | Enable verbose output | Off |
+| `-o`, `--output` | Specify output directory | Current directory |
+| `-h`, `--help` | Show help message | --- |
 
-### Compatibility
+<!-- CONFIGURATION OPTIONS: Document each configuration option with its type,
+     default value, and a brief description. Use a table for simple options
+     or subsections for complex ones. -->
+## Configuration options
 
-<Note>
-  Any important notes about compatibility with specific devices or
-  Android versions.
-</Note>
+### Option: `option_name`
 
-## [Item Two]
+- **Type:** `string`
+- **Default:** `"default_value"`
+- **Required:** No
 
-Repeat the same structure for each item in the reference.
+Description of what this option controls and when you might change it.
 
-## Comparison
+```yaml
+option_name: "your_value"
+```
 
-| Feature | Item One | Item Two |
-|---|---|---|
-| Resource usage | Low | Medium |
-| Ease of setup | Easy | Moderate |
-| Best for | [use case] | [use case] |
+### Option: `another_option`
 
-## Recommendation
+- **Type:** `boolean`
+- **Default:** `true`
+- **Required:** No
 
-State which option is recommended for most users and why.
+Description of the second option.
 
-<Tip>
-  A helpful tip about choosing between options.
-</Tip>
+<Warning>Changing this option while a session is running may cause unexpected behavior. Stop the session first.</Warning>
 
-## Frequently asked questions
+<!-- EXAMPLES: Provide two or three realistic examples that demonstrate common
+     use cases. Each example should have a brief description, the command or
+     configuration, and the expected result. -->
+## Examples
 
-<FAQ items={[
-  {
-    question: "Common question about this topic?",
-    answer: "Clear, helpful answer."
-  },
-]} />
+### Basic usage
+
+Description of what this example demonstrates:
+
+<CopyCommand command="command --flag value" />
+
+<Terminal command="command --flag value" output="Expected output from the command" />
+
+### Advanced usage
+
+Description of a more complex scenario:
+
+<CopyCommand command="command --verbose --output /path/to/dir argument" />
+
+<Terminal command="command --verbose --output /path/to/dir argument" output="Verbose output showing
+additional details about the operation" />
+
+<Tip>Describe a useful shortcut or non-obvious behavior related to this example.</Tip>
+
+### Configuration file example
+
+When configuring via file instead of command-line flags:
+
+```yaml
+# /path/to/config.yaml
+option_name: "value"
+another_option: false
+nested:
+  setting: 42
+```
+
+<BestPractice>Describe the recommended configuration for most users.</BestPractice>
+
+<!-- RELATED PAGES: Link to pages that complement this reference. Include both
+     conceptual pages (for understanding) and guide pages (for step-by-step
+     instructions). -->
+## Related pages
+
+- [Concept page that explains the underlying system](../learn/concepts/related-concept.md)
+- [Guide that uses this command or configuration](../guides/related-guide.md)
+- [Another reference page for a related tool](./related-reference.md)
 ````

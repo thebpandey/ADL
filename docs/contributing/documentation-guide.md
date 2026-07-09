@@ -1,311 +1,248 @@
 ---
-id: documentation-guide
-title: "Documentation Guide"
 sidebar_position: 2
+title: "Documentation Guide"
+description: "Standards for writing and structuring ADL documentation pages --- frontmatter, components, cross-linking, and the single-source-of-truth principle."
 ---
 
 # Documentation Guide
 
-This guide defines the standards, patterns, and templates that all ADL documentation pages must follow. Consistency across every page ensures that readers always know where to find information, regardless of which section they are reading.
-
-## Writing Principles
-
-Every page in this documentation follows these principles:
-
-- **Assume no prior knowledge.** Never assume the reader has used Linux, Termux, or any command line before. If a concept is needed, introduce it first.
-- **Explain before you instruct.** Before telling someone to run a command, explain what the command does and why it is needed.
-- **One idea per paragraph.** Short paragraphs are easier to scan on mobile devices.
-- **Use headings liberally.** Readers scan before they read. Every section should have a clear heading.
-- **Show expected results.** After every command or action, show what the reader should see. This builds confidence.
-- **Provide recovery paths.** After every section that could fail, include troubleshooting steps.
-
-## Terminology Rules
-
-### Introducing New Terms
-
-Every technical term must be introduced before it is used. Use this pattern:
-
-```md
-## What is Termux?
-
-**Termux** is a terminal emulator for Android. Think of it as a way to type
-commands on your phone, similar to the Terminal app on a Mac or Command Prompt
-on Windows.
-
-We use Termux because it lets us run Linux tools directly on Android without
-needing to modify (or "root") the device.
-```
-
-### Acronyms
-
-Spell out acronyms on first use, with the abbreviation in parentheses:
-
-```md
-Android Desktop Linux (ADL) uses a Virtual Network Computing (VNC) server
-to display the Linux desktop.
-```
-
-After the first use, the abbreviation alone is acceptable.
-
-### Avoid Jargon
-
-Instead of saying "bootstrap the proot environment," write "set up the Linux environment using proot." Whenever a simpler phrase works, use it.
+This guide defines the standards for all ADL documentation pages. Follow these conventions to keep the documentation consistent, maintainable, and easy to navigate.
 
 ## Page Structure
 
-Every documentation page must include these sections in this order.
+Every documentation page follows the same general structure:
 
-### Front Matter
+1. **Frontmatter** --- metadata that controls sidebar placement and SEO
+2. **Title heading** --- a single `#` heading matching the frontmatter title
+3. **Introduction** --- one to three paragraphs explaining what the page covers and who it is for
+4. **Body sections** --- the main content, organized under `##` headings
+5. **Cross-links** --- links to related pages, usually in a "Next Steps" or "Related Pages" section at the bottom
 
-Every page starts with YAML front matter:
+### Frontmatter
+
+Every page must begin with YAML frontmatter:
 
 ```yaml
 ---
-id: page-id
-title: "Page Title"
 sidebar_position: 1
+title: "Your Page Title"
+description: "A one-sentence description of what this page covers."
 ---
 ```
 
-### Page Header
+- `sidebar_position` controls the ordering within a sidebar category. Lower numbers appear first.
+- `title` is displayed in the sidebar and in browser tabs. Use sentence case.
+- `description` appears in search results and link previews. Keep it under 160 characters.
 
-Immediately after front matter, include a metadata block using our components:
+### Title Heading
 
-```mdx
-<Requirements items={[
-  "Android 10 or newer",
-  "Termux installed (see previous section)",
-  "At least 2 GB of free storage",
-]} />
-```
-
-Include estimated time and difficulty as a brief note at the top:
-
-```md
-**Estimated time:** 15 minutes · **Difficulty:** Beginner
-```
-
-### Main Content
-
-Write the guide content with frequent headings, code blocks, and component usage. See the component reference below.
-
-### Expected Results
-
-After every command or significant action, show what the reader should expect:
+After the frontmatter, include a single `#` heading that matches the `title` field:
 
 ```mdx
-<ExpectedResult>
-  You should see the text `Hello from Linux!` printed in your terminal.
-  If you see an error message instead, check the troubleshooting section below.
-</ExpectedResult>
+# Your Page Title
 ```
 
-### Troubleshooting
+Do not use more than one `#` heading per page.
 
-Every page that includes commands or installation steps must end with a troubleshooting section:
+### Introduction
+
+Write one to three paragraphs that answer these questions:
+
+- What does this page cover?
+- Who is this page for?
+- What will the reader be able to do after reading it?
+
+Do not start the introduction with "This page..." every time. Vary your openings.
+
+## Component Usage Guide
+
+ADL documentation uses custom MDX components. These are globally available --- you do not need to import them.
+
+### Warning
+
+Use `Warning` for actions that could cause data loss, break a setup, or are difficult to reverse.
 
 ```mdx
-<Troubleshooting items={[
-  {
-    problem: "Command not found: apt",
-    solution: "You may be running this outside of the Linux environment. Make sure you have started proot-distro first by running: proot-distro login ubuntu"
-  },
-  {
-    problem: "Permission denied",
-    solution: "Do not use sudo inside proot. Run the command without sudo. If the issue persists, check that you are logged into the correct distribution."
-  },
-]} />
+<Warning>Uninstalling Termux removes all Linux distributions and their data. Back up important files first.</Warning>
 ```
 
-### Summary and Next Steps
+### Tip
 
-End every page with a brief summary and links to the next logical page:
-
-```md
-## Summary
-
-In this section, you installed Termux and verified that it works correctly
-on your device.
-
-## Next Steps
-
-Continue to [Installing a Linux Distribution](/docs/installation/install-linux-distro)
-to set up Ubuntu inside Termux.
-```
-
-## Component Reference
-
-These components are available in every MDX page without imports. Use them consistently.
-
-### Callout Variants
-
-Use `<Note>` for supplementary information:
+Use `Tip` for helpful shortcuts, time-savers, or non-obvious features.
 
 ```mdx
-<Note title="About storage space">
-  The Linux distribution download is approximately 150 MB. After extraction,
-  it uses about 500 MB of storage.
-</Note>
+<Tip>Long-press the Termux notification to access session controls without leaving your current app.</Tip>
 ```
 
-Use `<Tip>` for helpful shortcuts or best practices:
+### Note
+
+Use `Note` for supplementary information that is relevant but not critical.
 
 ```mdx
-<Tip title="Save time with tab completion">
-  You can press the Tab key to auto-complete file names and commands in the
-  terminal. This saves typing and reduces errors.
-</Tip>
+<Note>This feature was introduced in Termux version 0.118. Earlier versions do not support it.</Note>
 ```
 
-Use `<Warning>` for actions that could cause problems:
+### BestPractice
+
+Use `BestPractice` for recommended approaches and patterns.
 
 ```mdx
-<Warning title="Do not install Termux from the Play Store">
-  The Google Play Store version of Termux is outdated and will not work
-  correctly. Always install Termux from F-Droid.
-</Warning>
+<BestPractice>Run apt update before installing any new package to ensure you get the latest version.</BestPractice>
 ```
 
-Use `<Callout type="danger">` for actions that could cause data loss:
+### CommonMistake
+
+Use `CommonMistake` for errors that readers frequently make.
 
 ```mdx
-<Callout type="danger" title="This will delete your Linux installation">
-  Running this command removes all files inside your Linux distribution.
-  Make sure you have backed up any important data before proceeding.
-</Callout>
+<CommonMistake>Do not install Termux from the Google Play Store --- it is outdated. Use F-Droid or the GitHub releases page instead.</CommonMistake>
 ```
 
-### Commands
+### CopyCommand
 
-Use `<CopyCommand>` for single commands the reader needs to copy:
+Use `CopyCommand` for any command the reader should run. It renders a code block with a copy button.
 
 ```mdx
-<CopyCommand command="pkg update && pkg upgrade -y" />
+<CopyCommand command="pkg install git -y" />
 ```
 
-Use `<Terminal>` to show multi-line terminal sessions with output:
+<CopyCommand command="pkg install git -y" />
+
+Always prefer `CopyCommand` over a plain fenced code block for executable commands. Reserve fenced code blocks for configuration files, code snippets, and output examples.
+
+### Terminal
+
+Use `Terminal` to show a command alongside its expected output. This helps readers verify that a command worked correctly.
 
 ```mdx
-<Terminal title="Termux">
-  $ pkg update
-  Hit:1 https://packages.termux.dev/apt/termux-main stable InRelease
-  Reading package lists... Done
-</Terminal>
+<Terminal command="proot-distro list" output="Installed:
+  ubuntu - Ubuntu 22.04" />
 ```
 
-### Downloads
+<Terminal command="proot-distro list" output="Installed:
+  ubuntu - Ubuntu 22.04" />
 
-Use `<DownloadCard>` for any software download:
+### Requirements
+
+Use `Requirements` to present a checklist of prerequisites at the top of a guide.
 
 ```mdx
-<DownloadCard
-  name="Termux"
-  description="Terminal emulator for Android"
-  url="https://f-droid.org/en/packages/com.termux/"
-  version="0.118"
-  icon="📱"
-/>
+<Requirements items={["Android 10 or later", "At least 4 GB of RAM", "2 GB of free storage"]} />
 ```
 
-### Media
+<Requirements items={["Android 10 or later", "At least 4 GB of RAM", "2 GB of free storage"]} />
 
-Use `<Diagram>` for architecture or flow diagrams:
+### DownloadCard
+
+Use `DownloadCard` to present a downloadable app or resource with a clear call to action. These are typically used in the Downloads section.
+
+### FAQ and Troubleshooting
+
+For FAQ sections, use standard Markdown headings with a question-and-answer structure. For troubleshooting pages, organize entries under `###` headings named after the symptom, followed by **Cause** and **Solution** subheadings.
+
+## Command Documentation Pattern
+
+When documenting a command, follow this pattern:
+
+1. Briefly explain what the command does
+2. Show the command with `CopyCommand`
+3. Show the expected result with `Terminal` or describe what the reader should see
+4. Note any common errors with `CommonMistake`
+
+Example:
 
 ```mdx
-<Diagram
-  src="/img/architecture-overview.png"
-  alt="ADL architecture showing Termux, proot-distro, and VNC layers"
-  caption="How Android Desktop Linux components connect"
-/>
+Update your package list to ensure you can install the latest versions:
+
+<CopyCommand command="apt update && apt upgrade -y" />
+
+<Terminal command="apt update" output="Hit:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+Reading package lists... Done" />
+
+<CommonMistake>If you see "Permission denied," make sure you are inside the Ubuntu proot environment, not in the Termux shell.</CommonMistake>
 ```
 
-Use `<ImageComparison>` for before/after screenshots:
+## Cross-Linking Rules
+
+### Use Relative Paths
+
+Always use relative file paths for internal links, not absolute URLs:
 
 ```mdx
-<ImageComparison
-  before="/img/phone-homescreen.png"
-  after="/img/phone-linux-desktop.png"
-  beforeLabel="Stock Android"
-  afterLabel="With ADL"
-/>
+<!-- Correct -->
+See the [Architecture Overview](../learn/concepts/architecture.md) page.
+
+<!-- Incorrect -->
+See the [Architecture Overview](https://adl-docs.example.com/learn/concepts/architecture) page.
 ```
 
-Use `<Video>` for embedded video tutorials:
+Relative paths are validated at build time. If a linked page is moved or deleted, the build will fail, alerting you to fix the link. Absolute URLs break silently.
+
+### Link Text
+
+Write descriptive link text. Avoid "click here" or "this page."
 
 ```mdx
-<Video
-  src="/video/termux-setup.mp4"
-  title="Setting up Termux on a Samsung Galaxy device"
-/>
+<!-- Correct -->
+Learn how to [install Ubuntu in proot](../installation/common/ubuntu-setup.md).
+
+<!-- Incorrect -->
+To install Ubuntu in proot, [click here](../installation/common/ubuntu-setup.md).
 ```
 
-### Interactive Elements
+### Linking to Sections
 
-Use `<FAQ>` for question-and-answer sections:
-
-```mdx
-<FAQ items={[
-  {
-    question: "Does ADL work on tablets?",
-    answer: "Yes. ADL works on any Android device running Android 10 or newer, including tablets."
-  },
-]} />
-```
-
-Use `<CollapsibleSection>` for optional detail:
+Link to specific sections using the heading's anchor:
 
 ```mdx
-<CollapsibleSection title="What does this command do?">
-  The `pkg update` command refreshes the list of available packages from
-  the Termux repository. This ensures you get the latest versions when
-  you install new software.
-</CollapsibleSection>
-```
-
-Use `<ProgressChecklist>` for multi-step processes:
-
-```mdx
-<ProgressChecklist title="Installation Progress" items={[
-  { label: "Install Termux", done: true },
-  { label: "Update packages", done: true },
-  { label: "Install proot-distro", done: false },
-  { label: "Install Ubuntu", done: false },
-]} />
-```
-
-Use `<Requirements>` at the top of any guide:
-
-```mdx
-<Requirements items={[
-  "Android 10 or newer",
-  "At least 4 GB of free storage",
-  "Wi-Fi connection recommended",
-]} />
+See [Storage Permissions](../installation/common/termux-setup.md#storage-permissions).
 ```
 
 ## Screenshot Standards
 
-When documentation is ready for screenshots:
+When adding screenshots to documentation:
 
-- Capture at the highest resolution available on the device.
-- Use PNG format for interface screenshots, JPEG for photographs.
-- Crop to show only the relevant area.
-- Add a descriptive alt text for accessibility.
-- Save screenshots to `static/img/` in a folder matching the doc section (for example, `static/img/installation/`).
-- Use placeholder text `[Screenshot: description]` until the actual screenshot is available.
+- **Format:** PNG only.
+- **Width:** Maximum 1200 pixels wide. Resize larger images before adding them.
+- **Annotations:** Use red rectangles or arrows to highlight relevant areas. Use a consistent annotation style.
+- **Alt text:** Always include descriptive alt text for accessibility.
+- **File naming:** Use lowercase, hyphen-separated names: `termux-storage-permission.png`, not `Screenshot_2024.png`.
+- **Location:** Store screenshots in a `img/` subdirectory alongside the page that uses them.
 
-## Command Documentation Pattern
+Example:
 
-Every command shown in the documentation must follow this pattern:
+```mdx
+![Termux storage permission dialog showing Allow and Deny buttons](./img/termux-storage-permission.png)
+```
 
-1. **Explain** what the command does in plain language.
-2. **Show** the command using `<CopyCommand>` or a code block.
-3. **Show expected output** using `<ExpectedResult>` or `<Terminal>`.
-4. **List common errors** using `<Troubleshooting>` if the command could fail.
+## The Single-Source-of-Truth Principle
 
-## Download Link Policy
+Define every concept, procedure, or configuration detail in exactly one place. Everywhere else, link to that canonical location.
 
-- Every download **must** link to the official project website or official GitHub repository.
-- Never link to third-party APK mirrors, file hosting sites, or unofficial sources.
-- When multiple installation methods exist, recommend one method and explain why it was chosen.
-- Always include the version number when referencing specific software.
+### Why This Matters
+
+When the same information appears on multiple pages, updates become error-prone. If you change the Termux installation steps on one page but forget the other three, readers get conflicting instructions.
+
+### How to Apply It
+
+- **Procedures:** Write the full steps on one page. On other pages, write a brief summary and link to the canonical page.
+- **Definitions:** Define terms in the [Glossary](/docs/glossary/terms). Reference them rather than redefining them.
+- **Commands:** If a command appears in multiple guides, document it fully in the relevant reference page and link to it from guides.
+
+<BestPractice>Before writing a new section, search the existing documentation. If the information already exists, link to it instead of duplicating it.</BestPractice>
+
+### Exception
+
+Brief reminders are acceptable when the reader needs context to continue. For example, a guide can say "Make sure you have completed the [Termux setup](../installation/common/termux-setup.md) before proceeding" without repeating the full setup instructions.
+
+## File and Directory Conventions
+
+- **File names:** Lowercase, hyphen-separated. Example: `install-termux.md`, not `InstallTermux.md`.
+- **Category files:** Each directory must have a `_category_.json` file defining its sidebar label and position.
+- **Page templates:** Use the templates in the [Page Templates](./templates/guide-template.md) section as a starting point for new pages.
+
+## Next Steps
+
+- Review the [Style Guide](./style-guide.md) for voice, tone, and formatting conventions
+- Use the [Guide Page Template](./templates/guide-template.md) or [Reference Page Template](./templates/reference-template.md) when creating new pages
+- Read [How to Contribute](./how-to-contribute.md) for the pull request workflow

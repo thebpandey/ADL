@@ -14,3 +14,8 @@ export { default as Diagram } from "./Diagram";
 export { default as ProgressChecklist } from "./ProgressChecklist";
 export { default as FAQ } from "./FAQ";
 export { default as CollapsibleSection } from "./CollapsibleSection";
+export { default as Decision } from "./Decision";
+export { default as BestPractice } from "./BestPractice";
+export { default as CommonMistake } from "./CommonMistake";
+export { default as Compatibility } from "./Compatibility";
+export { default as PerformanceNote } from "./PerformanceNote";

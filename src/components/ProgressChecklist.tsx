@@ -10,7 +10,7 @@ interface ProgressChecklistProps {
   items: ChecklistItem[];
 }
 
-export default function ProgressChecklist({ title = "Progress", items }: ProgressChecklistProps) {
+export default function ProgressChecklist({ title = "Progress", items = [] }: ProgressChecklistProps) {
   const completed = items.filter((i) => i.done).length;
   const pct = Math.round((completed / items.length) * 100);
 

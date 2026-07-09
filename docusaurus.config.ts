@@ -146,6 +146,12 @@ const config: Config = {
       },
       items: [
         {
+          type: "doc",
+          docId: "quick-start/overview",
+          position: "left",
+          label: "Quick Start",
+        },
+        {
           type: "docSidebar",
           sidebarId: "docsSidebar",
           position: "left",
@@ -164,12 +170,12 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "Documentation",
+          title: "Get Started",
           items: [
-            { label: "Getting Started", to: "/docs/category/getting-started" },
-            { label: "Installation", to: "/docs/category/installation" },
-            { label: "Desktop Environments", to: "/docs/category/desktop-environments" },
-            { label: "Troubleshooting", to: "/docs/category/troubleshooting" },
+            { label: "Quick Start", to: "/docs/quick-start/overview" },
+            { label: "Learn", to: "/docs/category/learn" },
+            { label: "Reference", to: "/docs/category/reference" },
+            { label: "Downloads", to: "/docs/category/downloads" },
           ],
         },
         {

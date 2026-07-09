@@ -9,7 +9,7 @@ interface TroubleshootingProps {
   items: TroubleshootingItem[];
 }
 
-export default function Troubleshooting({ items }: TroubleshootingProps) {
+export default function Troubleshooting({ items = [], children }: TroubleshootingProps & { children?: React.ReactNode }) {
   return (
     <div
       className="adl-troubleshooting"
@@ -36,6 +36,7 @@ export default function Troubleshooting({ items }: TroubleshootingProps) {
         <span>Troubleshooting</span>
       </div>
       <div style={{ padding: "0.25rem 0" }}>
+        {children}
         {items.map(({ problem, solution }, i) => (
           <details
             key={i}
