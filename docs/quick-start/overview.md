@@ -6,6 +6,11 @@ description: "Get a full Linux desktop running on your Android phone or tablet i
 
 # Quick Start Overview
 
+<HeroImage
+  image="hero-quick-start.webp"
+  alt="Robot mascot assembling an Android phone into a desktop Linux workstation, step by step"
+/>
+
 This guide walks you through setting up a complete Linux desktop environment on your Android device. No root required. No special hardware. Just your phone or tablet and a Wi-Fi connection.
 
 By the end, you'll have a fully functional XFCE desktop running inside Ubuntu on your Android device --- complete with a file manager, terminal, and access to thousands of Linux packages.

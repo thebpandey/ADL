@@ -6,6 +6,11 @@ description: "Complete guide to using Samsung DeX with ADL for a full Linux desk
 
 # Samsung DeX Overview
 
+<HeroImage
+  image="hero-samsung-dex.webp"
+  alt="Robot mascot using Samsung DeX: a Galaxy phone powering a desktop on an external monitor"
+/>
+
 Samsung DeX transforms your Galaxy phone or tablet into a desktop computer by connecting to an external monitor, keyboard, and mouse. When combined with ADL, DeX becomes the bridge between a pocket-sized Android device and a genuine Linux workstation. This page covers what DeX brings to the ADL experience, how to set it up, and how to choose between wired and wireless connections.
 
 <Note title="What is DeX?">

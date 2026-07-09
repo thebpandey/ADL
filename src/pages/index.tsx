@@ -2,9 +2,9 @@ import React from "react";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import HeroIllustration from "@site/src/components/HeroIllustration";
 import DeviceSetupDiagram from "@site/src/components/DeviceSetupDiagram";
 import SponsorsBanner from "@site/src/components/SponsorsBanner";
+import HeroImage from "@site/src/components/HeroImage";
 import styles from "./index.module.css";
 
 const tracks = [
@@ -200,7 +200,10 @@ function Hero() {
           </div>
         </div>
         <div style={{ flex: "1 1 320px", minWidth: 280 }}>
-          <HeroIllustration />
+          <HeroImage
+            image="hero-home.webp"
+            alt="Friendly robot mascot at a desk running a full Linux desktop from an Android phone connected to a monitor, keyboard, and mouse"
+          />
         </div>
       </div>
     </header>

@@ -6,6 +6,13 @@ description: "Everything you need to check and configure on your Android device 
 
 # Prerequisites
 
+<HeroImage
+  image="hero-installation.webp"
+  alt="Robot mascot preparing tools and checking requirements before installing Linux on an Android phone"
+/>
+
+{/* TODO: this hero is intended for the Installation section landing page (currently a generated index). Move it if a real landing page is created. */}
+
 Before installing ADL, you need to verify that your Android device meets the requirements and configure a few system settings. This page walks you through every check and setting change, step by step.
 
 Completing these prerequisites takes about **10 minutes** and prevents the most common installation failures.

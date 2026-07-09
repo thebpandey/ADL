@@ -6,6 +6,11 @@ description: Learn how to find and install applications in ADL using the APT pac
 
 # Installing Applications
 
+<HeroImage
+  image="hero-applications.webp"
+  alt="Robot mascot surrounded by Linux application icons being installed on an Android-powered desktop"
+/>
+
 ADL gives you access to thousands of Linux applications through the same package manager that powers Ubuntu servers and desktops worldwide. If you have never installed software from a command line before, this guide will walk you through everything you need to know.
 
 ## How Software Installation Works in ADL

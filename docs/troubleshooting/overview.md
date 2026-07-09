@@ -6,6 +6,11 @@ description: "How to diagnose and fix common issues with ADL."
 
 # Troubleshooting Overview
 
+<HeroImage
+  image="hero-troubleshooting.webp"
+  alt="Robot mascot with a wrench diagnosing a problem on an Android Linux desktop setup"
+/>
+
 When something goes wrong with ADL, the key to fixing it quickly is understanding _where_ in the stack the problem originates. ADL is not a single piece of software --- it is a layered system where Android, Termux, proot, Ubuntu, and XFCE all interact. A failure at any layer can produce symptoms that appear at a different layer entirely.
 
 This page explains how to approach diagnosing issues systematically. Start with the decision flow below to jump straight to the right page:
