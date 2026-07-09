@@ -3,6 +3,9 @@
 Documentation for turning modern Android phones into desktop Linux
 computers — **no root required**.
 
+Created and maintained by **Bhaskar Pandey** ([@thebpandey](https://github.com/thebpandey))
+· Android Desktop Linux Project - Almora Technology · [MIT License](LICENSE)
+
 ADL guides you through installing Termux, Ubuntu (via proot-distro), and a
 full XFCE desktop on your Android phone, then connecting it to a monitor,
 keyboard, and mouse for a real desktop workstation. Written for beginners:
@@ -71,6 +74,21 @@ verified by a build-only workflow that never deploys.
 If you fork this project, enable GitHub Pages in **Settings → Pages** with
 **GitHub Actions** as the source.
 
+## Attribution
+
+- **Author / project owner:** Bhaskar Pandey ([@thebpandey](https://github.com/thebpandey))
+- **Organization:** Android Desktop Linux Project - Almora Technology
+- **Copyright:** Copyright © 2026 Bhaskar Pandey. Released under the MIT License.
+- **Published site:** https://thebpandey.github.io/ADL/
+- **Profiles:** [GitHub](https://github.com/thebpandey) ·
+  [LinkedIn](https://www.linkedin.com/in/pandeybhaskar) ·
+  [bhaskarpandey.com](https://www.bhaskarpandey.com) ·
+  [almora.tech](https://almora.tech)
+
+Contributors are credited when their contributions are approved — merged work
+is attributed in the git history and acknowledged in the changelog.
+
 ## License
 
+Copyright © 2026 Bhaskar Pandey. Released under the MIT License.
 See the [LICENSE](LICENSE) file for details.
