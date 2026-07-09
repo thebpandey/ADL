@@ -7,7 +7,8 @@ const projectName = "ADL";
 
 const config: Config = {
   title: "Android Desktop Linux",
-  tagline: "Documentation for Android Desktop Linux",
+  tagline:
+    "Run desktop Linux environments on Android phones and tablets — no root required",
   favicon: "img/favicon.ico",
 
   url: `https://${organizationName}.github.io`,
@@ -41,6 +42,8 @@ const config: Config = {
         hashed: true,
         indexBlog: false,
         docsRouteBasePath: "/docs",
+        highlightSearchTermsOnTargetPage: true,
+        searchBarShortcutHint: true,
       },
     ],
   ],
@@ -53,6 +56,7 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           editUrl: `https://github.com/${organizationName}/${projectName}/edit/main/`,
           showLastUpdateTime: true,
+          breadcrumbs: true,
         },
         blog: false,
         theme: {
@@ -75,28 +79,63 @@ const config: Config = {
         content: "index, follow",
       },
     },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossorigin: "anonymous",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap",
+      },
+    },
   ],
 
   themeConfig: {
     metadata: [
       {
         name: "description",
-        content: "Documentation for Android Desktop Linux (ADL)",
+        content:
+          "Run desktop Linux environments on Android phones and tablets. No root required. Complete documentation for Android Desktop Linux (ADL).",
       },
       { property: "og:type", content: "website" },
       {
         property: "og:title",
-        content: "Android Desktop Linux Documentation",
+        content: "Android Desktop Linux — Full Linux Desktop on Android",
       },
       {
         property: "og:description",
-        content: "Documentation for Android Desktop Linux (ADL)",
+        content:
+          "Run desktop Linux environments on Android phones and tablets. No root required. Works with Samsung DeX.",
+      },
+      { property: "og:site_name", content: "Android Desktop Linux" },
+      { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:title",
+        content: "Android Desktop Linux Documentation",
       },
       {
-        property: "og:site_name",
-        content: "Android Desktop Linux",
+        name: "twitter:description",
+        content:
+          "Run desktop Linux environments on Android phones and tablets. No root required.",
       },
-      { name: "twitter:card", content: "summary" },
+      {
+        name: "keywords",
+        content:
+          "android, linux, desktop, termux, samsung dex, proot, xfce, documentation",
+      },
     ],
 
     navbar: {
@@ -110,12 +149,13 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "docsSidebar",
           position: "left",
-          label: "Documentation",
+          label: "Docs",
         },
         {
           href: `https://github.com/${organizationName}/${projectName}`,
-          label: "GitHub",
           position: "right",
+          className: "header-github-link",
+          "aria-label": "GitHub repository",
         },
       ],
     },
@@ -126,10 +166,7 @@ const config: Config = {
         {
           title: "Documentation",
           items: [
-            {
-              label: "Getting Started",
-              to: "/docs/intro",
-            },
+            { label: "Getting Started", to: "/docs/intro" },
           ],
         },
         {
@@ -146,11 +183,15 @@ const config: Config = {
           ],
         },
         {
-          title: "More",
+          title: "Project",
           items: [
             {
               label: "GitHub",
               href: `https://github.com/${organizationName}/${projectName}`,
+            },
+            {
+              label: "License",
+              href: `https://github.com/${organizationName}/${projectName}/blob/main/LICENSE`,
             },
           ],
         },
@@ -170,6 +211,9 @@ const config: Config = {
         "diff",
         "docker",
         "makefile",
+        "python",
+        "java",
+        "properties",
       ],
     },
 
