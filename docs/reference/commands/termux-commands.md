@@ -11,7 +11,7 @@ description: "Complete reference for Termux package management, storage, session
   alt="Robot mascot consulting a reference manual beside a terminal window"
 />
 
-{/* TODO: this hero is intended for the Reference section landing page (currently a generated index). Move it if a real landing page is created. */}
+{/* TODO: this hero is intended for the Reference section landing page (currently a generated index). Move it there if a real landing page is created later */}
 
 Reference for Termux-specific commands used within the ADL environment. Covers package management, storage access, session control, and the Termux API.
 
