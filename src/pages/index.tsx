@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
@@ -265,7 +266,7 @@ function Community() {
   );
 }
 
-export default function Home(): JSX.Element {
+export default function Home(): React.JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout

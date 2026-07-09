@@ -131,6 +131,7 @@ Back up your proot-distro environment regularly using `proot-distro backup ubunt
 proot does add some overhead because it intercepts and translates system calls. Here is what to expect:
 
 ### What Runs Well
+
 - Web browsing
 - Text editing and office applications
 - Programming (writing and editing code)
@@ -139,6 +140,7 @@ proot does add some overhead because it intercepts and translates system calls. 
 - Terminal-based applications
 
 ### What Runs Slower
+
 - **I/O-heavy operations** — file copying, package installation, and database operations are slower because every file access goes through proot's translation layer
 - **Compilation** — building large software projects takes longer due to the overhead on thousands of small file operations
 - **Disk-intensive applications** — anything that reads or writes many files frequently

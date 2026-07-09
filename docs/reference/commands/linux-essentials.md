@@ -62,6 +62,7 @@ Commands like `rm -rf` are irreversible. Always double-check the path before exe
 | `tail -f file` | Follow file updates in real time | <CopyCommand command="tail -f /var/log/syslog" /> |
 | `grep pattern file` | Search for a pattern in a file | ```bash
 grep 'error' log.txt
+
 ``` |
 | `grep -r pattern dir` | Search recursively in a directory | ```bash
 grep -r 'TODO' src/

@@ -1,0 +1,29 @@
+# CODEOWNERS — required reviewers for pull requests.
+# Later rules take precedence over earlier ones.
+
+# All files require owner review by default.
+* @thebpandey
+
+# Docusaurus configuration
+/docusaurus.config.ts @thebpandey
+/tsconfig.json @thebpandey
+
+# Docs navigation
+/sidebars.ts @thebpandey
+/docs/**/_category_.json @thebpandey
+
+# Package files
+/package.json @thebpandey
+/package-lock.json @thebpandey
+
+# GitHub Actions workflows and repo automation
+/.github/workflows/ @thebpandey
+/.github/dependabot.yml @thebpandey
+
+# Repository governance files
+/CLAUDE.md @thebpandey
+/CONTRIBUTING.md @thebpandey
+/SECURITY.md @thebpandey
+/SUPPORT.md @thebpandey
+/GOVERNANCE.md @thebpandey
+/.github/CODEOWNERS @thebpandey

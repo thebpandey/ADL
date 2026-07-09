@@ -1,0 +1,62 @@
+name: Installation help
+description: Stuck on a documented installation step? Ask for help here.
+title: "[Help]: "
+labels: ["help-wanted", "installation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before opening: check the [troubleshooting pages](https://thebpandey.github.io/ADL/docs/troubleshooting/overview)
+        — most common problems are covered there.
+
+        **Privacy reminder:** issues are public. Never paste tokens, passwords,
+        email addresses, or personal file contents.
+  - type: input
+    id: installation-step
+    attributes:
+      label: Installation step
+      description: Link the documentation page and name the step you are stuck on.
+      placeholder: "Install Ubuntu, step 2: https://thebpandey.github.io/ADL/docs/quick-start/install-ubuntu"
+    validations:
+      required: true
+  - type: textarea
+    id: command-run
+    attributes:
+      label: Command you ran
+      description: Copy the exact command — do not retype it.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: exact-error
+    attributes:
+      label: Exact error message
+      description: Copy the complete error output — do not paraphrase.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected-result
+    attributes:
+      label: Expected result
+      description: What did the documentation say should happen at this step?
+    validations:
+      required: true
+  - type: textarea
+    id: device-details
+    attributes:
+      label: Device details
+      description: Device model, Android version, and Termux version + install source (F-Droid or GitHub).
+      placeholder: |
+        Device: Samsung Galaxy S22+ (SM-S906B)
+        Android: 14 (One UI 6.1)
+        Termux: 0.118.1 (F-Droid)
+    validations:
+      required: true
+  - type: textarea
+    id: already-tried
+    attributes:
+      label: What you have already tried
+      description: List anything you attempted — retries, reboots, troubleshooting steps from the docs.
+    validations:
+      required: true

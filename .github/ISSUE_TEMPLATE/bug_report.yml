@@ -1,0 +1,71 @@
+name: Bug report
+description: Report an error in the documentation — a wrong command, broken link, or instructions that don't work.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please fill in as much as you can — exact details help us fix things fast.
+
+        **Privacy reminder:** issues are public. Never paste tokens, passwords, email
+        addresses, or personal file contents. Check screenshots and logs before attaching.
+  - type: input
+    id: affected-page
+    attributes:
+      label: Affected page
+      description: Link to the documentation page where the problem is.
+      placeholder: https://thebpandey.github.io/ADL/docs/quick-start/install-termux
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What went wrong when you followed the documentation? Paste exact commands and errors in code blocks.
+      placeholder: I ran the command in step 3 and got the following error...
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: What did the documentation say should happen?
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device
+      description: Exact device model.
+      placeholder: Samsung Galaxy S22+ (SM-S906B)
+    validations:
+      required: true
+  - type: input
+    id: android-version
+    attributes:
+      label: Android version
+      description: Settings > About phone > Software information.
+      placeholder: Android 14 (One UI 6.1)
+    validations:
+      required: true
+  - type: input
+    id: termux-version
+    attributes:
+      label: Termux version and install source
+      description: Find it in Termux settings or with `termux-info`. Say whether it came from F-Droid or GitHub.
+      placeholder: 0.118.1 (F-Droid)
+  - type: textarea
+    id: screenshots-logs
+    attributes:
+      label: Screenshots or logs
+      description: |
+        Attach screenshots or paste log output in a code block.
+        **Redact personal information first** — usernames, Wi-Fi names, emails, tokens.
+  - type: checkboxes
+    id: privacy-check
+    attributes:
+      label: Privacy check
+      options:
+        - label: I checked my screenshots and logs and removed all personal information (tokens, emails, passwords, personal files).
+          required: true

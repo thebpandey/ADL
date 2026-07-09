@@ -1,0 +1,47 @@
+name: Link check
+
+# Internal links are already verified on every build: docusaurus.config.ts
+# sets onBrokenLinks: "throw", so build.yml fails on any broken internal
+# link. This workflow adds a best-effort EXTERNAL link check.
+#
+# Limitation: external link checking is inherently brittle — sites
+# rate-limit CI traffic (GitHub especially), go down temporarily, or block
+# bots. To avoid noisy false failures:
+#   - this job never fails the PR (continue-on-error),
+#   - it runs on a weekly schedule rather than on every push,
+#   - known rate-limiters are excluded below.
+# Treat its output as a report to review, not a gate.
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  external-links:
+    name: Check external links (best effort)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check external links in docs
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Only scan documentation sources; skip internal/relative links
+          # (covered by the Docusaurus build) and known rate-limiters.
+          args: >-
+            --no-progress
+            --scheme https
+            --scheme http
+            --exclude-path docs/contributing/templates
+            --exclude 'github\.com'
+            --exclude 'amzn\.to'
+            --exclude 'fonts\.g(oogleapis|static)\.com'
+            --max-retries 2
+            --timeout 20
+            'docs/**/*.md'
+            'docs/**/*.mdx'
+          fail: false

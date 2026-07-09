@@ -1,68 +1,75 @@
-# Android Desktop Linux
+# Android Desktop Linux (ADL)
 
-A documentation project for Android Desktop Linux (ADL).
+Documentation for turning modern Android phones into desktop Linux
+computers — **no root required**.
 
-## Purpose
+ADL guides you through installing Termux, Ubuntu (via proot-distro), and a
+full XFCE desktop on your Android phone, then connecting it to a monitor,
+keyboard, and mouse for a real desktop workstation. Written for beginners:
+no prior Linux experience needed.
 
-This repository hosts the documentation site for Android Desktop Linux, providing guides, references, and resources for the project.
+**📖 Published site:** https://thebpandey.github.io/ADL/
 
-## Repository Structure
+## Getting started
+
+Start with the [Quick Start guide](https://thebpandey.github.io/ADL/docs/quick-start/overview)
+— it walks the full path from installing Termux to launching your desktop.
+
+## Project links
+
+- **[Contributing](CONTRIBUTING.md)** — how to propose changes, writing
+  standards, and pull request workflow
+- **[Support](SUPPORT.md)** — how to get installation help and what to
+  include when asking
+- **[Security](SECURITY.md)** — how to report security issues privately
+- **[Governance](GOVERNANCE.md)** — roles, decision-making, and reviews
+- **[License](LICENSE)** — project license
+
+## Repository structure
 
 ```
 docs/                   # Documentation content (Markdown/MDX)
 src/
     css/                # Custom stylesheets
-    components/         # React components
-    pages/              # Custom pages
+    components/         # React components used in docs
+    pages/              # Custom pages (landing page)
 static/
     img/                # Static images and favicon
-    robots.txt          # Search engine directives
-screenshots/            # Project screenshots
-.github/workflows/      # GitHub Actions CI/CD
-
+.github/                # Workflows, issue/PR templates, governance
 docusaurus.config.ts    # Docusaurus configuration
-sidebars.ts             # Sidebar configuration
-package.json            # Dependencies and scripts
-tsconfig.json           # TypeScript configuration
-README.md               # This file
-LICENSE                 # Project license
+sidebars.ts             # Sidebar / navigation configuration
+CLAUDE.md               # AI assistant operating standards
 ```
 
-## Tech Stack
+## Local development
 
-- [Docusaurus 3](https://docusaurus.io/) with TypeScript
-- React 18
-- Mermaid diagrams
-- Local search
-- Image zoom
-- GitHub Pages deployment via GitHub Actions
-
-## Development
+The site is built with [Docusaurus 3](https://docusaurus.io/) and TypeScript.
 
 ```bash
 # Install dependencies
-npm install
+npm ci
 
-# Start development server
+# Start the development server (http://localhost:3000)
 npm start
 
-# Build for production
+# Build for production — fails on broken internal links
 npm run build
 
-# Serve production build locally
+# Serve the production build locally
 npm run serve
+
+# Type-check
+npm run typecheck
 ```
 
-## GitHub Pages
+## Deployment
 
-The site is deployed automatically via GitHub Actions on every push to `main`.
+The site deploys to GitHub Pages automatically via GitHub Actions
+(`.github/workflows/deploy.yml`) on every push to `main`. Pull requests are
+verified by a build-only workflow that never deploys.
 
-The site will be available at `https://thebpandey.github.io/ADL/`.
-
-To configure GitHub Pages manually:
-
-1. Go to **Settings** > **Pages** in this repository.
-2. Under **Source**, select **GitHub Actions**.
+If you fork this project, enable GitHub Pages in **Settings → Pages** with
+**GitHub Actions** as the source.
 
 ## License
 

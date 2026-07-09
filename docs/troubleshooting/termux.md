@@ -204,25 +204,30 @@ Different Android manufacturers add their own process-killing layers on top of s
 
 **Samsung (One UI):**
 Disable all three battery restriction layers:
+
 1. Settings > Apps > Termux > Battery > Unrestricted
 2. Settings > Battery > Background usage limits --- remove Termux from both "Sleeping apps" and "Deep sleeping apps"
 3. Settings > Device care > Battery > App power management --- disable "Put unused apps to sleep"
 
 **Xiaomi (MIUI / HyperOS):**
+
 1. Settings > Apps > Manage apps > Termux > tap "No restrictions" under Battery saver
 2. Settings > Battery > App battery saver > Termux > No restrictions
 3. Security app > Boost speed > Lock Termux (prevents MIUI from killing it)
 4. Settings > Additional settings > Developer options > MIUI optimization > disable (may require developer options enabled)
 
 **OnePlus (OxygenOS / ColorOS):**
+
 1. Settings > Apps > Termux > Battery > select "Don't optimize"
 2. Settings > Battery > Battery optimization > find Termux > "Don't optimize"
 
 **Huawei (EMUI):**
+
 1. Settings > Apps > Termux > Battery > disable "Auto-launch", enable "Run in background", enable "Run when data saver on"
 2. Settings > Battery > App launch > Termux > set to "Manage manually" and enable all three toggles
 
 **Oppo / Realme (ColorOS):**
+
 1. Settings > Apps > Termux > Battery usage > select "Allow background activity"
 2. Settings > Battery > More settings > disable "Optimize battery use" for Termux
 

@@ -157,6 +157,7 @@ For questions about how to do something, requests for advice, or problems where 
 **Problem:** (one sentence describing what goes wrong)
 
 **Steps to reproduce:**
+
 1. Open Termux
 2. Run `...`
 3. Observe `...`

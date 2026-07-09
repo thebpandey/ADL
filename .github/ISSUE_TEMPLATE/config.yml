@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions & Discussions
+    url: https://github.com/thebpandey/ADL/discussions
+    about: Ask open-ended questions, share your setup, or discuss ideas.
+  - name: Security issues (private)
+    url: https://github.com/thebpandey/ADL/security/advisories/new
+    about: Report security problems privately — never in a public issue.
+  - name: Read the documentation
+    url: https://thebpandey.github.io/ADL/
+    about: Check the published guides and troubleshooting pages first.

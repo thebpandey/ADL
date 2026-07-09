@@ -1,0 +1,61 @@
+name: Device support request
+description: Request documentation for a device that isn't covered yet, or share what works on your device.
+title: "[Device]: "
+labels: ["device-support"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Device reports from the community are how new devices get documented.
+        Fill in what you know — "unknown" is a fine answer.
+  - type: input
+    id: device-model
+    attributes:
+      label: Device model
+      description: Exact model name and number.
+      placeholder: Google Pixel 8 Pro (GC3VE)
+    validations:
+      required: true
+  - type: input
+    id: android-version
+    attributes:
+      label: Android version
+      placeholder: Android 15
+    validations:
+      required: true
+  - type: input
+    id: chipset
+    attributes:
+      label: Chipset (if known)
+      placeholder: Google Tensor G3
+  - type: dropdown
+    id: usb-c-display
+    attributes:
+      label: USB-C display output (DisplayPort Alt Mode)
+      description: Does the device output video over USB-C when connected to a monitor or hub?
+      options:
+        - "Yes — video output works"
+        - "No — no video over USB-C"
+        - "Unknown / not tested"
+    validations:
+      required: true
+  - type: dropdown
+    id: desktop-mode
+    attributes:
+      label: DeX or desktop mode support
+      options:
+        - "Samsung DeX"
+        - "Built-in Android desktop mode"
+        - "No desktop mode"
+        - "Unknown / not tested"
+    validations:
+      required: true
+  - type: textarea
+    id: what-to-document
+    attributes:
+      label: What do you want documented?
+      description: |
+        What should the documentation cover for this device? If you already have
+        ADL working on it, describe your setup and any device-specific quirks.
+    validations:
+      required: true

@@ -1,0 +1,45 @@
+name: Build
+
+# Verifies the Docusaurus site builds cleanly. Does NOT deploy —
+# deployment is handled separately by deploy.yml on pushes to main.
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build Docusaurus site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22 # current Node LTS
+          cache: npm
+
+      - name: Install dependencies
+        # npm ci needs package-lock.json; fall back to npm install without one.
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Build website
+        # docusaurus.config.ts sets onBrokenLinks: "throw", so this build
+        # also fails on any broken internal link.
+        run: npm run build
+
+      - name: Type check
+        run: npm run typecheck

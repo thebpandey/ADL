@@ -1,0 +1,40 @@
+name: Documentation improvement
+description: Suggest an improvement to an existing page — clearer wording, missing details, better structure.
+title: "[Docs]: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for improving pages that already exist. For documenting a new
+        device, use the device support request template instead.
+  - type: input
+    id: affected-page
+    attributes:
+      label: Affected page
+      description: Link to the page you want improved.
+      placeholder: https://thebpandey.github.io/ADL/docs/learn/software/termux-x11
+    validations:
+      required: true
+  - type: textarea
+    id: current-problem
+    attributes:
+      label: Current problem
+      description: What is unclear, missing, outdated, or wrong on this page?
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-improvement
+    attributes:
+      label: Proposed improvement
+      description: How should it change? Draft wording is welcome but not required.
+    validations:
+      required: true
+  - type: textarea
+    id: source-links
+    attributes:
+      label: Source links
+      description: |
+        Official documentation or repositories that back the proposed change.
+        Remember — this project only links to official sources, never unofficial APK mirrors.
+      placeholder: https://wiki.termux.com/...

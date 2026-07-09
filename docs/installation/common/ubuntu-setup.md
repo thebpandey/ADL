@@ -35,6 +35,7 @@ You should see download progress followed by extraction output. The final line w
 ```
 Distribution ubuntu was successfully installed.
 ```
+
 </ExpectedResult>
 
 <Note>
@@ -83,6 +84,7 @@ Reading package lists... Done
 Building dependency tree... Done
 X upgraded, Y newly installed, 0 to remove and 0 not upgraded.
 ```
+
 </ExpectedResult>
 
 <BestPractice>
@@ -174,6 +176,7 @@ To log in directly as your new user in future sessions, use:
 ```
 proot-distro login ubuntu --user yourname
 ```
+
 </Tip>
 
 ---
@@ -200,6 +203,7 @@ Generating locales (this might take a while)...
   en_US.UTF-8... done
 Generation complete.
 ```
+
 </ExpectedResult>
 
 ### Set the locale as default
@@ -233,6 +237,7 @@ VERSION="24.04.x LTS (Noble Numbat)"
 VERSION_ID="24.04"
 VERSION_CODENAME=noble
 ```
+
 </ExpectedResult>
 
 ### Check installed packages
@@ -249,6 +254,7 @@ Each tool should return a path, confirming it is installed:
 /usr/bin/curl
 /usr/bin/git
 ```
+
 </ExpectedResult>
 
 ### Check locale
@@ -261,6 +267,7 @@ The output should show `en_US.UTF-8` (or your chosen locale) for the `LANG` vari
 ```
 LANG=en_US.UTF-8
 ```
+
 </ExpectedResult>
 
 ### Check network connectivity
