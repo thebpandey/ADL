@@ -419,3 +419,78 @@ table td {
     display: none !important;
   }
 }
+
+/* =========================================
+   Visual system — cards, figures, sections
+   ========================================= */
+
+/* Responsive card grid used by the visual components */
+.adl-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+
+.adl-visual-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+a:hover > .adl-visual-card,
+.adl-visual-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="dark"] a:hover > .adl-visual-card,
+[data-theme="dark"] .adl-visual-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Figure wrapper: soft background so diagrams stand apart from prose */
+.adl-figure {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--ifm-color-primary) 4%, transparent),
+    transparent 80%
+  );
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+/* Flow node hover affordance (InstallFlowDiagram) */
+a.adl-flow-node:hover {
+  border-color: var(--ifm-color-primary) !important;
+  text-decoration: none;
+}
+
+/* Softer, roomier admonition-style callouts from our components */
+.markdown .adl-requirements,
+.markdown .adl-faq,
+.markdown .adl-progress-checklist {
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+/* Breathing room around headings that follow visuals */
+.adl-figure + h2,
+.adl-card-grid + h2 {
+  margin-top: 2.5rem;
+}
+
+/* Mermaid diagrams: center and keep readable on small screens */
+.docusaurus-mermaid-container {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+
+/* Mobile: tighten card padding, let flow diagrams wrap vertically */
+@media (max-width: 600px) {
+  .adl-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .adl-figure {
+    padding: 0.6rem;
+  }
+}

@@ -10,6 +10,8 @@ description: Understanding proot — the tool that lets you run a full Linux dis
 
 In the ADL stack, proot is the layer that makes it possible to run Ubuntu and a full desktop environment inside Termux.
 
+<StackDiagram />
+
 ## Understanding Containers First
 
 Before explaining proot, let us talk about containers, because proot creates something similar.

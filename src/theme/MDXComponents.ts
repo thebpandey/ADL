@@ -20,6 +20,16 @@ import BestPractice from "@site/src/components/BestPractice";
 import CommonMistake from "@site/src/components/CommonMistake";
 import Compatibility from "@site/src/components/Compatibility";
 import PerformanceNote from "@site/src/components/PerformanceNote";
+import HeroIllustration from "@site/src/components/HeroIllustration";
+import DeviceSetupDiagram from "@site/src/components/DeviceSetupDiagram";
+import StackDiagram from "@site/src/components/StackDiagram";
+import InstallFlowDiagram from "@site/src/components/InstallFlowDiagram";
+import DesktopEnvironmentCards from "@site/src/components/DesktopEnvironmentCards";
+import HardwareChecklistCards from "@site/src/components/HardwareChecklistCards";
+import CommandFlow from "@site/src/components/CommandFlow";
+import TroubleshootingDecisionTree from "@site/src/components/TroubleshootingDecisionTree";
+import CompatibilityBadges from "@site/src/components/CompatibilityBadges";
+import FeatureCardGrid from "@site/src/components/FeatureCardGrid";
 
 export default {
   ...MDXComponents,
@@ -44,4 +54,14 @@ export default {
   CommonMistake,
   Compatibility,
   PerformanceNote,
+  HeroIllustration,
+  DeviceSetupDiagram,
+  StackDiagram,
+  InstallFlowDiagram,
+  DesktopEnvironmentCards,
+  HardwareChecklistCards,
+  CommandFlow,
+  TroubleshootingDecisionTree,
+  CompatibilityBadges,
+  FeatureCardGrid,
 };

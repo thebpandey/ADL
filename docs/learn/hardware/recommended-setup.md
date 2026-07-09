@@ -8,6 +8,8 @@ description: "The ideal hardware setup for running Android Desktop Linux, from b
 
 ADL turns your Android phone into a full desktop Linux environment. To get the best experience, you need a phone with enough power, the right ports, and a few key peripherals. This guide walks you through the ideal hardware setup and helps you choose components that work well together.
 
+<HardwareChecklistCards />
+
 ## Primary Device: Samsung Galaxy S22+
 
 The reference device for ADL is the **Samsung Galaxy S22+** with a Snapdragon 8 Gen 1 processor and 8 GB of RAM. This is the configuration the project is developed and tested against.

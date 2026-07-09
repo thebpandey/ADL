@@ -10,6 +10,8 @@ A desktop environment is the graphical layer that turns a command-line Linux sys
 
 When you install ADL, you are running a real Linux distribution inside a proot container on your Android device. Without a desktop environment, you would interact with it entirely through a terminal. A desktop environment gives you the full graphical experience --- windows, icons, menus, wallpapers --- rendered through Termux:X11 or VNC on your device screen.
 
+<DesktopEnvironmentCards />
+
 To understand the underlying concepts in more detail, see [What is a Desktop Environment?](/docs/learn/concepts/what-is-a-desktop-environment).
 
 ## What a Desktop Environment Provides

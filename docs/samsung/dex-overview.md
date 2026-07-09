@@ -23,6 +23,8 @@ Without DeX, your Linux desktop runs inside Termux:X11 on your phone or tablet s
 
 The result is a setup that is functionally indistinguishable from a budget laptop, powered entirely by the processor in your phone.
 
+<DeviceSetupDiagram variant="dex" />
+
 ## Requirements
 
 <Requirements items={[
