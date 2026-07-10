@@ -1,0 +1,54 @@
+.card {
+  border: 1px solid var(--adl-border-color, var(--ifm-color-emphasis-200));
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem 0.75rem;
+  margin-bottom: 1.5rem;
+  background: var(--adl-card-bg, transparent);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.35rem;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--ifm-font-color-base);
+}
+
+.purpose {
+  font-size: 0.8425rem;
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-600));
+  line-height: 1.6;
+  margin: 0 0 0.75rem;
+}
+
+.code {
+  margin-bottom: 0.75rem;
+}
+
+.code :global(.theme-code-block) {
+  margin-bottom: 0;
+  box-shadow: none;
+}
+
+.expected {
+  border-top: 1px dashed var(--adl-border-color, var(--ifm-color-emphasis-200));
+  padding: 0.6rem 0.1rem 0.5rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-700));
+}
+
+.expectedLabel {
+  font-weight: 700;
+  color: var(--ifm-color-success-darkest, #15803d);
+}
+
+[data-theme="dark"] .expectedLabel {
+  color: var(--ifm-color-success-lightest, #86efac);
+}

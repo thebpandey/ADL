@@ -32,6 +32,17 @@ import CompatibilityBadges from "@site/src/components/CompatibilityBadges";
 import FeatureCardGrid from "@site/src/components/FeatureCardGrid";
 import SvgDiagram from "@site/src/components/SvgDiagram";
 import HeroImage from "@site/src/components/HeroImage";
+import AdlCallout from "@site/src/components/AdlCallout";
+import CommandCard from "@site/src/components/CommandCard";
+import RequirementsCard from "@site/src/components/RequirementsCard";
+import CompatibilityBadge from "@site/src/components/CompatibilityBadge";
+import FeatureCard, { FeatureGrid } from "@site/src/components/FeatureCard";
+import TroubleshootingCard from "@site/src/components/TroubleshootingCard";
+import HardwareGrid from "@site/src/components/HardwareGrid";
+import InfoGrid from "@site/src/components/InfoGrid";
+import NextSteps from "@site/src/components/NextSteps";
+import PageMeta from "@site/src/components/PageMeta";
+import ChapterHeader from "@site/src/components/ChapterHeader";
 
 export default {
   ...MDXComponents,
@@ -68,4 +79,16 @@ export default {
   FeatureCardGrid,
   HeroImage,
   SvgDiagram,
+  AdlCallout,
+  CommandCard,
+  RequirementsCard,
+  CompatibilityBadge,
+  FeatureCard,
+  FeatureGrid,
+  TroubleshootingCard,
+  HardwareGrid,
+  InfoGrid,
+  NextSteps,
+  PageMeta,
+  ChapterHeader,
 };

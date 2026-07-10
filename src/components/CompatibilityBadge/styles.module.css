@@ -1,0 +1,37 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--adl-border-color, var(--ifm-color-emphasis-200));
+  border-radius: 100px;
+  padding: 0.25rem 0.8rem;
+  margin: 0 0.4rem 0.5rem 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--adl-card-bg, transparent);
+  vertical-align: middle;
+}
+
+.feature {
+  color: var(--ifm-font-color-base);
+}
+
+.tested {
+  border-color: var(--ifm-color-success-dark, #16a34a);
+  color: var(--ifm-color-success-darkest, #15803d);
+  background: color-mix(in srgb, var(--ifm-color-success, #16a34a) 8%, transparent);
+}
+
+[data-theme="dark"] .tested {
+  color: var(--ifm-color-success-lightest, #86efac);
+}
+
+.experimental {
+  border-color: #d6a94a;
+  color: #8a6d1f;
+  background: color-mix(in srgb, #d6a94a 10%, transparent);
+}
+
+[data-theme="dark"] .experimental {
+  color: #e5c675;
+}

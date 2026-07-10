@@ -1,0 +1,55 @@
+.grid {
+  display: grid;
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  border: 1px solid var(--adl-border-color, var(--ifm-color-emphasis-200));
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  background: var(--adl-card-bg, transparent);
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.linked {
+  text-decoration: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.linked:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: var(--ifm-global-shadow-md);
+  transform: translateY(-2px);
+  text-decoration: none;
+  color: inherit;
+}
+
+.linked:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+.icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  margin-bottom: 0.3rem;
+  color: var(--ifm-font-color-base);
+}
+
+.description {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-600));
+}
+
+.description > :last-child {
+  margin-bottom: 0;
+}

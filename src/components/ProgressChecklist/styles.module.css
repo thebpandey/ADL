@@ -1,0 +1,77 @@
+.panel {
+  border: 1px solid var(--adl-border-color, var(--ifm-color-emphasis-200));
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  background: var(--adl-card-bg, transparent);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.count {
+  font-size: 0.75rem;
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-600));
+  font-weight: 500;
+}
+
+.track {
+  height: 4px;
+  background: var(--adl-border-color, var(--ifm-color-emphasis-200));
+  border-radius: 2px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  background: var(--ifm-color-primary);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.3rem 0.3rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.item:hover {
+  background: color-mix(in srgb, var(--ifm-color-primary) 6%, transparent);
+}
+
+.done span {
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-600));
+  text-decoration: line-through;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--ifm-color-primary);
+  cursor: pointer;
+}
+
+.checkbox:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}

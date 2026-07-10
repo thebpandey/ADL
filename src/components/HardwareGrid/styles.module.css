@@ -1,0 +1,57 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  border: 1px solid var(--adl-border-color, var(--ifm-color-emphasis-200));
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  background: var(--adl-card-bg, transparent);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+
+.icon {
+  font-size: 1.25rem;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 0.9375rem;
+}
+
+.badge,
+.optional {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 100px;
+  padding: 0.1rem 0.55rem;
+}
+
+.badge {
+  border: 1px solid var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+.optional {
+  border: 1px solid var(--adl-border-color, var(--ifm-color-emphasis-300));
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-600));
+}
+
+.description {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-600));
+  margin: 0;
+}
