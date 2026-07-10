@@ -10,6 +10,12 @@ ADL turns your Android phone into a full desktop Linux environment. To get the b
 
 <HardwareChecklistCards />
 
+<SvgDiagram
+  src="/img/diagrams/connectivity/diagram-workstation-overview.svg"
+  alt="Hand-drawn desk scene of the complete ADL workstation: phone, USB-C dock, monitor, keyboard and mouse, and external SSD"
+  caption="The complete ADL workstation"
+/>
+
 ## Primary Device: Samsung Galaxy S22+
 
 The reference device for ADL is the **Samsung Galaxy S22+** with a Snapdragon 8 Gen 1 processor and 8 GB of RAM. This is the configuration the project is developed and tested against.

@@ -12,6 +12,12 @@ Without a hub, you are limited to Bluetooth peripherals and screen mirroring. Wi
 
 <DeviceSetupDiagram />
 
+<SvgDiagram
+  src="/img/diagrams/connectivity/diagram-usbc-workflow.svg"
+  alt="Hand-drawn sketch of a phone connected by USB-C to a dock that fans out to a monitor, keyboard and mouse, external SSD, and power input"
+  caption="One USB-C cable carries video, data, and power"
+/>
+
 ## DisplayPort Alt Mode
 
 **DisplayPort Alt Mode** (DP Alt Mode) is the technology that allows a video signal to travel over a USB-C cable. When your phone supports DP Alt Mode, it can send a display output directly to a monitor through the USB-C port — no wireless casting, no compression, no lag.

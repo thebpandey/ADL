@@ -30,6 +30,7 @@ import CommandFlow from "@site/src/components/CommandFlow";
 import TroubleshootingDecisionTree from "@site/src/components/TroubleshootingDecisionTree";
 import CompatibilityBadges from "@site/src/components/CompatibilityBadges";
 import FeatureCardGrid from "@site/src/components/FeatureCardGrid";
+import SvgDiagram from "@site/src/components/SvgDiagram";
 import HeroImage from "@site/src/components/HeroImage";
 
 export default {
@@ -66,4 +67,5 @@ export default {
   CompatibilityBadges,
   FeatureCardGrid,
   HeroImage,
+  SvgDiagram,
 };

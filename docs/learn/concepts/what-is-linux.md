@@ -11,6 +11,12 @@ description: Understanding Linux — the operating system that powers Android, s
   alt="Robot mascot reading a book about Linux concepts beside an Android phone"
 />
 
+<SvgDiagram
+  src="/img/diagrams/architecture/diagram-linux-stack.svg"
+  alt="Hand-drawn stack diagram: Android at the bottom, then Termux, proot, Ubuntu, XFCE desktop, and applications on top, with an arrow noting each layer runs on the one below"
+  caption="The ADL Linux stack — sketchbook view"
+/>
+
 {/* TODO: this hero is intended for the Learn section landing page (currently a generated index). Move it there if a real landing page is created later */}
 
 Linux is a **free, open-source operating system** that powers everything from web servers to smartphones. If you are using an Android phone right now, you are already running Linux — Android is built on top of the Linux kernel.
