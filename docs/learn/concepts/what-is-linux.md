@@ -74,7 +74,7 @@ Think of distributions like car models. They all have engines (the kernel), but 
 | Arch Linux | Advanced users | DIY, total control |
 | Linux Mint | Windows switchers | Familiar, comfortable |
 
-ADL uses **Ubuntu** as its distribution. We cover why in the [What is Ubuntu?](./what-is-ubuntu.md) page.
+ADL's guides use **Ubuntu** as the default distribution. We cover why in the [What is Ubuntu?](./what-is-ubuntu.md) page.
 
 ```mermaid
 graph TD
@@ -193,7 +193,7 @@ Most of these disadvantages are less relevant for ADL. Since you are running Lin
   },
   {
     question: "Do I need to know programming to use Linux?",
-    answer: "Not at all. While Linux is popular with programmers, it is a general-purpose operating system. You can browse the web, write documents, manage files, and watch videos without writing a single line of code. The ADL setup scripts handle the technical details."
+    answer: "Not at all. While Linux is popular with programmers, it is a general-purpose operating system. You can browse the web, write documents, manage files, and watch videos without writing a single line of code. The ADL guides walk you through the technical details."
   }
 ]} />
 

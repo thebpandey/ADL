@@ -78,7 +78,7 @@ The TCP connection adds negligible latency. Since the data never leaves your pho
 
 ## Setting Up Audio
 
-ADL setup scripts typically handle audio configuration automatically. If you need to set it up manually or troubleshoot, here are the key pieces:
+The ADL setup guides walk through audio configuration step by step. If you need to set it up manually or troubleshoot, here are the key pieces:
 
 ### Termux Side (PulseAudio Server)
 

@@ -49,7 +49,7 @@ Here are the most common options:
 | Void Linux | `void` | Independent distro with runit init. Lightweight. |
 
 <BestPractice>
-Stick with **Ubuntu** for ADL unless you have a specific reason to choose another distribution. The ADL setup scripts, documentation, and troubleshooting all assume Ubuntu. Other distributions work but you will need to adapt package names and commands yourself.
+Stick with **Ubuntu** for ADL unless you have a specific reason to choose another distribution. The ADL guides, examples, and troubleshooting all assume Ubuntu. Other distributions work but you will need to adapt package names and commands yourself.
 </BestPractice>
 
 ## Installing a distribution
@@ -122,7 +122,7 @@ Common environment variables for ADL:
 | `XDG_RUNTIME_DIR` | Runtime directory for desktop sessions | `/tmp/xdg-runtime` |
 
 <Tip>
-The ADL setup scripts configure these variables automatically in your shell profile inside the distribution. You only need to set them manually if you are doing a custom setup or troubleshooting.
+The commands in the ADL setup guides add these variables to your shell profile inside the distribution, so they are set automatically. You only need to set them manually if you are doing a custom setup or troubleshooting.
 </Tip>
 
 ## Managing multiple distributions

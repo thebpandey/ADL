@@ -6,7 +6,7 @@ description: "The ideal hardware setup for running Android Desktop Linux, from b
 
 # Recommended Setup
 
-ADL turns your Android phone into a full desktop Linux environment. To get the best experience, you need a phone with enough power, the right ports, and a few key peripherals. This guide walks you through the ideal hardware setup and helps you choose components that work well together.
+ADL shows you how to turn your Android phone into a full desktop Linux environment. To get the best experience, you need a phone with enough power, the right ports, and a few key peripherals. This guide walks you through the ideal hardware setup and helps you choose components that work well together.
 
 <HardwareChecklistCards />
 

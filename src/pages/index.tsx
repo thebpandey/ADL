@@ -7,88 +7,173 @@ import SponsorsBanner from "@site/src/components/SponsorsBanner";
 import HeroImage from "@site/src/components/HeroImage";
 import styles from "./index.module.css";
 
-const tracks = [
+const adlIs = [
+  "Open documentation for desktop Linux on Android",
+  "Reproducible, beginner-friendly installation guidance",
+  "Linux education for Android users",
+  "Hardware compatibility information",
+  "Device and desktop-mode research",
+  "Troubleshooting documentation",
+  "Community testing and verification",
+  "A long-term, vendor-neutral technical reference",
+];
+
+const adlIsNot = [
+  "A Linux distribution",
+  "A replacement Android operating system",
+  "A desktop environment",
+  "A commercial product",
+  "A single installer or setup script",
+  "A vendor-specific support site",
+  "A replacement for Termux, Local Desktop, or Samsung DeX",
+];
+
+const fragmentedSources = [
+  "GitHub repositories",
+  "Forum discussions",
+  "Reddit threads",
+  "Videos",
+  "Package documentation",
+  "Outdated tutorials",
+  "Device-specific instructions",
+];
+
+const missionValues = [
+  {
+    title: "Accessible to beginners",
+    description:
+      "Every step is spelled out — no prior Linux or terminal experience assumed.",
+  },
+  {
+    title: "Accurate",
+    description:
+      "Commands are verified against official sources before they are published.",
+  },
+  {
+    title: "Vendor-neutral",
+    description:
+      "No single distribution, desktop environment, manufacturer, or tool is required.",
+  },
+  {
+    title: "Community-driven",
+    description:
+      "Real reports from real hardware are welcomed, reviewed, and credited.",
+  },
+  {
+    title: "Transparently verified",
+    description:
+      "Every compatibility claim carries a status; nothing is recorded above what was tested.",
+  },
+  {
+    title: "Maintained for the long term",
+    description:
+      "Documentation is kept current as the Android desktop ecosystem changes.",
+  },
+];
+
+const findItems = [
   {
     icon: "🚀",
-    title: "Quick Start",
+    title: "Getting Started",
     description:
-      "The guided path: install Termux, Ubuntu, and a desktop in about an hour.",
+      "Beginner-friendly paths from an Android phone to a working desktop.",
     to: "/docs/quick-start/overview",
   },
   {
-    icon: "📚",
-    title: "Learn",
+    icon: "🧭",
+    title: "Installation Guides",
     description:
-      "Understand the concepts — Termux, proot, display servers, and the hardware.",
+      "Documented installation methods using supported tools and Linux distributions.",
+    to: "/docs/installation/common/prerequisites",
+  },
+  {
+    icon: "📚",
+    title: "Learning Linux",
+    description:
+      "Plain-language explanations of Termux, proot, distributions, desktops, package managers, filesystems, and commands.",
     to: "/docs/category/learn",
   },
   {
-    icon: "🔍",
-    title: "Reference",
+    icon: "🔌",
+    title: "Hardware Guidance",
     description:
-      "Look things up: commands, configuration files, and compatibility tables.",
-    to: "/docs/category/reference",
+      "Phones, docks, displays, input devices, storage, cables, and workstation setups.",
+    to: "/docs/learn/hardware/recommended-setup",
   },
-];
-
-const features = [
+  {
+    icon: "🧩",
+    title: "Compatibility Database",
+    description:
+      "Structured device, Android-version, desktop-mode, Linux, desktop-environment, and peripheral compatibility.",
+    to: "/docs/compatibility/overview",
+  },
   {
     icon: "🖥️",
-    title: "Full Desktop Environment",
+    title: "Desktop Environments",
     description:
-      "Run XFCE, LXDE, or other desktop environments directly on your Android device with full window management and multitasking.",
+      "Guidance comparing XFCE, LXQt, KDE Plasma, GNOME, MATE, Cinnamon, and more.",
+    to: "/docs/desktop-environments/overview",
   },
   {
-    icon: "📱",
-    title: "Samsung DeX Integration",
+    icon: "🧰",
+    title: "Applications",
     description:
-      "Connect a monitor, keyboard, and mouse to your Samsung device and use a full Linux desktop alongside your Android apps.",
+      "Browsers, development tools, office apps, terminals, file management, and media tools.",
+    to: "/docs/applications/overview",
   },
   {
-    icon: "⚡",
-    title: "No Root Required",
+    icon: "🛠️",
+    title: "Troubleshooting",
     description:
-      "ADL runs entirely in userspace using Termux and proot. No root access, no unlocked bootloader, no voided warranty.",
+      "Systematic help for installation, display, permissions, package, performance, audio, and input problems.",
+    to: "/docs/troubleshooting/overview",
   },
   {
-    icon: "📦",
-    title: "Real Linux Packages",
+    icon: "🔍",
+    title: "Reference Library",
     description:
-      "Install and run thousands of Linux packages from official repositories. Use apt, Python, Node.js, Docker, and more.",
+      "Commands, configuration files, scripts, glossary terms, architecture diagrams, and official sources.",
+    to: "/docs/category/reference",
   },
   {
-    icon: "🔒",
-    title: "Secure by Design",
+    icon: "🤝",
+    title: "Community Knowledge",
     description:
-      "Everything runs sandboxed within Android's security model. Your device stays protected while you run a full desktop.",
-  },
-  {
-    icon: "🌐",
-    title: "Open Source",
-    description:
-      "ADL is completely free and open source. Inspect the code, contribute improvements, or fork it for your own needs.",
+      "Community testing, verified configurations, compatibility reports, and contributor workflows.",
+    to: "/docs/category/contributing",
   },
 ];
 
-const quickStartSteps = [
-  {
-    step: 1,
-    title: "Install Termux",
-    description:
-      "Download Termux from F-Droid, the trusted open-source Android app repository. This gives you a Linux terminal on Android.",
-  },
-  {
-    step: 2,
-    title: "Run the Setup Script",
-    description:
-      "Execute the ADL setup script in Termux. It downloads a Linux distribution and configures your desktop environment automatically.",
-  },
-  {
-    step: 3,
-    title: "Launch Your Desktop",
-    description:
-      "Start the desktop environment and open Termux:X11. You now have a full Linux desktop running on your Android device.",
-  },
+const installationMethods = [
+  "Termux",
+  "Termux:X11",
+  "Local Desktop",
+  "Ubuntu",
+  "Debian",
+  "Arch Linux",
+  "Fedora",
+  "Alpine Linux",
+  "Samsung DeX",
+  "Manufacturer desktop modes",
+  "Manual proot installations",
+];
+
+const methodStatuses = [
+  { label: "Documented", description: "Written up in the docs." },
+  { label: "Planned", description: "On the roadmap, not yet documented." },
+  { label: "Experimental", description: "Documented but not broadly validated." },
+  { label: "Community Tested", description: "Reproduced by community reporters." },
+  { label: "Maintainer Verified", description: "Reproduced by a maintainer on reference hardware." },
+  { label: "Needs Testing", description: "Based on specs, not yet verified." },
+];
+
+const openPrinciples = [
+  "The documentation is open source and version controlled.",
+  "Compatibility data is structured and published openly.",
+  "Improvements happen in public, in the open repository.",
+  "Anyone can report an error or propose a change.",
+  "Maintainers review every change before it is published.",
+  "The project stays vendor-neutral and freely accessible.",
 ];
 
 const roadmap = [
@@ -106,10 +191,10 @@ const roadmap = [
     phase: "Phase 2 — Expansion",
     title: "Advanced Guides",
     items: [
-      "Samsung DeX optimization",
+      "More distributions and desktops",
       "Development environment setup",
       "Performance tuning",
-      "Hardware acceleration",
+      "Hardware acceleration research",
     ],
   },
   {
@@ -126,9 +211,9 @@ const roadmap = [
     phase: "Phase 4 — Community",
     title: "Community & Growth",
     items: [
-      "Contribution guides",
+      "Broader device compatibility",
+      "Verified configurations",
       "Community showcase",
-      "Video tutorials",
       "Localization support",
     ],
   },
@@ -152,15 +237,15 @@ const community = [
     icon: "🐛",
     title: "Report Issues",
     description:
-      "Found a bug or have a suggestion? Open an issue on GitHub to help us improve.",
+      "Found a bug or a gap in the docs? Open an issue on GitHub to help us improve.",
     href: "https://github.com/thebpandey/ADL/issues",
   },
   {
     icon: "🤝",
     title: "Contribute",
     description:
-      "Help improve the documentation, submit fixes, or add new guides for the community.",
-    href: "https://github.com/thebpandey/ADL",
+      "Improve the documentation, submit fixes, or report a tested configuration.",
+    href: "/docs/category/contributing",
   },
 ];
 
@@ -174,23 +259,34 @@ function Hero() {
         <h1 className={styles.heroTitle}>
           A Full Linux Desktop on Your Android Device
         </h1>
+        <p className={styles.heroTagline}>
+          The Open Knowledge Base for Desktop Linux on Android
+        </p>
         <HeroImage
           image="hero-home.webp"
           alt="Friendly robot mascot at a desk running a full Linux desktop from an Android phone connected to a monitor, keyboard, and mouse"
         />
         <p className={styles.heroSubtitle}>
-          Run desktop Linux environments on Android phones and tablets. No root
-          required. Works with Samsung DeX for a complete workstation experience.
+          Android Desktop Linux (ADL) is an open-source knowledge base that
+          helps you turn a modern Android phone into a practical Linux desktop
+          workstation — documenting the whole ecosystem, not a single install
+          method.
         </p>
         <div className={styles.heroButtons}>
           <Link className={styles.btnPrimary} to="/docs/quick-start/overview">
-            Quick Start
+            Get Started
+          </Link>
+          <Link className={styles.btnSecondary} to="/docs/intro">
+            Browse Documentation
+          </Link>
+          <Link className={styles.btnSecondary} to="/docs/compatibility/overview">
+            Compatibility
           </Link>
           <Link
             className={styles.btnSecondary}
             href="https://github.com/thebpandey/ADL"
           >
-            GitHub
+            GitHub Repository
           </Link>
         </div>
       </div>
@@ -198,44 +294,153 @@ function Hero() {
   );
 }
 
-function Tracks() {
+function WhatIsADL() {
+  return (
+    <section className={styles.section}>
+      <div className={`${styles.sectionInner} ${styles.sectionCenter}`}>
+        <span className={styles.sectionLabel}>The knowledge base</span>
+        <h2 className={styles.sectionTitle}>What is Android Desktop Linux?</h2>
+        <p className={styles.sectionDescription}>
+          ADL is an open knowledge base for people who want to use Android
+          devices as practical Linux desktop computers. It organizes
+          installation methods, hardware requirements, desktop environments,
+          compatibility results, troubleshooting, and technical explanations
+          into one continuously maintained reference — without requiring you to
+          adopt one specific distribution, desktop, manufacturer, or tool.
+        </p>
+        <div className={styles.compareGrid}>
+          <div className={styles.compareCard}>
+            <div className={styles.compareHeading}>ADL is</div>
+            <ul className={`${styles.compareList} ${styles.isList}`}>
+              {adlIs.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div className={styles.compareCard}>
+            <div className={styles.compareHeading}>ADL is not</div>
+            <ul className={`${styles.compareList} ${styles.isNotList}`}>
+              {adlIsNot.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function WhyExists() {
+  return (
+    <section className={`${styles.section} ${styles.sectionAlt}`}>
+      <div className={styles.sectionInner}>
+        <span className={styles.sectionLabel}>Why</span>
+        <h2 className={styles.sectionTitle}>Why ADL exists</h2>
+        <p className={styles.sectionDescription}>
+          Modern flagship Android phones have powerful processors, substantial
+          memory, external-display output, Bluetooth peripheral support, and
+          access to Linux userspace. But the knowledge to build a reliable
+          Android desktop is fragmented across:
+        </p>
+        <div className={styles.chipRow}>
+          {fragmentedSources.map((s) => (
+            <span key={s} className={styles.chip}>
+              {s}
+            </span>
+          ))}
+        </div>
+        <p
+          className={styles.sectionDescription}
+          style={{ marginTop: "1.75rem", marginBottom: 0 }}
+        >
+          ADL exists to organize that information into one open, structured,
+          maintainable, and beginner-friendly knowledge base — with an emphasis
+          on practical documentation, reproducible procedures, official
+          sources, tested compatibility, clear troubleshooting, and long-term
+          maintainability.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function Mission() {
   return (
     <section className={styles.section}>
       <div className={styles.sectionInner}>
-        <span className={styles.sectionLabel}>Documentation</span>
-        <h2 className={styles.sectionTitle}>Three ways in</h2>
+        <span className={styles.sectionLabel}>Mission</span>
+        <h2 className={styles.sectionTitle}>Our mission</h2>
         <p className={styles.sectionDescription}>
-          Follow the guided path, learn how it all works, or jump straight to
-          the reference you need.
+          Help people get more value from the Android hardware they already own
+          by making desktop Linux on Android understandable, reproducible, and
+          practical.
         </p>
-        <div className="adl-card-grid">
-          {tracks.map((t) => (
+        <div className={styles.featureGrid}>
+          {missionValues.map((v) => (
+            <div key={v.title} className={styles.featureCard}>
+              <h3 className={styles.featureTitle}>{v.title}</h3>
+              <p className={styles.featureDescription}>{v.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function WhatYouWillFind() {
+  return (
+    <section className={`${styles.section} ${styles.sectionAlt}`}>
+      <div className={styles.sectionInner}>
+        <span className={styles.sectionLabel}>What you will find</span>
+        <h2 className={styles.sectionTitle}>One reference, many topics</h2>
+        <p className={styles.sectionDescription}>
+          Everything you need to plan, build, understand, and troubleshoot a
+          desktop Linux setup on Android — organized so you can start anywhere.
+        </p>
+        <div className={styles.featureGrid}>
+          {findItems.map((f) => (
             <Link
-              key={t.title}
-              to={t.to}
+              key={f.title}
+              to={f.to}
+              className={styles.featureCard}
               style={{ textDecoration: "none", display: "block" }}
             >
-              <div
-                className="adl-visual-card"
-                style={{
-                  border: "1px solid var(--adl-border-color)",
-                  borderRadius: 12,
-                  padding: "1.25rem 1.4rem",
-                  background: "var(--adl-card-bg, transparent)",
-                  height: "100%",
-                }}
-              >
-                <div aria-hidden="true" style={{ fontSize: "1.75rem", marginBottom: "0.5rem" }}>
-                  {t.icon}
-                </div>
-                <div style={{ fontWeight: 700, fontSize: "1.0625rem", marginBottom: "0.35rem", color: "var(--ifm-font-color-base)" }}>
-                  {t.title}
-                </div>
-                <p style={{ fontSize: "0.875rem", lineHeight: 1.6, margin: 0, color: "var(--adl-text-muted, var(--ifm-color-emphasis-700))" }}>
-                  {t.description}
-                </p>
-              </div>
+              <div className={styles.featureIcon}>{f.icon}</div>
+              <h3 className={styles.featureTitle}>{f.title}</h3>
+              <p className={styles.featureDescription}>{f.description}</p>
             </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function InstallationMethods() {
+  return (
+    <section className={styles.section}>
+      <div className={styles.sectionInner}>
+        <span className={styles.sectionLabel}>Installation methods</span>
+        <h2 className={styles.sectionTitle}>Many methods, one reference</h2>
+        <p className={styles.sectionDescription}>
+          ADL documents multiple approaches rather than promoting a single one.
+          Not every method is complete, tested, or equally recommended — where
+          supported, each carries a status so you know how much to trust it.
+        </p>
+        <div className={styles.chipRow}>
+          {installationMethods.map((m) => (
+            <span key={m} className={styles.chip}>
+              {m}
+            </span>
+          ))}
+        </div>
+        <div className={styles.statusLegend}>
+          {methodStatuses.map((s) => (
+            <div key={s.label} className={styles.statusItem}>
+              <strong>{s.label}</strong> — {s.description}
+            </div>
           ))}
         </div>
       </div>
@@ -251,7 +456,8 @@ function DeskSetup() {
         <h2 className={styles.sectionTitle}>One phone, one hub, a whole desk</h2>
         <p className={styles.sectionDescription}>
           A USB-C hub connects your phone to a monitor, keyboard, mouse, and
-          power — everything you need for a workstation.
+          power — everything you need for a workstation. ADL documents the
+          hardware classes that work.
         </p>
         <DeviceSetupDiagram />
       </div>
@@ -259,46 +465,22 @@ function DeskSetup() {
   );
 }
 
-function Features() {
+function BuiltInTheOpen() {
   return (
     <section className={styles.section}>
       <div className={styles.sectionInner}>
-        <span className={styles.sectionLabel}>Features</span>
-        <h2 className={styles.sectionTitle}>Everything you need to get started</h2>
+        <span className={styles.sectionLabel}>Open source</span>
+        <h2 className={styles.sectionTitle}>Built in the open</h2>
         <p className={styles.sectionDescription}>
-          ADL transforms your Android device into a portable Linux workstation
-          with real desktop environments and full package management.
+          ADL is developed publicly on GitHub. Public access does not mean
+          unrestricted direct editing — contributions go through issues and
+          pull requests, and maintainers review every change before it is
+          published, so the reference stays accurate and vendor-neutral.
         </p>
         <div className={styles.featureGrid}>
-          {features.map((f) => (
-            <div key={f.title} className={styles.featureCard}>
-              <div className={styles.featureIcon}>{f.icon}</div>
-              <h3 className={styles.featureTitle}>{f.title}</h3>
-              <p className={styles.featureDescription}>{f.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function QuickStart() {
-  return (
-    <section className={`${styles.section} ${styles.sectionAlt}`}>
-      <div className={styles.sectionInner}>
-        <span className={styles.sectionLabel}>Quick Start</span>
-        <h2 className={styles.sectionTitle}>Up and running in minutes</h2>
-        <p className={styles.sectionDescription}>
-          Go from a stock Android device to a full Linux desktop in three steps.
-          No technical experience required.
-        </p>
-        <div className={styles.quickStartGrid}>
-          {quickStartSteps.map((s) => (
-            <div key={s.step} className={styles.stepCard}>
-              <div className={styles.stepNumber}>{s.step}</div>
-              <h3 className={styles.stepTitle}>{s.title}</h3>
-              <p className={styles.stepDescription}>{s.description}</p>
+          {openPrinciples.map((p) => (
+            <div key={p} className={styles.featureCard}>
+              <p className={styles.featureDescription}>{p}</p>
             </div>
           ))}
         </div>
@@ -309,13 +491,13 @@ function QuickStart() {
 
 function Roadmap() {
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} ${styles.sectionAlt}`}>
       <div className={`${styles.sectionInner} ${styles.sectionCenter}`}>
         <span className={styles.sectionLabel}>Roadmap</span>
         <h2 className={styles.sectionTitle}>Documentation roadmap</h2>
         <p className={styles.sectionDescription}>
           We are building comprehensive documentation for every aspect of
-          Android Desktop Linux. Here is what is planned.
+          desktop Linux on Android. Here is what is planned.
         </p>
         <div className={styles.roadmapTimeline}>
           {roadmap.map((r) => (
@@ -337,13 +519,13 @@ function Roadmap() {
 
 function Community() {
   return (
-    <section className={`${styles.section} ${styles.sectionAlt}`}>
+    <section className={styles.section}>
       <div className={`${styles.sectionInner} ${styles.sectionCenter}`}>
         <span className={styles.sectionLabel}>Community</span>
         <h2 className={styles.sectionTitle}>Join the community</h2>
         <p className={styles.sectionDescription}>
-          ADL is built by the community, for the community. Get help, share your
-          setup, or contribute to the project.
+          ADL is built in the open, by the community, for the community. Get
+          help, share your setup, or contribute to the knowledge base.
         </p>
         <div className={styles.communityGrid}>
           {community.map((c) => {
@@ -382,15 +564,18 @@ export default function Home(): React.JSX.Element {
   return (
     <Layout
       title={siteConfig.title}
-      description="Run desktop Linux environments on Android phones and tablets. No root required. Complete documentation for Android Desktop Linux."
+      description="Android Desktop Linux is the open-source knowledge base for desktop Linux on Android, with installation guides, hardware compatibility, troubleshooting, technical reference material, and community-tested configurations."
     >
       <Hero />
       <SponsorsBanner />
       <main>
-        <Tracks />
-        <Features />
+        <WhatIsADL />
+        <WhyExists />
+        <Mission />
+        <WhatYouWillFind />
+        <InstallationMethods />
         <DeskSetup />
-        <QuickStart />
+        <BuiltInTheOpen />
         <Roadmap />
         <Community />
       </main>

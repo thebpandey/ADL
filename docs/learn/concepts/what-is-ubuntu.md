@@ -206,7 +206,7 @@ Arch Linux follows a "rolling release" model where software is continuously upda
 
 ## What Comes with Ubuntu in ADL?
 
-When you install Ubuntu through proot-distro, you get a minimal base system. ADL's setup scripts then install additional packages to create a complete desktop environment. Here is what the layers look like:
+When you install Ubuntu through proot-distro, you get a minimal base system. The ADL guides then walk you through installing additional packages to create a complete desktop environment. Here is what the layers look like:
 
 ### Base Ubuntu (from proot-distro)
 
@@ -258,7 +258,7 @@ Be cautious with PPAs in a proot environment. Not all PPAs work correctly on ARM
 <FAQ items={[
   {
     question: "Can I use Debian instead of Ubuntu?",
-    answer: "Yes, proot-distro supports Debian. Since Ubuntu is based on Debian, most things will work the same way. However, ADL's documentation and setup scripts are written for Ubuntu, so you may need to adapt some steps. Debian packages tend to be older than Ubuntu packages, which could mean missing features in some applications."
+    answer: "Yes, proot-distro supports Debian. Since Ubuntu is based on Debian, most things will work the same way. However, ADL's documentation and examples are written for Ubuntu, so you may need to adapt some steps. Debian packages tend to be older than Ubuntu packages, which could mean missing features in some applications."
   },
   {
     question: "What version of Ubuntu does ADL use?",
@@ -276,6 +276,6 @@ Be cautious with PPAs in a proot environment. Not all PPAs work correctly on ARM
 
 ## Summary
 
-Ubuntu is the Linux distribution that ADL uses as its foundation. It was chosen for its unmatched combination of community size, documentation quality, package availability, and ARM support. When you run ADL, you are running a real Ubuntu system — the same one used by millions of people worldwide on servers, desktops, and now, on your Android phone.
+Ubuntu is the default Linux distribution the ADL guides build on. It was chosen for its unmatched combination of community size, documentation quality, package availability, and ARM support. When you follow the guides, you are running a real Ubuntu system — the same one used by millions of people worldwide on servers, desktops, and now, on your Android phone.
 
 **Next:** Learn about [desktop environments](./what-is-a-desktop-environment.md), the graphical interface that makes Ubuntu look and feel like a traditional computer.

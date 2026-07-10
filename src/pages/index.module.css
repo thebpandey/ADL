@@ -40,11 +40,117 @@
   color: var(--ifm-color-emphasis-900);
 }
 
+.heroTagline {
+  font-size: clamp(1.05rem, 1.8vw, 1.375rem);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ifm-color-primary);
+  margin-bottom: 1.75rem;
+}
+
 .heroSubtitle {
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-size: 1.125rem;
+  line-height: 1.65;
   color: var(--adl-text-muted);
   margin-bottom: 2.5rem;
+}
+
+/* --- ADL is / is not comparison --- */
+.compareGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.compareCard {
+  background: var(--adl-card-bg);
+  border: 1px solid var(--adl-border-color);
+  border-radius: var(--ifm-global-radius);
+  padding: 1.5rem 1.6rem;
+}
+
+.compareHeading {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.compareList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.compareList li {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--adl-text-body, var(--ifm-color-emphasis-800));
+  padding: 0.3rem 0 0.3rem 1.6rem;
+  position: relative;
+}
+
+.compareList li::before {
+  position: absolute;
+  left: 0;
+  top: 0.3rem;
+  font-weight: 700;
+}
+
+.isList li::before {
+  content: "✓";
+  color: #2e7d4f;
+}
+
+.isNotList li::before {
+  content: "✕";
+  color: #b3402f;
+}
+
+[data-theme="dark"] .isList li::before {
+  color: #6fcf97;
+}
+
+[data-theme="dark"] .isNotList li::before {
+  color: #e08b7c;
+}
+
+/* --- Method / status chips --- */
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.chip {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.3rem 0.75rem;
+  border-radius: 100px;
+  background: var(--adl-badge-bg);
+  color: var(--adl-badge-color);
+  border: 1px solid var(--adl-border-color);
+}
+
+.statusLegend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 0.6rem 1.25rem;
+  text-align: left;
+  margin-top: 1.75rem;
+}
+
+.statusItem {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--adl-text-muted);
+}
+
+.statusItem strong {
+  color: var(--ifm-color-emphasis-900);
 }
 
 .heroButtons {
@@ -365,7 +471,8 @@
 
   .featureGrid,
   .quickStartGrid,
-  .communityGrid {
+  .communityGrid,
+  .compareGrid {
     grid-template-columns: 1fr;
   }
 

@@ -77,7 +77,7 @@ Budget Samsung phones (Galaxy A10, A20, A30 series) and most non-Samsung Android
 
 ## DeX Without ADL vs. DeX With ADL
 
-DeX on its own provides a desktop-like layout for Android apps. Adding ADL transforms it into something much more capable:
+DeX on its own provides a desktop-like layout for Android apps. Adding a Linux desktop by following ADL transforms it into something much more capable:
 
 | Capability | DeX Alone | DeX + ADL |
 |---|---|---|
