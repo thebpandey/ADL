@@ -8,6 +8,17 @@ difficulty: "Beginner"
 
 # Samsung DeX Setup
 
+<PageMeta difficulty="Beginner" estimatedTime="10 minutes" />
+
+<div>
+  <CompatibilityBadge type="samsung-dex" />
+  <CompatibilityBadge type="displayport" />
+  <CompatibilityBadge type="keyboard" />
+  <CompatibilityBadge type="mouse" />
+  <CompatibilityBadge type="tested" label="Tested on Galaxy S22+" />
+</div>
+
+
 Samsung DeX turns your Galaxy phone or tablet into a desktop workstation by connecting to an external monitor. Combined with ADL, you get a full Linux desktop on a big screen with keyboard and mouse support.
 
 <Note title="Samsung Only">
@@ -92,4 +103,10 @@ For a comprehensive DeX guide including advanced display configuration, multi-mo
   }
 ]} />
 
-You now have a complete Linux desktop workstation powered by your Samsung Galaxy device. For more Samsung-specific features and optimizations, visit the [Samsung](/docs/samsung/dex-overview) section.
+You now have a complete Linux desktop workstation powered by your Samsung Galaxy device.
+
+<NextSteps items={[
+  { title: "Samsung DeX Overview", description: "Go deeper: wired vs wireless DeX, optimization, and Galaxy-specific features.", to: "/docs/samsung/dex-overview" },
+  { title: "Recommended hardware", description: "Hubs, monitors, and peripherals that work well with DeX.", to: "/docs/learn/hardware/recommended-setup" },
+  { title: "Install applications", description: "Fill your new workstation with browsers, editors, and tools.", to: "/docs/applications/overview" },
+]} />

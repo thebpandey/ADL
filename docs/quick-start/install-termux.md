@@ -9,6 +9,9 @@ custom_fields:
 
 # Install Termux
 
+<PageMeta difficulty="Beginner" estimatedTime="10 minutes" />
+
+
 Termux is a terminal emulator for Android that gives you a Linux environment on your phone. In this step, you will install Termux from F-Droid.
 
 <Warning title="Do Not Use Google Play Store">
@@ -84,4 +87,9 @@ Want to understand what Termux is and how it works? See [What is Termux?](/docs/
 
 ## Next Step
 
-With Termux installed and updated, proceed to [Install Ubuntu](/docs/quick-start/install-ubuntu) to set up a full Linux environment inside Termux.
+With Termux installed and updated, you're ready for a full Linux environment.
+
+<NextSteps items={[
+  { title: "Install Ubuntu", description: "Set up a complete Linux distribution inside Termux with proot-distro.", to: "/docs/quick-start/install-ubuntu" },
+  { title: "What is Termux?", description: "Optional: understand what you just installed and why it works.", to: "/docs/learn/concepts/what-is-termux" },
+]} />

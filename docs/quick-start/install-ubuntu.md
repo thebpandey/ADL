@@ -8,6 +8,9 @@ difficulty: "Beginner"
 
 # Install Ubuntu
 
+<PageMeta difficulty="Beginner" estimatedTime="10 minutes" />
+
+
 Now that Termux is set up, install a full Ubuntu Linux distribution inside it using proot-distro.
 
 ## Step 1: Install proot-distro
@@ -75,4 +78,9 @@ Learn more about why Ubuntu was chosen and what alternatives exist in [What is U
 
 ## Next Step
 
-Continue to [Install Desktop Environment](/docs/quick-start/install-desktop).
+Ubuntu is running — time to give it a graphical desktop.
+
+<NextSteps items={[
+  { title: "Install Desktop Environment", description: "Install XFCE and Termux:X11, and create your launch script.", to: "/docs/quick-start/install-desktop" },
+  { title: "What is proot?", description: "Optional: how Ubuntu runs inside Android without root.", to: "/docs/learn/concepts/what-is-proot" },
+]} />

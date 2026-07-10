@@ -25,11 +25,18 @@ By the end, you'll have a fully functional XFCE desktop running inside Ubuntu on
 
 ## What You Need
 
-<Requirements items={[
-  "Android phone or tablet (Android 7+)",
-  "Wi-Fi connection (for downloading packages)",
-  "Approximately 4GB of free storage",
-]} />
+<RequirementsCard
+  difficulty="Beginner"
+  estimatedTime="30-45 minutes"
+  requiredHardware={[
+    "Android phone or tablet (Android 7+)",
+    "Approximately 4GB of free storage",
+  ]}
+  requiredSoftware={[
+    "Wi-Fi connection (for downloading packages)",
+    "Termux from F-Droid (installed in step 1)",
+  ]}
+/>
 
 That's it. No PC required. No unlocked bootloader. No root access.
 

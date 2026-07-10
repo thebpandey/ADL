@@ -8,6 +8,9 @@ difficulty: "Beginner"
 
 # Install Desktop Environment
 
+<PageMeta difficulty="Beginner" estimatedTime="10 minutes" />
+
+
 Now install XFCE, a lightweight desktop environment, and configure Termux:X11 to display it.
 
 ## Step 1: Install XFCE Desktop
@@ -92,4 +95,9 @@ Understand how Termux:X11 provides a display server in [What is Termux:X11?](/do
 
 ## Next Step
 
-Your desktop environment is installed and ready to go. Continue to [First Launch](/docs/quick-start/first-launch) to start it up for the first time.
+Your desktop environment is installed and ready to go.
+
+<NextSteps items={[
+  { title: "First Launch", description: "Start your desktop for the first time and take the tour.", to: "/docs/quick-start/first-launch" },
+  { title: "What is XFCE?", description: "Optional: what a desktop environment actually does.", to: "/docs/learn/concepts/what-is-xfce" },
+]} />
