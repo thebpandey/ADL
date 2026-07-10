@@ -31,7 +31,7 @@ export default function InstallFlowDiagram({ title = "Installation path", steps 
         style={{
           display: "flex",
           flexWrap: "wrap",
-          gap: "0.4rem",
+          gap: "0.15rem",
           listStyle: "none",
           padding: 0,
           margin: 0,
@@ -40,19 +40,19 @@ export default function InstallFlowDiagram({ title = "Installation path", steps 
       >
         {steps.map((step, i) => {
           const inner = (
-            <span style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+            <span style={{ display: "flex", alignItems: "center", gap: "0.3rem" }}>
               <span
                 aria-hidden="true"
                 style={{
-                  width: 26,
-                  height: 26,
+                  width: 16,
+                  height: 16,
                   borderRadius: "50%",
                   background: "var(--ifm-color-primary)",
                   color: "#fff",
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: "0.8125rem",
+                  fontSize: "0.625rem",
                   fontWeight: 700,
                   flexShrink: 0,
                 }}
@@ -60,9 +60,9 @@ export default function InstallFlowDiagram({ title = "Installation path", steps 
                 {i + 1}
               </span>
               <span style={{ display: "flex", flexDirection: "column", lineHeight: 1.3 }}>
-                <span style={{ fontWeight: 600, fontSize: "0.875rem", color: "var(--ifm-font-color-base)" }}>{step.label}</span>
+                <span style={{ fontWeight: 600, fontSize: "0.6875rem", color: "var(--ifm-font-color-base)" }}>{step.label}</span>
                 {step.detail && (
-                  <span style={{ fontSize: "0.6875rem", color: "var(--adl-text-muted, var(--ifm-color-emphasis-600))" }}>
+                  <span style={{ fontSize: "0.5625rem", color: "var(--adl-text-muted, var(--ifm-color-emphasis-600))" }}>
                     {step.detail}
                   </span>
                 )}
@@ -70,7 +70,7 @@ export default function InstallFlowDiagram({ title = "Installation path", steps 
             </span>
           );
           return (
-            <li key={step.label} style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
+            <li key={step.label} style={{ display: "flex", alignItems: "center", gap: "0.15rem" }}>
               {step.to ? (
                 <Link
                   to={step.to}
@@ -78,7 +78,7 @@ export default function InstallFlowDiagram({ title = "Installation path", steps 
                   style={{
                     border: "1px solid var(--adl-border-color)",
                     borderRadius: 10,
-                    padding: "0.5rem 0.85rem",
+                    padding: "0.3rem 0.35rem",
                     background: "var(--adl-card-bg, transparent)",
                     textDecoration: "none",
                     display: "block",
@@ -92,7 +92,7 @@ export default function InstallFlowDiagram({ title = "Installation path", steps 
                   style={{
                     border: "1px solid var(--adl-border-color)",
                     borderRadius: 10,
-                    padding: "0.5rem 0.85rem",
+                    padding: "0.3rem 0.35rem",
                     background: "var(--adl-card-bg, transparent)",
                     display: "block",
                   }}
@@ -101,7 +101,7 @@ export default function InstallFlowDiagram({ title = "Installation path", steps 
                 </span>
               )}
               {i < steps.length - 1 && (
-                <span aria-hidden="true" style={{ color: "var(--ifm-color-primary)", fontWeight: 700 }}>
+                <span aria-hidden="true" style={{ color: "var(--ifm-color-primary)", fontWeight: 700, fontSize: "0.625rem" }}>
                   →
                 </span>
               )}

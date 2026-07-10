@@ -248,7 +248,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Created by Bhaskar Pandey · Android Desktop Linux Project - Almora Technology<br />Copyright © 2026 Bhaskar Pandey. Released under the MIT License. Built with Docusaurus.`,
+      copyright: `Created by Bhaskar Pandey · Android Desktop Linux Project - Almora Technology<br />Copyright © 2026 Bhaskar Pandey. Released under the MIT License. Built with Docusaurus.<br />Android Desktop Linux is an independent project, not affiliated with or endorsed by Google or Samsung.`,
     },
 
     prism: {

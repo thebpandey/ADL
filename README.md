@@ -116,3 +116,8 @@ is attributed in the git history and acknowledged in the changelog.
 
 Copyright © 2026 Bhaskar Pandey. Released under the MIT License.
 See the [LICENSE](LICENSE) file for details.
+
+## Trademark Disclaimer
+
+Android Desktop Linux is an independent project, not affiliated with or
+endorsed by Google or Samsung.
