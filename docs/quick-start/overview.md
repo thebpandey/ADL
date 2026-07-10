@@ -17,6 +17,12 @@ By the end, you'll have a fully functional XFCE desktop running inside Ubuntu on
 
 <InstallFlowDiagram />
 
+<SvgDiagram
+  src="/img/diagrams/installation/diagram-installation-overview.svg"
+  alt="Hand-drawn installation roadmap with seven steps: prepare Android, install Termux, install Termux:X11, install Ubuntu, install XFCE, launch the desktop, and install apps"
+  caption="The road ahead, at a glance"
+/>
+
 ## What You Need
 
 <Requirements items={[

@@ -6,6 +6,13 @@ description: "Configure Termux:X11 and VNC to render your Linux desktop on Andro
 
 # Display Servers
 
+<SvgDiagram
+  src="/img/diagrams/connectivity/diagram-display-output.svg"
+  alt="Hand-drawn diagram of the video path: phone over USB-C DisplayPort Alt Mode to a dock, then HDMI to a monitor showing desktop mode"
+  caption="How video reaches the monitor"
+/>
+
+
 Your Linux desktop environment needs a display server to render its graphical output. In ADL, you have two options: Termux:X11 and VNC. Each works differently, has distinct advantages, and is better suited to different use cases.
 
 For background on display server concepts, see [What is Wayland?](/docs/learn/concepts/what-is-wayland). For detailed setup instructions, see [Termux:X11](/docs/learn/software/termux-x11) and [VNC](/docs/learn/software/vnc).

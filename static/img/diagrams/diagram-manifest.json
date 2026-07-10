@@ -1,0 +1,179 @@
+{
+  "$schema": "Diagram manifest for the ADL engineering-notebook SVG system",
+  "style": "ADL engineering notebook: warm paper, ink linework, pencil construction lines, watercolor fills",
+  "phases": {
+    "3A": "foundational architecture, installation, and connectivity diagrams"
+  },
+  "diagrams": [
+    {
+      "filename": "diagram-linux-stack.svg",
+      "path": "/img/diagrams/architecture/diagram-linux-stack.svg",
+      "category": "architecture",
+      "title": "The ADL Linux stack",
+      "description": "Layered stack from Android up through Termux, proot, Ubuntu, XFCE, and applications.",
+      "phase": "3A",
+      "recommendedPages": [
+        "/docs/learn/concepts/what-is-linux",
+        "/docs/learn/concepts/what-is-proot"
+      ]
+    },
+    {
+      "filename": "diagram-desktop-architecture.svg",
+      "path": "/img/diagrams/architecture/diagram-desktop-architecture.svg",
+      "category": "architecture",
+      "title": "Desktop architecture",
+      "description": "Phone cutaway showing the software layers and USB-C video out to an external monitor.",
+      "phase": "3A",
+      "recommendedPages": [
+        "/docs/learn/concepts/what-is-a-desktop-environment"
+      ]
+    },
+    {
+      "filename": "diagram-filesystem.svg",
+      "path": "/img/diagrams/architecture/diagram-filesystem.svg",
+      "category": "architecture",
+      "title": "Where your files live",
+      "description": "Android shared storage, Termux home, and the Ubuntu container connected by shared folders and backups.",
+      "phase": "3A",
+      "recommendedPages": [
+        "/docs/reference/configuration/filesystem-layout"
+      ]
+    },
+    {
+      "filename": "diagram-process-flow.svg",
+      "path": "/img/diagrams/architecture/diagram-process-flow.svg",
+      "category": "architecture",
+      "title": "Command process flow",
+      "description": "A command flows from the user through the shell and Linux environment down to Android resources.",
+      "phase": "3A",
+      "recommendedPages": [
+        "/docs/learn/concepts/what-is-a-shell"
+      ]
+    },
+    {
+      "filename": "diagram-memory-flow.svg",
+      "path": "/img/diagrams/architecture/diagram-memory-flow.svg",
+      "category": "architecture",
+      "title": "Hardware resource flow",
+      "description": "CPU, RAM, storage, battery, and display feed both Android and the Linux desktop session.",
+      "phase": "3A",
+      "recommendedPages": [
+        "/docs/performance/overview"
+      ]
+    },
+    {
+      "filename": "diagram-installation-overview.svg",
+      "path": "/img/diagrams/installation/diagram-installation-overview.svg",
+      "category": "installation",
+      "title": "Installation roadmap",
+      "description": "Seven steps from preparing Android to installing apps on the finished desktop.",
+      "phase": "3A",
+      "recommendedPages": [
+        "/docs/quick-start/overview",
+        "/docs/installation/common/prerequisites"
+      ]
+    },
+    {
+      "filename": "diagram-first-launch.svg",
+      "path": "/img/diagrams/installation/diagram-first-launch.svg",
+      "category": "installation",
+      "title": "First launch sequence",
+      "description": "Open Termux, start Linux, start X11, open the desktop, see it on the monitor.",
+      "phase": "3A",
+      "recommendedPages": [
+        "/docs/quick-start/first-launch"
+      ]
+    },
+    {
+      "filename": "diagram-update-flow.svg",
+      "path": "/img/diagrams/installation/diagram-update-flow.svg",
+      "category": "installation",
+      "title": "Update and maintenance loop",
+      "description": "Check repos, download package lists, upgrade packages, clean unused files \u2014 repeat.",
+      "phase": "3A",
+      "recommendedPages": [
+        "/docs/installation/common/post-install"
+      ]
+    },
+    {
+      "filename": "diagram-backup-restore.svg",
+      "path": "/img/diagrams/installation/diagram-backup-restore.svg",
+      "category": "installation",
+      "title": "Backup and restore flow",
+      "description": "The Linux container is archived to external storage or cloud and restored to any phone.",
+      "phase": "3A",
+      "recommendedPages": [
+        "/docs/installation/common/uninstall",
+        "/docs/troubleshooting/recovery"
+      ]
+    },
+    {
+      "filename": "diagram-directory-layout.svg",
+      "path": "/img/diagrams/installation/diagram-directory-layout.svg",
+      "category": "installation",
+      "title": "Directory layout",
+      "description": "Termux home, Ubuntu root, and shared storage with downloads and backups.",
+      "phase": "3A",
+      "recommendedPages": [
+        "/docs/reference/configuration/filesystem-layout"
+      ]
+    },
+    {
+      "filename": "diagram-usbc-workflow.svg",
+      "path": "/img/diagrams/connectivity/diagram-usbc-workflow.svg",
+      "category": "connectivity",
+      "title": "USB-C workstation workflow",
+      "description": "Phone to dock fan-out: monitor, keyboard and mouse, SSD, and power.",
+      "phase": "3A",
+      "recommendedPages": [
+        "/docs/learn/hardware/usb-c-hubs",
+        "/docs/samsung/dex-overview"
+      ]
+    },
+    {
+      "filename": "diagram-display-output.svg",
+      "path": "/img/diagrams/connectivity/diagram-display-output.svg",
+      "category": "connectivity",
+      "title": "Display output path",
+      "description": "Video path from phone over DisplayPort Alt Mode through the dock to the monitor.",
+      "phase": "3A",
+      "recommendedPages": [
+        "/docs/desktop-environments/display-servers",
+        "/docs/samsung/dex-overview"
+      ]
+    },
+    {
+      "filename": "diagram-storage-flow.svg",
+      "path": "/img/diagrams/connectivity/diagram-storage-flow.svg",
+      "category": "connectivity",
+      "title": "External storage flow",
+      "description": "Phone, dock, external SSD, and the Linux shared folder exchanging files.",
+      "phase": "3A",
+      "recommendedPages": [
+        "/docs/performance/storage"
+      ]
+    },
+    {
+      "filename": "diagram-bluetooth-flow.svg",
+      "path": "/img/diagrams/connectivity/diagram-bluetooth-flow.svg",
+      "category": "connectivity",
+      "title": "Bluetooth input flow",
+      "description": "Keyboard and mouse connect over Bluetooth to the phone and into the desktop session.",
+      "phase": "3A",
+      "recommendedPages": [
+        "/docs/learn/hardware/peripherals"
+      ]
+    },
+    {
+      "filename": "diagram-workstation-overview.svg",
+      "path": "/img/diagrams/connectivity/diagram-workstation-overview.svg",
+      "category": "connectivity",
+      "title": "Complete ADL workstation",
+      "description": "Desk scene with phone, dock, monitor, keyboard and mouse, and external SSD.",
+      "phase": "3A",
+      "recommendedPages": [
+        "/docs/learn/hardware/recommended-setup"
+      ]
+    }
+  ]
+}

@@ -11,6 +11,12 @@ description: "Everything you need to check and configure on your Android device 
   alt="Robot mascot preparing tools and checking requirements before installing Linux on an Android phone"
 />
 
+<SvgDiagram
+  src="/img/diagrams/installation/diagram-installation-overview.svg"
+  alt="Hand-drawn installation roadmap with seven steps from preparing Android to installing apps"
+  caption="Where these prerequisites fit in the full installation"
+/>
+
 {/* TODO: this hero is intended for the Installation section landing page (currently a generated index). Move it there if a real landing page is created later */}
 
 Before installing ADL, you need to verify that your Android device meets the requirements and configure a few system settings. This page walks you through every check and setting change, step by step.
