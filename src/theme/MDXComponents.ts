@@ -43,6 +43,14 @@ import InfoGrid from "@site/src/components/InfoGrid";
 import NextSteps from "@site/src/components/NextSteps";
 import PageMeta from "@site/src/components/PageMeta";
 import ChapterHeader from "@site/src/components/ChapterHeader";
+import GlossaryTerm from "@site/src/components/Documentation/GlossaryTerm";
+import VersionCallout from "@site/src/components/Documentation/VersionCallout";
+import TroubleshootingNavigator from "@site/src/components/Troubleshooting/TroubleshootingNavigator";
+import DownloadHub from "@site/src/components/Downloads/DownloadHub";
+import HardwareCard from "@site/src/components/Downloads/HardwareCard";
+import VerificationBanner from "@site/src/components/Verification/VerificationBanner";
+import LearningPathNav from "@site/src/components/Learning/LearningPathNav";
+import RelatedArticles from "@site/src/components/Navigation/RelatedArticles";
 
 export default {
   ...MDXComponents,
@@ -91,4 +99,13 @@ export default {
   NextSteps,
   PageMeta,
   ChapterHeader,
+  GlossaryTerm,
+  Term: GlossaryTerm,
+  VersionCallout,
+  TroubleshootingNavigator,
+  DownloadHub,
+  HardwareCard,
+  VerificationBanner,
+  LearningPathNav,
+  RelatedArticles,
 };

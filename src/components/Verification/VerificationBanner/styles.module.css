@@ -1,0 +1,42 @@
+.banner {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  border: 1px solid color-mix(in srgb, var(--ifm-color-success, #16a34a) 40%, var(--adl-border-color));
+  border-left: 4px solid var(--ifm-color-success-dark, #16a34a);
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.8125rem;
+  background: color-mix(in srgb, var(--ifm-color-success, #16a34a) 5%, var(--adl-card-bg, transparent));
+}
+
+.check {
+  color: var(--ifm-color-success-dark, #16a34a);
+  font-weight: 800;
+}
+
+.label {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-600));
+}
+
+.facts {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.facts > span,
+.facts > strong {
+  white-space: nowrap;
+}
+
+.version {
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-600));
+}

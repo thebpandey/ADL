@@ -1,0 +1,70 @@
+.card {
+  position: relative;
+  border: 1px solid var(--adl-border-color, var(--ifm-color-emphasis-200));
+  border-radius: 12px;
+  background: var(--adl-card-bg, transparent);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.recommended {
+  border: 2px solid var(--ifm-color-primary);
+}
+
+.badge {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  background: var(--ifm-color-primary);
+  color: #fff;
+  border-radius: 100px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.6rem;
+  z-index: 1;
+}
+
+.image {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  display: block;
+  background: var(--adl-paper, var(--ifm-background-surface-color));
+}
+
+.body {
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.category {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ifm-color-primary);
+}
+
+.name {
+  font-weight: 700;
+  font-size: 0.9375rem;
+}
+
+.notes {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-600));
+  margin: 0;
+}
+
+.link {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}

@@ -2,13 +2,25 @@
 sidebar_position: 3
 title: "Install Ubuntu"
 description: "Installing Ubuntu via proot-distro"
+difficulty: Beginner
 estimated_time: "10 minutes"
-difficulty: "Beginner"
+prerequisites:
+  - /docs/quick-start/install-termux
+next_topics:
+  - /docs/quick-start/install-desktop
+related_topics:
+  - /docs/learn/concepts/what-is-ubuntu
+  - /docs/learn/concepts/what-is-proot
+keywords:
+  - ubuntu
+  - proot
+  - proot-distro
+  - linux distribution
+  - container
 ---
 
 # Install Ubuntu
 
-<PageMeta difficulty="Beginner" estimatedTime="10 minutes" />
 
 
 Now that Termux is set up, install a full Ubuntu Linux distribution inside it using proot-distro.

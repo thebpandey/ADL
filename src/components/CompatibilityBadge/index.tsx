@@ -6,10 +6,12 @@ type BadgeType =
   | "displayport"
   | "bluetooth"
   | "external-storage"
+  | "external-display"
   | "keyboard"
   | "mouse"
   | "tested"
-  | "experimental";
+  | "experimental"
+  | "community-verified";
 
 interface CompatibilityBadgeProps {
   type: BadgeType;
@@ -22,10 +24,12 @@ const config: Record<BadgeType, { icon: string; label: string; className: string
   displayport: { icon: "🔌", label: "DisplayPort", className: styles.feature },
   bluetooth: { icon: "📶", label: "Bluetooth", className: styles.feature },
   "external-storage": { icon: "💾", label: "External Storage", className: styles.feature },
+  "external-display": { icon: "🖥️", label: "External Display", className: styles.feature },
   keyboard: { icon: "⌨️", label: "Keyboard", className: styles.feature },
   mouse: { icon: "🖱️", label: "Mouse", className: styles.feature },
   tested: { icon: "✅", label: "Tested", className: styles.tested },
   experimental: { icon: "🧪", label: "Experimental", className: styles.experimental },
+  "community-verified": { icon: "🤝", label: "Community Verified", className: styles.tested },
 };
 
 /** Small pill badge marking a capability or support status. */

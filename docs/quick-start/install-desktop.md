@@ -2,13 +2,25 @@
 sidebar_position: 4
 title: "Install Desktop Environment"
 description: "Installing XFCE desktop environment and configuring Termux:X11 to display it on your Android device."
+difficulty: Beginner
 estimated_time: "10 minutes"
-difficulty: "Beginner"
+prerequisites:
+  - /docs/quick-start/install-ubuntu
+next_topics:
+  - /docs/quick-start/first-launch
+related_topics:
+  - /docs/learn/concepts/what-is-xfce
+  - /docs/learn/software/termux-x11
+keywords:
+  - xfce
+  - desktop environment
+  - termux-x11
+  - x11
+  - launch script
 ---
 
 # Install Desktop Environment
 
-<PageMeta difficulty="Beginner" estimatedTime="10 minutes" />
 
 
 Now install XFCE, a lightweight desktop environment, and configure Termux:X11 to display it.

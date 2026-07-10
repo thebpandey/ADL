@@ -2,6 +2,24 @@
 sidebar_position: 1
 title: "Quick Start Overview"
 description: "Get a full Linux desktop running on your Android phone or tablet in 30-45 minutes."
+difficulty: Beginner
+estimated_time: "30-45 minutes"
+next_topics:
+  - /docs/quick-start/install-termux
+related_topics:
+  - /docs/learn/concepts/what-is-termux
+  - /docs/learn/concepts/what-is-proot
+tested_device: "Samsung Galaxy S22+"
+tested_android_version: "Android 16"
+tested_date: "July 2026"
+last_verified: "2026-07-10"
+documentation_version: "1.0"
+keywords:
+  - quick start
+  - setup
+  - install linux on android
+  - no root
+  - getting started
 ---
 
 # Quick Start Overview
@@ -46,6 +64,7 @@ Track where you are as you work through the guide:
 
 <ProgressChecklist
   title="Quick Start Steps"
+  storageKey="quick-start"
   items={[
     { label: "Install Termux", done: false },
     { label: "Install Ubuntu", done: false },
@@ -107,8 +126,8 @@ This Quick Start track is **procedural**: do this, then this, then this. Each pa
 
 The **Learn track** explains the *why* behind each step. If you want to understand what Termux actually is, how proot containers work, or why we use XFCE over other desktop environments, the Learn pages go deeper:
 
-- [What is Termux?](/docs/learn/concepts/what-is-termux) --- how a terminal emulator becomes a full Linux environment
-- [What is proot?](/docs/learn/concepts/what-is-proot) --- running Ubuntu without root access
+- [What is Termux?](/docs/learn/concepts/what-is-termux) --- how a <GlossaryTerm term="termux">Termux</GlossaryTerm> terminal becomes a full Linux environment
+- [What is proot?](/docs/learn/concepts/what-is-proot) --- running Ubuntu without root access via <GlossaryTerm term="proot">proot</GlossaryTerm>
 - [Desktop Environments](/docs/learn/concepts/what-is-a-desktop-environment) --- why XFCE and what the alternatives are
 
 You don't need to read the Learn pages to get up and running. They're there when you're curious or when something goes wrong and you want to understand what's happening under the hood.

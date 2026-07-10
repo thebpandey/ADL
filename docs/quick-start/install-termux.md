@@ -2,14 +2,25 @@
 sidebar_position: 2
 title: "Install Termux"
 description: "Installing Termux from F-Droid for use with ADL on Android."
-custom_fields:
-  estimated_time: "10 minutes"
-  difficulty: "Beginner"
+difficulty: Beginner
+estimated_time: "10 minutes"
+next_topics:
+  - /docs/quick-start/install-ubuntu
+related_topics:
+  - /docs/learn/concepts/what-is-termux
+  - /docs/troubleshooting/termux
+keywords:
+  - termux
+  - f-droid
+  - fdroid
+  - terminal
+  - install termux
+  - pkg
+  - termux-setup-storage
 ---
 
 # Install Termux
 
-<PageMeta difficulty="Beginner" estimatedTime="10 minutes" />
 
 
 Termux is a terminal emulator for Android that gives you a Linux environment on your phone. In this step, you will install Termux from F-Droid.

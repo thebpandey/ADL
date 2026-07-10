@@ -75,3 +75,25 @@
   outline: 2px solid var(--ifm-color-primary);
   outline-offset: 2px;
 }
+
+.reset {
+  margin-left: 0.6rem;
+  font: inherit;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  background: none;
+  border: 1px solid var(--adl-border-color, var(--ifm-color-emphasis-300));
+  border-radius: 100px;
+  padding: 0.1rem 0.6rem;
+  cursor: pointer;
+}
+
+.reset:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.reset:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 1px;
+}

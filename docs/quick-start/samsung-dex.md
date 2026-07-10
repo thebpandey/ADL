@@ -2,13 +2,37 @@
 sidebar_position: 6
 title: "Samsung DeX Setup"
 description: "Configuring your Linux desktop with Samsung DeX for external display output"
+difficulty: Beginner
 estimated_time: "10 minutes"
-difficulty: "Beginner"
+prerequisites:
+  - /docs/quick-start/first-launch
+next_topics:
+  - /docs/samsung/dex-overview
+related_topics:
+  - /docs/learn/hardware/usb-c-hubs
+  - /docs/samsung/dex-optimization
+tested_device: "Samsung Galaxy S22+"
+tested_android_version: "Android 16"
+tested_date: "July 2026"
+last_verified: "2026-07-10"
+documentation_version: "1.0"
+compatibility:
+  - samsung-dex
+  - displayport
+  - keyboard
+  - mouse
+  - tested
+keywords:
+  - samsung dex
+  - dex
+  - external monitor
+  - usb-c hub
+  - displayport alt mode
+  - hdmi
 ---
 
 # Samsung DeX Setup
 
-<PageMeta difficulty="Beginner" estimatedTime="10 minutes" />
 
 <div>
   <CompatibilityBadge type="samsung-dex" />

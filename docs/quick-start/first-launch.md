@@ -2,13 +2,25 @@
 sidebar_position: 5
 title: "First Launch"
 description: "Launching your Linux desktop for the first time"
+difficulty: Beginner
 estimated_time: "5 minutes"
-difficulty: "Beginner"
+prerequisites:
+  - /docs/quick-start/install-desktop
+next_topics:
+  - /docs/quick-start/samsung-dex
+  - /docs/applications/overview
+related_topics:
+  - /docs/troubleshooting/display
+  - /docs/desktop-environments/overview
+keywords:
+  - first launch
+  - start desktop
+  - termux:x11
+  - xfce session
 ---
 
 # First Launch
 
-<PageMeta difficulty="Beginner" estimatedTime="5 minutes" />
 
 
 <SvgDiagram
