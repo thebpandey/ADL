@@ -6,6 +6,13 @@ description: Understanding Linux — the operating system that powers Android, s
 
 # What is Linux?
 
+<HeroImage
+  image="hero-learn.webp"
+  alt="Robot mascot reading a book about Linux concepts beside an Android phone"
+/>
+
+{/* TODO: this hero is intended for the Learn section landing page (currently a generated index). Move it there if a real landing page is created later */}
+
 Linux is a **free, open-source operating system** that powers everything from web servers to smartphones. If you are using an Android phone right now, you are already running Linux — Android is built on top of the Linux kernel.
 
 Understanding Linux is the first step to understanding how ADL works. This page explains what Linux is, why it matters, and why it makes running a desktop on your phone possible.

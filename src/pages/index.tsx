@@ -2,8 +2,9 @@ import React from "react";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import HeroIllustration from "@site/src/components/HeroIllustration";
 import DeviceSetupDiagram from "@site/src/components/DeviceSetupDiagram";
+import SponsorsBanner from "@site/src/components/SponsorsBanner";
+import HeroImage from "@site/src/components/HeroImage";
 import styles from "./index.module.css";
 
 const tracks = [
@@ -135,6 +136,13 @@ const roadmap = [
 
 const community = [
   {
+    icon: "💖",
+    title: "Support ADL",
+    description:
+      "ADL is free and open-source — donations are optional. Sponsor the project or buy the maintainer a coffee.",
+    href: "/docs/support-adl",
+  },
+  {
     icon: "💬",
     title: "GitHub Discussions",
     description: "Ask questions, share tips, and connect with other ADL users.",
@@ -192,7 +200,10 @@ function Hero() {
           </div>
         </div>
         <div style={{ flex: "1 1 320px", minWidth: 280 }}>
-          <HeroIllustration />
+          <HeroImage
+            image="hero-home.webp"
+            alt="Friendly robot mascot at a desk running a full Linux desktop from an Android phone connected to a monitor, keyboard, and mouse"
+          />
         </div>
       </div>
     </header>
@@ -347,19 +358,31 @@ function Community() {
           setup, or contribute to the project.
         </p>
         <div className={styles.communityGrid}>
-          {community.map((c) => (
-            <a
-              key={c.title}
-              className={styles.communityCard}
-              href={c.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className={styles.communityIcon}>{c.icon}</div>
-              <h3 className={styles.communityTitle}>{c.title}</h3>
-              <p className={styles.communityDescription}>{c.description}</p>
-            </a>
-          ))}
+          {community.map((c) => {
+            const isInternal = c.href.startsWith("/");
+            const inner = (
+              <>
+                <div className={styles.communityIcon}>{c.icon}</div>
+                <h3 className={styles.communityTitle}>{c.title}</h3>
+                <p className={styles.communityDescription}>{c.description}</p>
+              </>
+            );
+            return isInternal ? (
+              <Link key={c.title} className={styles.communityCard} to={c.href}>
+                {inner}
+              </Link>
+            ) : (
+              <a
+                key={c.title}
+                className={styles.communityCard}
+                href={c.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {inner}
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -374,6 +397,7 @@ export default function Home(): React.JSX.Element {
       description="Run desktop Linux environments on Android phones and tablets. No root required. Complete documentation for Android Desktop Linux."
     >
       <Hero />
+      <SponsorsBanner />
       <main>
         <Tracks />
         <Features />

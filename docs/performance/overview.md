@@ -6,6 +6,11 @@ description: "Understanding what affects ADL performance and setting realistic e
 
 # Performance Overview
 
+<HeroImage
+  image="hero-performance.webp"
+  alt="Robot mascot tuning performance dials on a speedy Android-powered Linux desktop"
+/>
+
 Running a full Linux desktop on an Android device is genuinely impressive, but it comes with trade-offs. Understanding where those trade-offs lie helps you set realistic expectations and focus your optimization efforts where they actually matter.
 
 This page explains the factors that affect ADL performance, what you can expect from different device classes, and how ADL compares to running Linux on native hardware.

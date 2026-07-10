@@ -30,6 +30,7 @@ import CommandFlow from "@site/src/components/CommandFlow";
 import TroubleshootingDecisionTree from "@site/src/components/TroubleshootingDecisionTree";
 import CompatibilityBadges from "@site/src/components/CompatibilityBadges";
 import FeatureCardGrid from "@site/src/components/FeatureCardGrid";
+import HeroImage from "@site/src/components/HeroImage";
 
 export default {
   ...MDXComponents,
@@ -64,4 +65,5 @@ export default {
   TroubleshootingDecisionTree,
   CompatibilityBadges,
   FeatureCardGrid,
+  HeroImage,
 };
