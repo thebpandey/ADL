@@ -1,0 +1,109 @@
+[
+  {
+    "id": "ubuntu",
+    "name": "Ubuntu",
+    "installCommand": "proot-distro install ubuntu",
+    "performance": "Excellent \u2014 the ADL reference distribution",
+    "memoryUsageMb": "Base ~120, with XFCE ~600",
+    "advantages": [
+      "Largest package ecosystem via apt",
+      "Most documentation and community help",
+      "Everything in the ADL guides is tested on it"
+    ],
+    "disadvantages": [
+      "Larger base install than Alpine",
+      "Some server-oriented defaults"
+    ],
+    "knownIssues": [
+      "snapd does not work under proot \u2014 use apt or standalone builds"
+    ],
+    "summary": "The default and recommended ADL distribution.",
+    "status": "fully-supported",
+    "verification": "maintainer-verified"
+  },
+  {
+    "id": "debian",
+    "name": "Debian",
+    "installCommand": "proot-distro install debian",
+    "performance": "Excellent \u2014 marginally leaner than Ubuntu",
+    "memoryUsageMb": "Base ~100, with XFCE ~550",
+    "advantages": [
+      "Very stable",
+      "Slightly lighter than Ubuntu",
+      "Same apt workflow as the guides"
+    ],
+    "disadvantages": [
+      "Older package versions on stable"
+    ],
+    "knownIssues": [
+      "Backports may be needed for newer apps"
+    ],
+    "summary": "A drop-in alternative if you prefer Debian stable.",
+    "status": "supported",
+    "verification": "community-verified"
+  },
+  {
+    "id": "archlinux",
+    "name": "Arch Linux",
+    "installCommand": "proot-distro install archlinux",
+    "performance": "Excellent when tuned; rolling updates need attention",
+    "memoryUsageMb": "Base ~90, with XFCE ~520",
+    "advantages": [
+      "Newest packages",
+      "AUR ecosystem",
+      "Minimal base"
+    ],
+    "disadvantages": [
+      "Rolling release can break under proot",
+      "Guides assume apt, not pacman"
+    ],
+    "knownIssues": [
+      "Keyring initialization sometimes needed after install (pacman-key --init)"
+    ],
+    "summary": "For experienced users who want current software.",
+    "status": "supported",
+    "verification": "community-verified"
+  },
+  {
+    "id": "fedora",
+    "name": "Fedora",
+    "installCommand": "proot-distro install fedora",
+    "performance": "Good",
+    "memoryUsageMb": "Base ~150, with XFCE ~650",
+    "advantages": [
+      "Modern toolchain",
+      "dnf is pleasant to use"
+    ],
+    "disadvantages": [
+      "Heavier base than Debian family",
+      "Less ADL community coverage"
+    ],
+    "knownIssues": [
+      "Some SELinux-adjacent tooling misbehaves under proot"
+    ],
+    "summary": "Solid, but fewer ADL-specific footsteps to follow.",
+    "status": "partial",
+    "verification": "needs-testing"
+  },
+  {
+    "id": "alpine",
+    "name": "Alpine",
+    "installCommand": "proot-distro install alpine",
+    "performance": "Fastest and smallest by far",
+    "memoryUsageMb": "Base ~30, with XFCE ~400",
+    "advantages": [
+      "Tiny footprint",
+      "Great for low-storage devices"
+    ],
+    "disadvantages": [
+      "musl libc breaks some prebuilt binaries",
+      "apk ecosystem smaller than apt"
+    ],
+    "knownIssues": [
+      "glibc-only apps (e.g. VS Code) need workarounds or won't run"
+    ],
+    "summary": "Minimalist choice for constrained devices and terminal-first use.",
+    "status": "partial",
+    "verification": "community-verified"
+  }
+]

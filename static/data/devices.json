@@ -1,0 +1,163 @@
+[
+  {
+    "id": "samsung-galaxy-s22-plus",
+    "name": "Samsung Galaxy S22+",
+    "manufacturer": "Samsung",
+    "chipset": "Snapdragon 8 Gen 1",
+    "ramGb": [
+      8
+    ],
+    "storageGb": [
+      128,
+      256
+    ],
+    "androidVersions": [
+      "12",
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    "desktopMode": "samsung-dex",
+    "usbcVideo": "fully-supported",
+    "releaseYear": 2022,
+    "status": "fully-supported",
+    "verification": "maintainer-verified",
+    "version": {
+      "androidVersion": "Android 16",
+      "documentationVersion": "1.0",
+      "verificationDate": "2026-07-10"
+    },
+    "verifiedConfiguration": "/docs/compatibility/devices/galaxy-s22-plus",
+    "notes": "The ADL reference device. Full DeX workstation setup verified end to end."
+  },
+  {
+    "id": "samsung-galaxy-s23-ultra",
+    "name": "Samsung Galaxy S23 Ultra",
+    "manufacturer": "Samsung",
+    "chipset": "Snapdragon 8 Gen 2",
+    "ramGb": [
+      8,
+      12
+    ],
+    "storageGb": [
+      256,
+      512,
+      1024
+    ],
+    "androidVersions": [
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    "desktopMode": "samsung-dex",
+    "usbcVideo": "supported",
+    "releaseYear": 2023,
+    "status": "supported",
+    "verification": "needs-testing",
+    "notes": "DeX and DP Alt Mode per Samsung specifications; an end-to-end ADL test report is welcome."
+  },
+  {
+    "id": "samsung-galaxy-tab-s9",
+    "name": "Samsung Galaxy Tab S9",
+    "manufacturer": "Samsung",
+    "chipset": "Snapdragon 8 Gen 2",
+    "ramGb": [
+      8,
+      12
+    ],
+    "storageGb": [
+      128,
+      256
+    ],
+    "androidVersions": [
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    "desktopMode": "samsung-dex",
+    "usbcVideo": "supported",
+    "releaseYear": 2023,
+    "status": "supported",
+    "verification": "needs-testing",
+    "notes": "DeX-capable tablet per Samsung specifications; large screen suits on-device desktop use."
+  },
+  {
+    "id": "google-pixel-8-pro",
+    "name": "Google Pixel 8 Pro",
+    "manufacturer": "Google",
+    "chipset": "Google Tensor G3",
+    "ramGb": [
+      12
+    ],
+    "storageGb": [
+      128,
+      256,
+      512
+    ],
+    "androidVersions": [
+      "14",
+      "15",
+      "16"
+    ],
+    "desktopMode": "android-desktop-mode",
+    "usbcVideo": "supported",
+    "releaseYear": 2023,
+    "status": "partial",
+    "verification": "needs-testing",
+    "notes": "DisplayPort output enabled by Google from Pixel 8 onward; Android desktop mode is still maturing."
+  },
+  {
+    "id": "oneplus-12",
+    "name": "OnePlus 12",
+    "manufacturer": "OnePlus",
+    "chipset": "Snapdragon 8 Gen 3",
+    "ramGb": [
+      12,
+      16
+    ],
+    "storageGb": [
+      256,
+      512
+    ],
+    "androidVersions": [
+      "14",
+      "15",
+      "16"
+    ],
+    "desktopMode": "none",
+    "usbcVideo": "partial",
+    "releaseYear": 2024,
+    "status": "partial",
+    "verification": "needs-testing",
+    "notes": "Strong on-device performance; no vendor desktop mode, so external-display use depends on OS build."
+  },
+  {
+    "id": "nothing-phone-2",
+    "name": "Nothing Phone (2)",
+    "manufacturer": "Nothing",
+    "chipset": "Snapdragon 8+ Gen 1",
+    "ramGb": [
+      8,
+      12
+    ],
+    "storageGb": [
+      128,
+      256,
+      512
+    ],
+    "androidVersions": [
+      "13",
+      "14",
+      "15"
+    ],
+    "desktopMode": "none",
+    "usbcVideo": "broken",
+    "releaseYear": 2023,
+    "status": "partial",
+    "verification": "community-verified",
+    "notes": "Community reports: no DisplayPort Alt Mode; on-device Termux:X11 desktop works well."
+  }
+]

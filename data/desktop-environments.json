@@ -1,0 +1,130 @@
+[
+  {
+    "id": "xfce",
+    "name": "XFCE",
+    "performance": "fully-supported",
+    "memoryUsageMb": "450-600",
+    "responsiveness": "Excellent \u2014 near-native window management",
+    "touchFriendliness": "Fair \u2014 targets are small; best with a mouse",
+    "recommendedDevices": "All devices; the ADL default",
+    "summary": "The recommended ADL desktop: fast, stable, complete.",
+    "advantages": [
+      "Light on RAM",
+      "Very stable under proot",
+      "Full desktop feature set",
+      "Huge documentation base"
+    ],
+    "disadvantages": [
+      "Dated default look (fixable with themes)",
+      "Touch targets small out of the box"
+    ],
+    "installCommand": "apt install xfce4 xfce4-goodies",
+    "status": "fully-supported",
+    "verification": "maintainer-verified"
+  },
+  {
+    "id": "lxqt",
+    "name": "LXQt",
+    "performance": "fully-supported",
+    "memoryUsageMb": "350-500",
+    "responsiveness": "Excellent \u2014 lightest full desktop",
+    "touchFriendliness": "Fair",
+    "recommendedDevices": "Devices with 6GB RAM or less",
+    "summary": "The lightweight alternative when every megabyte counts.",
+    "advantages": [
+      "Lowest memory use of the full desktops",
+      "Snappy on older chipsets"
+    ],
+    "disadvantages": [
+      "Fewer built-in tools than XFCE",
+      "Smaller community"
+    ],
+    "installCommand": "apt install lxqt",
+    "status": "supported",
+    "verification": "community-verified"
+  },
+  {
+    "id": "mate",
+    "name": "MATE",
+    "performance": "supported",
+    "memoryUsageMb": "500-700",
+    "responsiveness": "Good",
+    "touchFriendliness": "Fair",
+    "recommendedDevices": "8GB+ devices wanting a traditional layout",
+    "summary": "A classic GNOME 2 style desktop that runs well under proot.",
+    "advantages": [
+      "Familiar traditional layout",
+      "Stable"
+    ],
+    "disadvantages": [
+      "Slightly heavier than XFCE"
+    ],
+    "installCommand": "apt install mate-desktop-environment",
+    "status": "supported",
+    "verification": "community-verified"
+  },
+  {
+    "id": "kde",
+    "name": "KDE Plasma",
+    "performance": "partial",
+    "memoryUsageMb": "800-1200",
+    "responsiveness": "Fair \u2014 compositing costs are noticeable under proot",
+    "touchFriendliness": "Good \u2014 largest touch targets of the group",
+    "recommendedDevices": "12GB+ flagships only",
+    "summary": "Beautiful and configurable, but heavy for a phone.",
+    "advantages": [
+      "Modern look",
+      "Extremely configurable",
+      "Best touch support"
+    ],
+    "disadvantages": [
+      "High RAM use",
+      "Compositor overhead under proot",
+      "Occasional session glitches"
+    ],
+    "installCommand": "apt install kde-plasma-desktop",
+    "status": "partial",
+    "verification": "experimental"
+  },
+  {
+    "id": "gnome",
+    "name": "GNOME",
+    "performance": "partial",
+    "memoryUsageMb": "900-1400",
+    "responsiveness": "Fair to poor under proot",
+    "touchFriendliness": "Good in design, heavy in practice",
+    "recommendedDevices": "Not recommended for ADL yet",
+    "summary": "GNOME's requirements clash with proot's constraints.",
+    "advantages": [
+      "Polished design"
+    ],
+    "disadvantages": [
+      "Heaviest RAM use",
+      "Depends on systemd pieces proot lacks",
+      "Slow session startup"
+    ],
+    "installCommand": "apt install gnome-session gnome-shell",
+    "status": "experimental",
+    "verification": "experimental"
+  },
+  {
+    "id": "cinnamon",
+    "name": "Cinnamon",
+    "performance": "partial",
+    "memoryUsageMb": "700-1000",
+    "responsiveness": "Fair",
+    "touchFriendliness": "Fair",
+    "recommendedDevices": "12GB+ devices, experimentation only",
+    "summary": "Works with effort; compositing needs to be toned down.",
+    "advantages": [
+      "Pleasant modern-traditional design"
+    ],
+    "disadvantages": [
+      "Compositor issues under proot",
+      "Heavier than XFCE/MATE"
+    ],
+    "installCommand": "apt install cinnamon-desktop-environment",
+    "status": "experimental",
+    "verification": "needs-testing"
+  }
+]

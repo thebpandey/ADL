@@ -1,0 +1,8 @@
+{
+  "label": "Peripherals",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Keyboards, mice, and other input peripherals."
+  }
+}

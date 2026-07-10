@@ -1,0 +1,41 @@
+[
+  {
+    "id": "galaxy-s22-plus-reference",
+    "title": "Samsung Galaxy S22+ \u2014 Reference Workstation",
+    "deviceId": "samsung-galaxy-s22-plus",
+    "androidVersion": "Android 16 (One UI)",
+    "desktopMode": "Samsung DeX (wired)",
+    "linuxDistribution": "Ubuntu 24.04 via proot-distro",
+    "desktopEnvironment": "XFCE 4.18",
+    "dock": "USB-C hub with HDMI + 45W PD pass-through (5-in-1)",
+    "monitor": "1080p HDMI monitor at 60Hz",
+    "keyboard": "Bluetooth keyboard (paired via Android)",
+    "mouse": "Bluetooth mouse (paired via Android)",
+    "ssd": "USB 3.x portable SSD, exFAT, mounted through the dock",
+    "performanceNotes": [
+      "Desktop feels near-native at 1080p with compositing disabled",
+      "Sustained sessions stay smooth if background Android apps are trimmed",
+      "120Hz phone display coexists fine with the 60Hz external monitor"
+    ],
+    "knownIssues": [
+      "Samsung Auto Blocker silently blocks the Termux:X11 APK during installation",
+      "Brief display flicker when returning to Termux:X11 from the background",
+      "Alt+Tab is intercepted by DeX before reaching XFCE"
+    ],
+    "workarounds": [
+      "Temporarily disable Auto Blocker and allow the installer source, then re-enable \u2014 see the Termux:X11 guide",
+      "Wait 1-2 seconds or switch away and back to the app",
+      "Remap window switching in XFCE, e.g. to Super+Tab"
+    ],
+    "dateTested": "July 2026",
+    "verifiedBy": "maintainer",
+    "verification": "maintainer-verified",
+    "version": {
+      "androidVersion": "Android 16",
+      "linuxVersion": "Ubuntu 24.04",
+      "desktopVersion": "XFCE 4.18",
+      "documentationVersion": "1.0",
+      "verificationDate": "2026-07-10"
+    }
+  }
+]

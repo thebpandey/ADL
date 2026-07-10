@@ -116,6 +116,16 @@ for (const file of walk(DOCS)) {
     prerequisites: fm.prerequisites || [],
     nextTopics: fm.next_topics || [],
     relatedTopics: fm.related_topics || [],
+    // Part 14 — compatibility frontmatter extensions
+    device: fm.device || null,
+    androidVersion: fm.android_version || null,
+    linuxDistribution: fm.linux_distribution || null,
+    desktopEnvironment: fm.desktop_environment || null,
+    verified: fm.verified === "true" || fm.verified === true || null,
+    verificationDate: fm.verification_date || null,
+    maintainer: fm.maintainer || null,
+    communityVerified: fm.community_verified === "true" || null,
+    compatibilityLevel: fm.compatibility_level || null,
     commands: extractCommands(body),
   });
 }
@@ -171,7 +181,10 @@ const ai = {
     commandMetadata: "pages[].commands",
     troubleshootingMetadata: "pages[] where category == 'troubleshooting'",
     learningMetadata: "pages[].{prerequisites,nextTopics,previousTopics,relatedTopics}",
-    compatibilityMetadata: "pages[].{compatibility,testedDevice,testedAndroidVersion}",
+    compatibilityMetadata: "pages[].{compatibility,testedDevice,testedAndroidVersion,device,compatibilityLevel}",
+    hardwareMetadata: "/data/hardware.json (also served at /ADL/data/hardware.json)",
+    compatibilityDatabase:
+      "/data/{devices,hardware,desktop-environments,linux-distributions,android-versions,compatibility-matrix,test-results,verified-configurations}.json",
   },
   pages,
 };
@@ -180,4 +193,18 @@ fs.writeFileSync(
   JSON.stringify(ai, null, 2) + "\n",
 );
 
-console.log(`docs index: ${pages.length} pages -> src/data/docs-index.json, static/ai-metadata.json`);
+// Part 15 — publish the compatibility database as a static interface.
+const dataDir = path.join(ROOT, "data");
+const outDir = path.join(ROOT, "static/data");
+fs.mkdirSync(outDir, { recursive: true });
+let copied = 0;
+if (fs.existsSync(dataDir)) {
+  for (const f of fs.readdirSync(dataDir).filter((n) => n.endsWith(".json"))) {
+    fs.copyFileSync(path.join(dataDir, f), path.join(outDir, f));
+    copied++;
+  }
+}
+
+console.log(
+  `docs index: ${pages.length} pages -> src/data/docs-index.json, static/ai-metadata.json; ${copied} data files -> static/data/`,
+);

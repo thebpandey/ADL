@@ -1,0 +1,41 @@
+[
+  {
+    "id": "tr-s22p-2026-07",
+    "deviceId": "samsung-galaxy-s22-plus",
+    "tester": "maintainer",
+    "verification": "maintainer-verified",
+    "date": "2026-07-10",
+    "version": {
+      "androidVersion": "Android 16",
+      "linuxVersion": "Ubuntu 24.04 (proot-distro)",
+      "desktopVersion": "XFCE 4.18",
+      "documentationVersion": "1.0",
+      "verificationDate": "2026-07-10"
+    },
+    "hardwareIds": [
+      "usb-c-hdmi-pd-hub-generic",
+      "monitor-1080p",
+      "bt-keyboard-mouse-combo",
+      "portable-ssd-usb3",
+      "pd-charger-65w"
+    ],
+    "linuxDistribution": "ubuntu",
+    "desktopEnvironment": "xfce",
+    "result": "fully-supported",
+    "notes": "Full DeX workstation verified end to end, including the Samsung Auto Blocker APK workaround."
+  },
+  {
+    "id": "tr-nothing2-community",
+    "deviceId": "nothing-phone-2",
+    "tester": "community",
+    "verification": "community-verified",
+    "date": "2026-06-01",
+    "version": {
+      "androidVersion": "Android 15"
+    },
+    "linuxDistribution": "ubuntu",
+    "desktopEnvironment": "xfce",
+    "result": "partial",
+    "notes": "On-device desktop works well; no DisplayPort Alt Mode, so external display is not possible."
+  }
+]

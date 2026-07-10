@@ -1,0 +1,32 @@
+[
+  {
+    "version": "12",
+    "name": "Android 12",
+    "notes": "Earliest version the guides target for DeX-era devices. Phantom process killer can terminate Termux sessions \u2014 apply the documented workaround.",
+    "status": "partial"
+  },
+  {
+    "version": "13",
+    "name": "Android 13",
+    "notes": "Stable ADL base; phantom process limits still apply on some builds.",
+    "status": "supported"
+  },
+  {
+    "version": "14",
+    "name": "Android 14",
+    "notes": "Works well; per-app unknown-source install prompts became stricter.",
+    "status": "supported"
+  },
+  {
+    "version": "15",
+    "name": "Android 15",
+    "notes": "Works well; check background-process settings after major updates.",
+    "status": "supported"
+  },
+  {
+    "version": "16",
+    "name": "Android 16",
+    "notes": "Current reference version, verified on the Galaxy S22+. Samsung builds add Auto Blocker \u2014 see the Termux:X11 install guidance.",
+    "status": "fully-supported"
+  }
+]
