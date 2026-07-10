@@ -138,6 +138,7 @@ For the best ADL experience on the Galaxy S22+, apply these settings:
 1. **Display > Motion smoothness:** Adaptive (or High when connected to power).
 2. **Display > Screen resolution:** FHD+ (sufficient for on-device use; external monitors use their native resolution via DeX).
 3. **Battery > Background usage limits > Never sleeping apps:** Add Termux and Termux:X11.
+4. **Security and privacy > Auto Blocker:** Auto Blocker silently blocks the Termux:X11 APK during installation. Disable it temporarily while installing the app, then re-enable it — see [Termux:X11 APK will not install on Samsung devices](/docs/troubleshooting/display#termux-apk-will-not-install-on-samsung-devices).
 4. **Apps > Termux > Battery:** Set to Unrestricted.
 5. **Developer options > Don't keep activities:** Make sure this is **OFF** (it would destroy Termux:X11 when switching apps).
 

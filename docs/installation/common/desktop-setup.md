@@ -33,7 +33,7 @@ Before starting, confirm the following:
 You will be switching between two environments during this guide: the Termux shell (where you see a `$` prompt) and the Ubuntu shell inside proot-distro (where you see `root@localhost`). Pay close attention to which environment each command should be run in -- running a command in the wrong environment is one of the most common setup mistakes.
 
 <Note>
-If you have not yet installed Termux:X11, refer to [Termux:X11 Setup](/docs/learn/software/termux-x11) for installation instructions.
+If you have not yet installed Termux:X11, refer to [Termux:X11 Setup](/docs/learn/software/termux-x11) for installation instructions. Samsung devices may silently block the Termux:X11 APK — if the installer closes without installing the app, see [Termux:X11 APK will not install on Samsung devices](/docs/troubleshooting/display#termux-apk-will-not-install-on-samsung-devices).
 </Note>
 
 ## Step 1: Install XFCE Packages

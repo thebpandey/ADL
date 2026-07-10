@@ -47,6 +47,10 @@ Termux:X11 is an Android app that acts as a display server, allowing graphical L
 
 1. Download the Termux:X11 APK from the [GitHub releases page](https://github.com/termux/termux-x11/releases).
 2. Install the APK on your Android device (you may need to allow installation from unknown sources).
+
+<Warning title="Samsung devices">
+Samsung devices may silently block the Termux:X11 APK. If the installer closes without installing the app, see [Termux:X11 APK will not install on Samsung devices](/docs/troubleshooting/display#termux-apk-will-not-install-on-samsung-devices).
+</Warning>
 3. Install the Termux:X11 companion package inside Termux:
 
 <CopyCommand command="pkg install termux-x11-nightly" />
@@ -81,6 +85,14 @@ proot-distro login ubuntu --shared-tmp -- bash -c "export DISPLAY=:0; dbus-launc
 After saving (Ctrl+O, Enter, Ctrl+X), make the script executable:
 
 <CopyCommand command="chmod +x ~/start-desktop.sh" />
+
+Before the first launch, verify that both Termux:X11 components are present:
+
+<CopyCommand command="command -v termux-x11" />
+
+<CopyCommand command="pm list packages | grep termux.x11" />
+
+The first command checks the Termux-side client and should print `/data/data/com.termux/files/usr/bin/termux-x11`. The second checks the Termux:X11 Android app and should print `package:com.termux.x11`. If the first succeeds but the second returns nothing, the Android app is not installed — on Samsung devices, see [the Samsung APK troubleshooting entry](/docs/troubleshooting/display#termux-apk-will-not-install-on-samsung-devices) before continuing.
 
 <BestPractice>
 Keep the launch script in your Termux home directory. You'll run it every time you want to start your desktop. You can customize it later as you learn more.

@@ -135,6 +135,14 @@ If audio is not working, verify PulseAudio is running with `pulseaudio --check`.
 
 ## Starting the Desktop
 
+Before the first run, verify both Termux:X11 components from the Termux prompt:
+
+<CopyCommand command="command -v termux-x11" />
+
+<CopyCommand command="pm list packages | grep termux.x11" />
+
+The first command verifies the Termux-side client (`/data/data/com.termux/files/usr/bin/termux-x11`); the second verifies the Termux:X11 Android app (`package:com.termux.x11`). Both must return results, or the launch script will fail with `Termux:X11 application not found`. If only the second is missing on a Samsung device, see [Termux:X11 APK will not install on Samsung devices](/docs/troubleshooting/display#termux-apk-will-not-install-on-samsung-devices).
+
 ### startxfce4
 
 The standard way to start the XFCE desktop:

@@ -73,7 +73,7 @@ The X11 display server used by ADL to render a full graphical desktop on Android
 <DownloadCard
   name="Termux:X11 (GitHub Releases)"
   description="Pre-built APK and companion package for the Termux:X11 display server."
-  url="https://github.com/niclas-niclas/termux-x11-releases/releases"
+  url="https://github.com/termux/termux-x11/releases"
 />
 
 <Note>

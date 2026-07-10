@@ -195,6 +195,8 @@ If you must use wireless DeX for a work session, reduce the resolution to 1920x1
 
 A few issues are specific to running a Linux desktop through DeX rather than a standard Android app:
 
+**Termux:X11 is missing from the Android app list.** If the Termux:X11 Android app never installed — the APK installer closed silently — Samsung Auto Blocker is the usual cause. See [Termux:X11 APK will not install on Samsung devices](/docs/troubleshooting/display#termux-apk-will-not-install-on-samsung-devices).
+
 **Termux:X11 opens on the phone screen instead of the monitor.** This happens when DeX does not recognize Termux:X11 as a DeX-compatible app. Drag the window to the external display manually, or long-press the Termux:X11 icon in the DeX taskbar and select "Open on connected display."
 
 **Mouse cursor appears duplicated.** You may see both the XFCE cursor and the Android/DeX cursor overlapping. In Termux:X11 preferences, enable "Capture external pointer" to hide the Android cursor while the Termux:X11 window is focused.

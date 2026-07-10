@@ -63,6 +63,35 @@ After downloading, tap the APK to install it. You may need to enable "Install fr
 There is no official Termux:X11 listing on Google Play. If you find one, it is unofficial and potentially outdated or malicious. Always install from the GitHub releases page or from F-Droid.
 </Warning>
 
+### Samsung Devices: Auto Blocker
+
+<Warning title="Samsung devices may block this APK">
+Samsung devices may block the Termux:X11 APK by default. The installer may briefly display "Installing" and then close without installing the app. If Termux:X11 does not appear in Android's app list, temporarily disable Samsung Auto Blocker and allow the browser or file manager opening the APK to install unknown apps.
+</Warning>
+
+If the Termux:X11 Android app did not install, follow these steps:
+
+1. Open Samsung Settings.
+2. Go to **Security and privacy**.
+3. Open **Auto Blocker**.
+4. Temporarily turn Auto Blocker off.
+5. If **Maximum restrictions** is enabled, disable it temporarily.
+6. Go to **Security and privacy** > **More security settings** > **Install unknown apps**.
+7. Enable the permission for the app opening the APK, such as Samsung Internet, Chrome, or My Files.
+8. Reopen the APK from My Files or the browser and complete the installation.
+9. Confirm Termux:X11 appears in Android **Settings** > **Apps**.
+10. Verify from Termux:
+
+<CopyCommand command="pm list packages | grep termux.x11" />
+
+<ExpectedResult>
+package:com.termux.x11
+</ExpectedResult>
+
+<Note title="Re-enable your security settings">
+Re-enable Auto Blocker and remove the temporary unknown-app installation permission after Termux:X11 is installed. These protections should stay on for everyday use.
+</Note>
+
 ### Step 2: Install the Termux Companion Package
 
 Inside Termux, install the companion package that creates the display socket:

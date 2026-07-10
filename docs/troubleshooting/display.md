@@ -83,6 +83,42 @@ To resize an active X session from within the proot environment:
 
 ---
 
+## Termux:X11 APK Will Not Install on Samsung Devices
+
+### Symptoms
+
+- The APK installer briefly says "Installing" and then disappears.
+- No success or failure message is shown.
+- Termux:X11 is missing from Android's app list (Settings > Apps).
+- The `termux-x11` command exists inside Termux.
+- `pm list packages | grep termux.x11` returns no output.
+- Launching the desktop script reports `Termux:X11 application not found`.
+
+### Cause
+
+Samsung Auto Blocker or the per-app **Install unknown apps** permission is blocking the APK. The installer is dismissed silently, so no error is shown.
+
+<Note title="Two separate components">
+Installing `termux-x11-nightly` inside Termux does not install the Android Termux:X11 application. The Termux-side client and the Termux:X11 Android app are separate components, and both are required.
+</Note>
+
+### Resolution
+
+1. Temporarily disable Samsung Auto Blocker (Settings > Security and privacy > Auto Blocker). If **Maximum restrictions** is enabled, disable it temporarily as well.
+2. Allow My Files, Samsung Internet, Chrome, or whichever app is opening the APK to install unknown apps (Settings > Security and privacy > More security settings > Install unknown apps).
+3. Install the APK again from My Files or the browser.
+4. Confirm the Android package exists:
+
+<CopyCommand command="pm list packages | grep termux.x11" />
+
+<ExpectedResult>
+package:com.termux.x11
+</ExpectedResult>
+
+5. Re-enable Auto Blocker and remove the temporary unknown-app permission afterward.
+
+The full step-by-step walkthrough lives in [Termux:X11 setup — Samsung Devices: Auto Blocker](/docs/learn/software/termux-x11#samsung-devices-auto-blocker).
+
 ## Termux:X11 Not Connecting
 
 Connection failures between Termux and the X11 companion app prevent the desktop from displaying entirely.
