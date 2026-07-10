@@ -6,6 +6,13 @@ description: "Troubleshooting slow performance, high resource usage, and applica
 
 # Performance Issues
 
+<SvgDiagram
+  src="/img/diagrams/troubleshooting/diagram-performance-troubleshooting.svg"
+  alt="Hand-drawn flow: slow desktop, close apps, check RAM, reduce desktop effects, reboot, use lighter components, smooth again"
+  caption="The fastest fixes first"
+/>
+
+
 Running a full Linux desktop through proot on Android introduces inherent overhead. This guide covers common performance problems and practical solutions to get the best experience out of ADL.
 
 <Note>

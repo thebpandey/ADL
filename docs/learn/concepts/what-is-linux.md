@@ -44,6 +44,12 @@ Every computing device needs an operating system. The most common ones are:
 | iOS | iPhones and iPads | Apple |
 | Linux | Servers, PCs, embedded devices | Community (open source) |
 
+<SvgDiagram
+  src="/img/diagrams/concepts/diagram-linux-components.svg"
+  alt="Hand-drawn diagram of a Linux system: kernel at the bottom talking to hardware, with shell, packages, desktop, apps, and user files in userspace above"
+  caption="The parts of a Linux system"
+/>
+
 ## Kernel vs. Distribution
 
 Linux is actually two things, and understanding the difference is important.

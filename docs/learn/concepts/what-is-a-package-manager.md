@@ -6,6 +6,13 @@ description: Understanding package managers — how Linux installs, updates, and
 
 # What is a Package Manager?
 
+<SvgDiagram
+  src="/img/diagrams/troubleshooting/diagram-package-troubleshooting.svg"
+  alt="Hand-drawn flow: package error, update package lists, fix broken packages, clear cache, retry install, installed"
+  caption="The standard recovery sequence for package errors"
+/>
+
+
 A package manager is a tool that **installs, updates, and removes software** on your system. Think of it as an app store that you control from the command line. Instead of browsing a store and tapping "Install," you type a command and the package manager handles everything: downloading the software, installing its dependencies, and placing files in the right locations.
 
 In ADL, you work with two package managers: **pkg** in Termux and **apt** in Ubuntu. Understanding which one to use and when is essential.
