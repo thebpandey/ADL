@@ -25,8 +25,8 @@ export default function HeroImage({ image, alt, caption }: HeroImageProps) {
         alt={alt}
         loading="lazy"
         decoding="async"
-        width={512}
-        height={512}
+        width={1280}
+        height={720}
         className={styles.heroImage}
       />
       {caption && (

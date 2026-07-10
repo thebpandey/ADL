@@ -1,6 +1,6 @@
 .heroFigure {
-  margin: 0 auto 2rem;
-  max-width: 420px;
+  margin: 0 0 2rem;
+  max-width: 100%;
   text-align: center;
 }
 
@@ -26,7 +26,6 @@
 
 @media (max-width: 600px) {
   .heroFigure {
-    max-width: 300px;
     margin-bottom: 1.5rem;
   }
 }
