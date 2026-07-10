@@ -1,0 +1,13 @@
+.grid {
+  display: grid;
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.grid > * {
+  min-width: 0;
+}
+
+.grid :global(p:last-child) {
+  margin-bottom: 0;
+}

@@ -1,0 +1,58 @@
+.card {
+  border: 1px solid var(--adl-border-color, var(--ifm-color-emphasis-200));
+  border-radius: 12px;
+  padding: 0;
+  margin-bottom: 0.75rem;
+  background: var(--adl-card-bg, transparent);
+  overflow: hidden;
+}
+
+.problem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.problem::-webkit-details-marker {
+  display: none;
+}
+
+.problem::after {
+  content: "▾";
+  margin-left: auto;
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-600));
+  transition: transform 0.15s ease;
+}
+
+.card[open] .problem::after {
+  transform: rotate(180deg);
+}
+
+.problem:hover {
+  background: color-mix(in srgb, var(--ifm-color-primary) 5%, transparent);
+}
+
+.problem:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: -2px;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+.solution {
+  padding: 0 1.25rem 1rem 3rem;
+  font-size: 0.8425rem;
+  line-height: 1.65;
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-700));
+}
+
+.solution > :last-child {
+  margin-bottom: 0;
+}

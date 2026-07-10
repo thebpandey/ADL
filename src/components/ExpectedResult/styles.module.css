@@ -1,0 +1,27 @@
+.panel {
+  border: 1px solid var(--adl-border-color, var(--ifm-color-emphasis-200));
+  border-left: 4px solid var(--ifm-color-success-dark, #16a34a);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  background: color-mix(in srgb, var(--ifm-color-success) 6%, var(--adl-card-bg, transparent));
+}
+
+.header {
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ifm-color-success-darkest, #15803d);
+}
+
+[data-theme="dark"] .header {
+  color: var(--ifm-color-success-lightest, #86efac);
+}
+
+.body > :last-child {
+  margin-bottom: 0;
+}

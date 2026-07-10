@@ -1,0 +1,46 @@
+.callout {
+  border: 1px solid var(--adl-border-color, var(--ifm-color-emphasis-200));
+  border-left-width: 4px;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  background: var(--adl-card-bg, transparent);
+}
+
+.header {
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.body > :last-child {
+  margin-bottom: 0;
+}
+
+.tip {
+  border-left-color: var(--ifm-color-info, #0ea5e9);
+  background: color-mix(in srgb, var(--ifm-color-info, #0ea5e9) 6%, var(--adl-card-bg, transparent));
+}
+
+.warning {
+  border-left-color: #d6a94a;
+  background: color-mix(in srgb, #d6a94a 8%, var(--adl-card-bg, transparent));
+}
+
+.danger {
+  border-left-color: var(--ifm-color-danger, #b85c5c);
+  background: color-mix(in srgb, var(--ifm-color-danger, #b85c5c) 7%, var(--adl-card-bg, transparent));
+}
+
+.note {
+  border-left-color: var(--ifm-color-emphasis-500);
+}
+
+.success {
+  border-left-color: var(--ifm-color-success-dark, #16a34a);
+  background: color-mix(in srgb, var(--ifm-color-success, #16a34a) 6%, var(--adl-card-bg, transparent));
+}

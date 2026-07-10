@@ -1,0 +1,68 @@
+.card {
+  border: 1px solid var(--adl-border-color, var(--ifm-color-emphasis-200));
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  background: var(--adl-card-bg, transparent);
+}
+
+.header {
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin-bottom: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0 0 1rem;
+}
+
+.fact {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  border: 1px solid var(--adl-border-color, var(--ifm-color-emphasis-200));
+  border-radius: 100px;
+  padding: 0.3rem 0.9rem;
+}
+
+.factLabel {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-600));
+}
+
+.factValue {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.lists {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.5rem 1.5rem;
+}
+
+.listTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-600));
+  margin-bottom: 0.35rem;
+}
+
+.list {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
