@@ -167,43 +167,31 @@ const community = [
 function Hero() {
   return (
     <header className={styles.hero}>
-      <div
-        className={styles.heroInner}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "2.5rem",
-          flexWrap: "wrap",
-        }}
-      >
-        <div style={{ flex: "1 1 320px", minWidth: 280 }}>
-          <div className={styles.heroBadge}>Open Source Project</div>
-          <h1 className={styles.heroTitle}>
-            A Full Linux Desktop
-            <br />
-            on Your Android Device
-          </h1>
-          <p className={styles.heroSubtitle}>
-            Run desktop Linux environments on Android phones and tablets. No root
-            required. Works with Samsung DeX for a complete workstation experience.
-          </p>
-          <div className={styles.heroButtons}>
-            <Link className={styles.btnPrimary} to="/docs/quick-start/overview">
-              Quick Start
-            </Link>
-            <Link
-              className={styles.btnSecondary}
-              href="https://github.com/thebpandey/ADL"
-            >
-              GitHub
-            </Link>
-          </div>
+      <div className={styles.heroInner}>
+        <div className={styles.heroBadge}>
+          An Open Source Project by Bhaskar Pandey
         </div>
-        <div style={{ flex: "1 1 320px", minWidth: 280 }}>
-          <HeroImage
-            image="hero-home.webp"
-            alt="Friendly robot mascot at a desk running a full Linux desktop from an Android phone connected to a monitor, keyboard, and mouse"
-          />
+        <h1 className={styles.heroTitle}>
+          A Full Linux Desktop on Your Android Device
+        </h1>
+        <HeroImage
+          image="hero-home.webp"
+          alt="Friendly robot mascot at a desk running a full Linux desktop from an Android phone connected to a monitor, keyboard, and mouse"
+        />
+        <p className={styles.heroSubtitle}>
+          Run desktop Linux environments on Android phones and tablets. No root
+          required. Works with Samsung DeX for a complete workstation experience.
+        </p>
+        <div className={styles.heroButtons}>
+          <Link className={styles.btnPrimary} to="/docs/quick-start/overview">
+            Quick Start
+          </Link>
+          <Link
+            className={styles.btnSecondary}
+            href="https://github.com/thebpandey/ADL"
+          >
+            GitHub
+          </Link>
         </div>
       </div>
     </header>

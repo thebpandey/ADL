@@ -8,7 +8,7 @@
 }
 
 .heroInner {
-  max-width: 720px;
+  max-width: 880px;
   margin: 0 auto;
 }
 
@@ -31,11 +31,12 @@
 }
 
 .heroTitle {
-  font-size: 3.5rem;
+  font-size: clamp(1.5rem, 2.6vw, 2.3rem);
   font-weight: 800;
   letter-spacing: -0.035em;
-  line-height: 1.1;
-  margin-bottom: 1.25rem;
+  line-height: 1.15;
+  white-space: nowrap;
+  margin-bottom: 2rem;
   color: var(--ifm-color-emphasis-900);
 }
 
@@ -44,9 +45,6 @@
   line-height: 1.6;
   color: var(--adl-text-muted);
   margin-bottom: 2.5rem;
-  max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .heroButtons {
@@ -350,7 +348,7 @@
   }
 
   .heroTitle {
-    font-size: 2.5rem;
+    white-space: normal;
   }
 
   .heroSubtitle {
@@ -382,7 +380,7 @@
   }
 
   .heroTitle {
-    font-size: 2rem;
+    white-space: normal;
   }
 
   .heroSubtitle {
