@@ -1,0 +1,70 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.search {
+  border: 1px solid var(--adl-border-color, var(--ifm-color-emphasis-300));
+  border-radius: 8px;
+  padding: 0.45rem 0.8rem;
+  font: inherit;
+  font-size: 0.8425rem;
+  background: var(--adl-card-bg, var(--ifm-background-color));
+  color: inherit;
+  max-width: 380px;
+}
+
+.search:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 1px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chip {
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid var(--adl-border-color, var(--ifm-color-emphasis-300));
+  border-radius: 100px;
+  padding: 0.25rem 0.8rem;
+  background: var(--adl-card-bg, transparent);
+  color: inherit;
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 1px;
+}
+
+.active {
+  background: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 0.9rem;
+}
+
+.grid > div {
+  margin-bottom: 0;
+}
+
+.empty {
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-600));
+  font-size: 0.875rem;
+}

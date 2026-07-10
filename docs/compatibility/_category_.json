@@ -1,0 +1,8 @@
+{
+  "label": "Compatibility Database",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "The authoritative compatibility database for Android Desktop Linux: devices, hardware, distributions, and verified configurations."
+  }
+}

@@ -1,0 +1,71 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 100px;
+  border: 1px solid currentColor;
+  padding: 0.15rem 0.7rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.compact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  font-size: 0.75rem;
+  font-weight: 800;
+  cursor: help;
+}
+
+.full {
+  color: #4e6b42;
+  background: color-mix(in srgb, #7a9a6a 16%, transparent);
+}
+
+.ok {
+  color: #557246;
+  background: color-mix(in srgb, #7a9a6a 8%, transparent);
+}
+
+.partial {
+  color: #7d6120;
+  background: color-mix(in srgb, #d6a94a 14%, transparent);
+}
+
+.experimental {
+  color: #6b5385;
+  background: color-mix(in srgb, #8a7ba8 14%, transparent);
+}
+
+.broken {
+  color: #8a3c3c;
+  background: color-mix(in srgb, #b85c5c 14%, transparent);
+}
+
+.untested {
+  color: var(--adl-text-muted, #6b7280);
+  background: color-mix(in srgb, #8a8178 10%, transparent);
+}
+
+[data-theme="dark"] .full,
+[data-theme="dark"] .ok {
+  color: #a8c79a;
+}
+
+[data-theme="dark"] .partial {
+  color: #e5c675;
+}
+
+[data-theme="dark"] .experimental {
+  color: #c1b3dd;
+}
+
+[data-theme="dark"] .broken {
+  color: #d9a0a0;
+}

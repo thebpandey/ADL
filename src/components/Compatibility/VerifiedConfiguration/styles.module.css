@@ -1,0 +1,57 @@
+.badges {
+  margin-bottom: 0.9rem;
+}
+
+.card {
+  border: 1px solid var(--adl-border-color, var(--ifm-color-emphasis-200));
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  background: var(--adl-card-bg, transparent);
+  margin-bottom: 1.25rem;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: 0.6rem 1.5rem;
+  margin: 0;
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+}
+
+.factLabel {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-600));
+}
+
+.factValue {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.section {
+  margin-bottom: 1.25rem;
+}
+
+.heading {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.list {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.875rem;
+  line-height: 1.75;
+}
+
+.workaround {
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-700));
+}

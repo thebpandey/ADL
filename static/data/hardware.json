@@ -1,0 +1,137 @@
+[
+  {
+    "id": "usb-c-hdmi-pd-hub-generic",
+    "name": "USB-C hub with HDMI + 45W PD (generic 5-in-1)",
+    "category": "usb-c-dock",
+    "description": "The baseline ADL dock: HDMI out, USB-A ports, and Power Delivery pass-through.",
+    "keySpecs": [
+      "HDMI 4K@30 or 1080p@60",
+      "USB PD pass-through 45W+",
+      "2x USB-A"
+    ],
+    "worksWith": [
+      "samsung-galaxy-s22-plus"
+    ],
+    "status": "fully-supported",
+    "verification": "maintainer-verified",
+    "version": {
+      "verificationDate": "2026-07-10"
+    },
+    "notes": "Category verified with the reference device; any hub meeting these specs should behave the same."
+  },
+  {
+    "id": "hdmi-4k60-dock",
+    "name": "USB-C dock with HDMI 2.0 (4K@60)",
+    "category": "usb-c-dock",
+    "description": "Higher-bandwidth dock for 4K monitors at 60Hz.",
+    "keySpecs": [
+      "HDMI 2.0 4K@60",
+      "USB PD 65W+",
+      "USB-A + Ethernet"
+    ],
+    "status": "supported",
+    "verification": "community-verified",
+    "notes": "Requires a phone whose DP Alt Mode carries 4 lanes."
+  },
+  {
+    "id": "monitor-1080p",
+    "name": "1080p HDMI monitor (any brand)",
+    "category": "monitor",
+    "description": "Full HD monitors are the sweet spot for ADL: sharp, fast, and light on the GPU.",
+    "keySpecs": [
+      "1920x1080",
+      "HDMI input",
+      "60Hz"
+    ],
+    "worksWith": [
+      "samsung-galaxy-s22-plus"
+    ],
+    "status": "fully-supported",
+    "verification": "maintainer-verified"
+  },
+  {
+    "id": "monitor-1440p",
+    "name": "1440p HDMI monitor (any brand)",
+    "category": "monitor",
+    "description": "QHD works well on flagship phones; expect slightly higher GPU load.",
+    "keySpecs": [
+      "2560x1440",
+      "HDMI input",
+      "60Hz"
+    ],
+    "status": "supported",
+    "verification": "community-verified"
+  },
+  {
+    "id": "portable-ssd-usb3",
+    "name": "USB 3.x portable SSD",
+    "category": "storage",
+    "description": "External SSD mounted through the dock, visible to Android and Linux via shared storage.",
+    "keySpecs": [
+      "USB 3.x",
+      "exFAT recommended",
+      "Bus-powered"
+    ],
+    "worksWith": [
+      "samsung-galaxy-s22-plus"
+    ],
+    "status": "supported",
+    "verification": "maintainer-verified",
+    "notes": "Use exFAT for cross-compatibility; ext4 requires extra setup on Android."
+  },
+  {
+    "id": "bt-keyboard-mouse-combo",
+    "name": "Bluetooth keyboard + mouse combo",
+    "category": "input",
+    "description": "Wireless input paired through Android; events pass into the Linux desktop.",
+    "keySpecs": [
+      "Bluetooth 5.x",
+      "Multi-device pairing helpful"
+    ],
+    "worksWith": [
+      "samsung-galaxy-s22-plus"
+    ],
+    "status": "fully-supported",
+    "verification": "maintainer-verified"
+  },
+  {
+    "id": "usb-a-keyboard",
+    "name": "Wired USB-A keyboard",
+    "category": "input",
+    "description": "Plugged into the dock; zero pairing, zero latency.",
+    "keySpecs": [
+      "USB-A",
+      "Any layout"
+    ],
+    "status": "fully-supported",
+    "verification": "community-verified"
+  },
+  {
+    "id": "phone-stand",
+    "name": "Adjustable phone stand",
+    "category": "accessory",
+    "description": "Keeps the phone visible and cool while it drives the desktop.",
+    "keySpecs": [
+      "Ventilated designs help thermals"
+    ],
+    "status": "supported",
+    "verification": "community-verified"
+  },
+  {
+    "id": "pd-charger-65w",
+    "name": "65W USB PD charger",
+    "category": "power-delivery",
+    "description": "Powers the dock and keeps the phone charging under desktop load.",
+    "keySpecs": [
+      "USB PD 3.0",
+      "65W",
+      "USB-C"
+    ],
+    "worksWith": [
+      "samsung-galaxy-s22-plus"
+    ],
+    "status": "fully-supported",
+    "verification": "maintainer-verified",
+    "notes": "Pick a charger rated above the dock's pass-through so the hub's own draw is covered."
+  }
+]

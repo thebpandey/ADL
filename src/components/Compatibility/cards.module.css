@@ -1,0 +1,85 @@
+.card {
+  border: 1px solid var(--adl-border-color, var(--ifm-color-emphasis-200));
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  background: var(--adl-card-bg, transparent);
+  margin-bottom: 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 0.9375rem;
+}
+
+.kicker {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ifm-color-primary);
+  display: block;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr));
+  gap: 0.35rem 1.25rem;
+  margin: 0.5rem 0 0;
+  font-size: 0.8125rem;
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+}
+
+.factLabel {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-600));
+}
+
+.factValue {
+  margin: 0;
+  font-weight: 600;
+}
+
+.notes {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-600));
+  margin: 0.6rem 0 0;
+}
+
+.list {
+  margin: 0.35rem 0 0;
+  padding-left: 1.2rem;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.grid .card {
+  margin-bottom: 0;
+}
+
+.link {
+  font-size: 0.8125rem;
+  font-weight: 600;
+}

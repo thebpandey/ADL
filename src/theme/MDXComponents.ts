@@ -51,6 +51,12 @@ import HardwareCard from "@site/src/components/Downloads/HardwareCard";
 import VerificationBanner from "@site/src/components/Verification/VerificationBanner";
 import LearningPathNav from "@site/src/components/Learning/LearningPathNav";
 import RelatedArticles from "@site/src/components/Navigation/RelatedArticles";
+import TestStatusBadge from "@site/src/components/Compatibility/TestStatusBadge";
+import CompatibilityMatrix from "@site/src/components/Compatibility/CompatibilityMatrix";
+import HardwareDatabase from "@site/src/components/Compatibility/HardwareDatabase";
+import VerifiedConfiguration from "@site/src/components/Compatibility/VerifiedConfiguration";
+import { DeviceCard, DeviceCardGrid, HardwareEntryCard, CompatibilityCard, VersionCard, HardwareRequirements } from "@site/src/components/Compatibility/cards";
+import { DistroProfile, DesktopEnvProfile, AndroidVersionList } from "@site/src/components/Compatibility/profiles";
 
 export default {
   ...MDXComponents,
@@ -108,4 +114,17 @@ export default {
   VerificationBanner,
   LearningPathNav,
   RelatedArticles,
+  TestStatusBadge,
+  CompatibilityMatrix,
+  HardwareDatabase,
+  VerifiedConfiguration,
+  DeviceCard,
+  DeviceCardGrid,
+  HardwareEntryCard,
+  CompatibilityCard,
+  VersionCard,
+  HardwareRequirements,
+  DistroProfile,
+  DesktopEnvProfile,
+  AndroidVersionList,
 };

@@ -1,0 +1,9 @@
+{
+  "label": "Linux Distributions",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "How each distribution behaves under proot on Android.",
+    "slug": "/category/compat-linux-distributions"
+  }
+}
