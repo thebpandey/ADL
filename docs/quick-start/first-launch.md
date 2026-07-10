@@ -36,6 +36,10 @@ Everything is installed. Time to launch your Linux desktop.
 
 ## Step 1: Start the Desktop
 
+<Tip title="Preflight check">
+If this is your very first launch, confirm both Termux:X11 components exist: `command -v termux-x11` (Termux-side client) and `pm list packages | grep termux.x11` (Android app). If the second returns nothing on a Samsung device, see [Termux:X11 APK will not install on Samsung devices](/docs/troubleshooting/display#termux-apk-will-not-install-on-samsung-devices).
+</Tip>
+
 <CopyCommand command="~/start-desktop.sh" />
 
 <ExpectedResult>

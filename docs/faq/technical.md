@@ -10,6 +10,10 @@ In-depth answers to common technical questions about ADL's architecture, capabil
 
 <FAQ items={[
   {
+    question: "Why does the Termux:X11 APK not install on my Samsung phone?",
+    answer: "Samsung Auto Blocker or the per-app Install unknown apps permission silently dismisses the installer. Temporarily disable Auto Blocker, allow your browser or My Files to install unknown apps, install the APK, then re-enable the protections. See Troubleshooting > Display Issues > 'Termux:X11 APK Will Not Install on Samsung Devices' for full steps."
+  },
+  {
     question: "What Linux kernel version does it use?",
     answer: "ADL does not ship or run its own Linux kernel. Instead, it uses the Linux kernel that is already built into your Android device's firmware. Proot translates system calls from the Ubuntu userspace to the host Android kernel, so your kernel version matches whatever your device manufacturer shipped. You can check it by running 'uname -r' inside the proot environment."
   },

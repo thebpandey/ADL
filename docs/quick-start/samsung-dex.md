@@ -108,6 +108,10 @@ For the best DeX experience, keep your Samsung device plugged into power through
 For a comprehensive DeX guide including advanced display configuration, multi-monitor setups, and performance optimization, see [Samsung DeX Setup](/docs/samsung/dex-overview).
 </Note>
 
+<Note title="Termux:X11 application not found?">
+If launching reports `Termux:X11 application not found`, the Termux:X11 Android app is missing even though the Termux-side client is installed. Samsung Auto Blocker can silently block the APK — see [Termux:X11 APK will not install on Samsung devices](/docs/troubleshooting/display#termux-apk-will-not-install-on-samsung-devices).
+</Note>
+
 <Troubleshooting items={[
   {
     problem: "DeX not detecting the external monitor",

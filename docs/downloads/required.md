@@ -94,11 +94,15 @@ Termux:X11 is a display server companion app for Termux. It provides the graphic
 <DownloadCard
   name="Termux:X11"
   description="X11 display server for Termux. Renders the Linux desktop GUI on your Android device's screen."
-  url="https://github.com/niclas-niclas/Termux-X11/releases"
+  url="https://github.com/termux/termux-x11/releases"
   version="Latest (GitHub Releases)"
   size="~15 MB"
   icon="display"
 />
+
+<Warning title="Samsung devices">
+Samsung devices may silently block the Termux:X11 APK. If the installer closes without installing the app, see [Termux:X11 APK will not install on Samsung devices](/docs/troubleshooting/display#termux-apk-will-not-install-on-samsung-devices).
+</Warning>
 
 ### How Termux:X11 works
 
@@ -106,7 +110,7 @@ Traditional Linux desktops use an X11 or Wayland display server to render window
 
 ### Installing Termux:X11
 
-1. Visit the [Termux:X11 releases page](https://github.com/niclas-niclas/Termux-X11/releases) on your phone's browser.
+1. Visit the [Termux:X11 releases page](https://github.com/termux/termux-x11/releases) on your phone's browser.
 2. Download the latest `.apk` file from the **Assets** section of the most recent release.
 3. Open the downloaded APK and install it. You may need to allow installs from unknown sources for your browser if you have not already done so.
 4. Also download the companion `termux-x11.deb` file from the same release, if provided. This is the Termux-side package that enables communication between Termux and the Termux:X11 app.
