@@ -6,6 +6,13 @@ description: Understanding XFCE — the lightweight desktop environment that pow
 
 # What is XFCE?
 
+<SvgDiagram
+  src="/img/diagrams/concepts/diagram-what-is-xfce.svg"
+  alt="Hand-drawn diagram of a user interacting with the XFCE desktop layer, which launches and draws Linux applications"
+  caption="The desktop environment is the layer you touch"
+/>
+
+
 XFCE (pronounced "ecks-fce") is a **lightweight, open-source desktop environment** for Linux. It gives you a full graphical interface -- windows, menus, a taskbar, a file manager -- while using far less memory and CPU than heavier alternatives like GNOME or KDE Plasma. This efficiency is why ADL recommends XFCE for running a Linux desktop on your phone.
 
 ## A Brief History

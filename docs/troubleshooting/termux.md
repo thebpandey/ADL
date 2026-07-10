@@ -6,6 +6,15 @@ description: "Troubleshooting Termux-specific problems including package managem
 
 # Termux Issues
 
+<SvgDiagram
+  src="/img/diagrams/troubleshooting/diagram-installation-troubleshooting.svg"
+  alt="Hand-drawn flow: command failed, check internet, update packages, check storage, retry, reinstall component, working again"
+  caption="When an install command fails, check in this order"
+/>
+
+{/* TODO: this diagram is intended for a dedicated installation troubleshooting page if one is created later */}
+
+
 This page covers common problems specific to Termux itself --- package management failures, permission errors, Android killing Termux in the background, and storage access. For installation issues, see [Install Termux](/docs/quick-start/install-termux). For commands reference, see [Termux Commands](/docs/reference/commands/termux-commands).
 
 <Warning>

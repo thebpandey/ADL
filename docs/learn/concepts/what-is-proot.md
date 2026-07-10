@@ -6,6 +6,13 @@ description: Understanding proot — the tool that lets you run a full Linux dis
 
 # What is proot?
 
+<SvgDiagram
+  src="/img/diagrams/concepts/diagram-what-is-proot.svg"
+  alt="Hand-drawn diagram of Ubuntu running inside a dashed proot boundary within Android, with a padlock noting the warranty stays intact"
+  caption="A protected workspace inside Android — no root"
+/>
+
+
 **proot** is a program that lets you run a complete Linux distribution on your Android phone without needing root (administrator) access. It works by intercepting system calls and translating them so that programs believe they are running on a real Linux computer.
 
 In the ADL stack, proot is the layer that makes it possible to run Ubuntu and a full desktop environment inside Termux.

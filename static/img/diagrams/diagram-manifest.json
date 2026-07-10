@@ -2,7 +2,8 @@
   "$schema": "Diagram manifest for the ADL engineering-notebook SVG system",
   "style": "ADL engineering notebook: warm paper, ink linework, pencil construction lines, watercolor fills",
   "phases": {
-    "3A": "foundational architecture, installation, and connectivity diagrams"
+    "3A": "foundational architecture, installation, and connectivity diagrams",
+    "3B": "troubleshooting flows and learning concept diagrams"
   },
   "diagrams": [
     {
@@ -173,6 +174,141 @@
       "phase": "3A",
       "recommendedPages": [
         "/docs/learn/hardware/recommended-setup"
+      ]
+    },
+    {
+      "filename": "diagram-troubleshooting-overview.svg",
+      "path": "/img/diagrams/troubleshooting/diagram-troubleshooting-overview.svg",
+      "category": "troubleshooting",
+      "title": "Troubleshooting triage",
+      "description": "A problem fans out to five lanes: display, install, performance, permissions, packages.",
+      "phase": "3B",
+      "recommendedPages": [
+        "/docs/troubleshooting/overview"
+      ]
+    },
+    {
+      "filename": "diagram-display-troubleshooting.svg",
+      "path": "/img/diagrams/troubleshooting/diagram-display-troubleshooting.svg",
+      "category": "troubleshooting",
+      "title": "Display troubleshooting flow",
+      "description": "No display: check cable, dock, monitor input, desktop mode, then Termux:X11.",
+      "phase": "3B",
+      "recommendedPages": [
+        "/docs/troubleshooting/display"
+      ]
+    },
+    {
+      "filename": "diagram-installation-troubleshooting.svg",
+      "path": "/img/diagrams/troubleshooting/diagram-installation-troubleshooting.svg",
+      "category": "troubleshooting",
+      "title": "Installation troubleshooting flow",
+      "description": "Command failed: check internet, update packages, check storage, retry, reinstall.",
+      "phase": "3B",
+      "recommendedPages": [
+        "/docs/troubleshooting/termux"
+      ]
+    },
+    {
+      "filename": "diagram-performance-troubleshooting.svg",
+      "path": "/img/diagrams/troubleshooting/diagram-performance-troubleshooting.svg",
+      "category": "troubleshooting",
+      "title": "Performance troubleshooting flow",
+      "description": "Slow desktop: close apps, check RAM, reduce effects, reboot, use lighter components.",
+      "phase": "3B",
+      "recommendedPages": [
+        "/docs/troubleshooting/performance",
+        "/docs/performance/overview"
+      ]
+    },
+    {
+      "filename": "diagram-permission-troubleshooting.svg",
+      "path": "/img/diagrams/troubleshooting/diagram-permission-troubleshooting.svg",
+      "category": "troubleshooting",
+      "title": "Permission troubleshooting flow",
+      "description": "Permission denied: grant storage, check Android app settings, rerun, verify access.",
+      "phase": "3B",
+      "recommendedPages": [
+        "/docs/installation/common/termux-setup",
+        "/docs/troubleshooting/termux"
+      ]
+    },
+    {
+      "filename": "diagram-package-troubleshooting.svg",
+      "path": "/img/diagrams/troubleshooting/diagram-package-troubleshooting.svg",
+      "category": "troubleshooting",
+      "title": "Package troubleshooting flow",
+      "description": "Package error: update lists, fix broken packages, clear cache, retry install.",
+      "phase": "3B",
+      "recommendedPages": [
+        "/docs/learn/concepts/what-is-a-package-manager",
+        "/docs/reference/commands/apt-commands"
+      ]
+    },
+    {
+      "filename": "diagram-what-is-termux.svg",
+      "path": "/img/diagrams/concepts/diagram-what-is-termux.svg",
+      "category": "concepts",
+      "title": "What is Termux?",
+      "description": "Termux as the gateway between the Android world and Linux tools.",
+      "phase": "3B",
+      "recommendedPages": [
+        "/docs/learn/concepts/what-is-termux"
+      ]
+    },
+    {
+      "filename": "diagram-what-is-proot.svg",
+      "path": "/img/diagrams/concepts/diagram-what-is-proot.svg",
+      "category": "concepts",
+      "title": "What is proot?",
+      "description": "proot as a protected Linux workspace inside Android, no root required.",
+      "phase": "3B",
+      "recommendedPages": [
+        "/docs/learn/concepts/what-is-proot"
+      ]
+    },
+    {
+      "filename": "diagram-what-is-xfce.svg",
+      "path": "/img/diagrams/concepts/diagram-what-is-xfce.svg",
+      "category": "concepts",
+      "title": "What is a desktop environment?",
+      "description": "XFCE as the interface layer between the user and Linux applications.",
+      "phase": "3B",
+      "recommendedPages": [
+        "/docs/learn/concepts/what-is-xfce"
+      ]
+    },
+    {
+      "filename": "diagram-linux-components.svg",
+      "path": "/img/diagrams/concepts/diagram-linux-components.svg",
+      "category": "concepts",
+      "title": "Linux components",
+      "description": "Kernel, userspace, shell, packages, desktop, apps, and your files.",
+      "phase": "3B",
+      "recommendedPages": [
+        "/docs/learn/concepts/what-is-linux"
+      ]
+    },
+    {
+      "filename": "diagram-app-lifecycle.svg",
+      "path": "/img/diagrams/concepts/diagram-app-lifecycle.svg",
+      "category": "concepts",
+      "title": "Application lifecycle",
+      "description": "Click app, desktop launcher, Linux process, window appears, user interacts.",
+      "phase": "3B",
+      "recommendedPages": [
+        "/docs/applications/overview"
+      ]
+    },
+    {
+      "filename": "diagram-desktop-session.svg",
+      "path": "/img/diagrams/concepts/diagram-desktop-session.svg",
+      "category": "concepts",
+      "title": "Desktop session lifecycle",
+      "description": "Start desktop, run apps, save work, stop session, return to Android.",
+      "phase": "3B",
+      "recommendedPages": [
+        "/docs/quick-start/first-launch"
       ]
     }
   ]

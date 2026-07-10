@@ -6,6 +6,13 @@ description: Understanding Termux — the terminal emulator that brings real Lin
 
 # What is Termux?
 
+<SvgDiagram
+  src="/img/diagrams/concepts/diagram-what-is-termux.svg"
+  alt="Hand-drawn diagram of Termux as a terminal gateway between the Android world of apps and Linux tools like shell, packages, python, git, and ssh"
+  caption="Termux: one app that opens the whole Linux toolbox"
+/>
+
+
 Termux is a **free, open-source terminal emulator and Linux environment** for Android. It gives you access to a real Linux command line and thousands of Linux packages — directly on your phone, without rooting.
 
 In the ADL stack, Termux is the foundation layer. It is the app that makes everything else possible.

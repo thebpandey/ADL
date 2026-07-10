@@ -6,6 +6,13 @@ description: "How to diagnose and fix common issues with ADL."
 
 # Troubleshooting Overview
 
+<SvgDiagram
+  src="/img/diagrams/troubleshooting/diagram-troubleshooting-overview.svg"
+  alt="Hand-drawn triage diagram: a problem box fanning out to display, install, performance, permissions, and packages lanes"
+  caption="Five lanes — match your symptom to one"
+/>
+
+
 <HeroImage
   image="hero-troubleshooting.webp"
   alt="Robot mascot with a wrench diagnosing a problem on an Android Linux desktop setup"

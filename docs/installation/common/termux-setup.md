@@ -6,6 +6,15 @@ description: "Detailed guide to installing and configuring Termux on Android for
 
 # Termux Setup
 
+<SvgDiagram
+  src="/img/diagrams/troubleshooting/diagram-permission-troubleshooting.svg"
+  alt="Hand-drawn flow: permission denied, grant storage, check Android app settings, rerun command, verify folder access, access granted"
+  caption="If you hit permission denied, follow this path"
+/>
+
+{/* TODO: this diagram is intended for a dedicated storage/permissions page if one is created later */}
+
+
 Termux is a powerful terminal emulator for Android that provides a full Linux environment without requiring root access. ADL uses Termux as the foundation layer — it is the bridge between your Android device and a complete Linux desktop. Every command you run, every package you install, and every Linux distribution you set up flows through Termux.
 
 This guide walks you through each step of installing and configuring Termux in detail. If you want to understand more about what Termux is and how it works under the hood, see the [What is Termux?](/docs/learn/concepts/what-is-termux) concept guide.

@@ -8,6 +8,15 @@ difficulty: "Beginner"
 
 # First Launch
 
+<SvgDiagram
+  src="/img/diagrams/concepts/diagram-desktop-session.svg"
+  alt="Hand-drawn loop: start desktop, run apps, save work, stop session, return to Android, and start again next time"
+  caption="A full session, start to finish"
+/>
+
+{/* TODO: this diagram is intended for a dedicated desktop session page if one is created later */}
+
+
 Everything is installed. Time to launch your Linux desktop.
 
 ## Step 1: Start the Desktop

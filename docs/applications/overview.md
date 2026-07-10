@@ -6,6 +6,13 @@ description: Learn how to find and install applications in ADL using the APT pac
 
 # Installing Applications
 
+<SvgDiagram
+  src="/img/diagrams/concepts/diagram-app-lifecycle.svg"
+  alt="Hand-drawn flow: clicking an app icon triggers the desktop launcher, a Linux process starts, the window appears, and the user interacts"
+  caption="From tap to running app"
+/>
+
+
 <HeroImage
   image="hero-applications.webp"
   alt="Robot mascot surrounded by Linux application icons being installed on an Android-powered desktop"

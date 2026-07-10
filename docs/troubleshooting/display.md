@@ -6,6 +6,13 @@ description: "Troubleshooting display problems including black screens, resoluti
 
 # Display Issues
 
+<SvgDiagram
+  src="/img/diagrams/troubleshooting/diagram-display-troubleshooting.svg"
+  alt="Hand-drawn flow: no display, check cable, check dock, check monitor input, check desktop mode, check Termux:X11, display works"
+  caption="Work through the checks in order"
+/>
+
+
 Display problems are among the most common issues when running a Linux desktop on Android. Most stem from misconfigured display servers, incorrect resolution settings, or permission issues between Termux and the proot environment.
 
 ## Black Screen When Launching Desktop
