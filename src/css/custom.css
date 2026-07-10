@@ -213,14 +213,6 @@ article {
   font-size: 0.9375rem;
 }
 
-/* Comfortable reading measure; wide media may still bleed to full width */
-.theme-doc-markdown > p,
-.theme-doc-markdown > ul,
-.theme-doc-markdown > ol,
-.theme-doc-markdown > blockquote {
-  max-width: 76ch;
-}
-
 .markdown li {
   margin: 0.3rem 0;
 }
