@@ -74,7 +74,7 @@ A program that manages graphical output and input devices, acting as an intermed
 
 ### Distribution
 
-A complete operating system built around the Linux kernel, bundled with package management and pre-selected software. ADL uses Ubuntu as its distribution, providing access to Ubuntu's extensive software repositories and community support.
+A complete operating system built around the Linux kernel, bundled with package management and pre-selected software. ADL's guides use Ubuntu as their default distribution, giving access to Ubuntu's extensive software repositories and community support; other distributions are documented too.
 
 ### DNS
 
@@ -232,7 +232,7 @@ A companion Android application for Termux that provides a native X11 display se
 
 ### Ubuntu
 
-A popular Linux distribution based on Debian, known for its extensive software repositories and community support. ADL installs Ubuntu inside the proot environment, giving you access to a familiar and well-documented Linux system with thousands of available packages.
+A popular Linux distribution based on Debian, known for its extensive software repositories and community support. ADL's guides install Ubuntu inside the proot environment, giving you access to a familiar and well-documented Linux system with thousands of available packages.
 
 ### USB-C
 

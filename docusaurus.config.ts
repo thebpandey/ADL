@@ -7,8 +7,7 @@ const projectName = "ADL";
 
 const config: Config = {
   title: "Android Desktop Linux",
-  tagline:
-    "Run desktop Linux environments on Android phones and tablets — no root required",
+  tagline: "The Open Knowledge Base for Desktop Linux on Android",
   favicon: "img/favicon.ico",
 
   url: `https://${organizationName}.github.io`,
@@ -109,7 +108,7 @@ const config: Config = {
       {
         name: "description",
         content:
-          "Run desktop Linux environments on Android phones and tablets. No root required. Complete documentation for Android Desktop Linux (ADL).",
+          "Android Desktop Linux is the open-source knowledge base for desktop Linux on Android, with installation guides, hardware compatibility, troubleshooting, technical reference material, and community-tested configurations.",
       },
       { name: "author", content: "Bhaskar Pandey" },
       {
@@ -119,28 +118,30 @@ const config: Config = {
       { property: "og:type", content: "website" },
       {
         property: "og:title",
-        content: "Android Desktop Linux — Full Linux Desktop on Android",
+        content:
+          "Android Desktop Linux — The Open Knowledge Base for Desktop Linux on Android",
       },
       {
         property: "og:description",
         content:
-          "Run desktop Linux environments on Android phones and tablets. No root required. Works with Samsung DeX.",
+          "The open-source knowledge base for running desktop Linux on Android: installation guides, hardware compatibility, troubleshooting, and community-tested configurations.",
       },
       { property: "og:site_name", content: "Android Desktop Linux" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "Android Desktop Linux Documentation",
+        content:
+          "Android Desktop Linux — The Open Knowledge Base for Desktop Linux on Android",
       },
       {
         name: "twitter:description",
         content:
-          "Run desktop Linux environments on Android phones and tablets. No root required.",
+          "The open-source knowledge base for running desktop Linux on Android: installation guides, hardware compatibility, troubleshooting, and community-tested configurations.",
       },
       {
         name: "keywords",
         content:
-          "android, linux, desktop, termux, samsung dex, proot, xfce, documentation",
+          "android desktop linux, desktop linux on android, knowledge base, documentation, termux, proot, samsung dex, ubuntu, debian, arch linux, xfce, hardware compatibility, mobile computing",
       },
     ],
 
@@ -162,6 +163,16 @@ const config: Config = {
           sidebarId: "docsSidebar",
           position: "left",
           label: "Docs",
+        },
+        {
+          to: "/docs/compatibility/overview",
+          position: "left",
+          label: "Compatibility",
+        },
+        {
+          to: "/docs/about",
+          position: "right",
+          label: "About",
         },
         {
           to: "/docs/support-adl",
@@ -187,6 +198,7 @@ const config: Config = {
             { label: "Quick Start", to: "/docs/quick-start/overview" },
             { label: "Learn", to: "/docs/category/learn" },
             { label: "Reference", to: "/docs/category/reference" },
+            { label: "Compatibility", to: "/docs/compatibility/overview" },
             { label: "Downloads", to: "/docs/category/downloads" },
           ],
         },
@@ -248,7 +260,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Created by Bhaskar Pandey · Android Desktop Linux Project - Almora Technology<br />Copyright © 2026 Bhaskar Pandey. Released under the MIT License. Built with Docusaurus.<br />Android Desktop Linux is an independent project, not affiliated with or endorsed by Google or Samsung.`,
+      copyright: `Android Desktop Linux is the open knowledge base for desktop Linux on Android.<br />Created by Bhaskar Pandey · Android Desktop Linux Project - Almora Technology<br />Copyright © 2026 Bhaskar Pandey. Released under the MIT License. Built with Docusaurus.<br />Android Desktop Linux is an independent project, not affiliated with or endorsed by Google or Samsung.`,
     },
 
     prism: {

@@ -6,7 +6,7 @@ description: "Completely removing ADL (Android Desktop Linux) from your device, 
 
 # Uninstall ADL
 
-There are several reasons you might want to uninstall ADL from your device:
+There are several reasons you might want to remove the Linux desktop setup you built by following ADL:
 
 - You need to reclaim storage space on your Android device.
 - You want to start fresh with a clean installation.

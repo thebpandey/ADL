@@ -98,7 +98,7 @@ Then start proot with a bind mount that makes this directory visible inside Ubun
 
 ### Method 3: Termux Shared Storage from Inside Proot
 
-If your proot launch script bind-mounts Termux's storage directory, you can access Android's shared storage directly from inside Linux. Many ADL setup scripts do this automatically. Check whether `/sdcard` or a similar path exists inside your proot environment:
+If your proot launch script bind-mounts Termux's storage directory, you can access Android's shared storage directly from inside Linux. The ADL guides set this up for you. Check whether `/sdcard` or a similar path exists inside your proot environment:
 
 <CopyCommand command="ls /sdcard" />
 

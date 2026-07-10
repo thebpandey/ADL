@@ -287,7 +287,7 @@ Do not confuse proot with rooting your phone. **proot** is a user-space tool tha
   },
   {
     question: "Can I access my Android files from inside proot?",
-    answer: "Yes, with some setup. Termux can access Android's shared storage (after running termux-setup-storage), and this storage can be mounted inside the proot environment. ADL's setup scripts typically configure this for you."
+    answer: "Yes, with some setup. Termux can access Android's shared storage (after running termux-setup-storage), and this storage can be mounted inside the proot environment. The ADL guides walk you through configuring this."
   }
 ]} />
 
