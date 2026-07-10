@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 
 interface ChecklistItem {
@@ -9,20 +9,64 @@ interface ChecklistItem {
 interface ProgressChecklistProps {
   title?: string;
   items?: ChecklistItem[];
+  /**
+   * When set, progress persists in the browser's localStorage under
+   * `adl-checklist:<storageKey>` and survives page reloads. A Reset
+   * button appears once anything is ticked.
+   */
+  storageKey?: string;
 }
 
 /**
- * Interactive progress checklist: readers can tick tasks off as they work
- * (state is local to the page visit). Fully keyboard accessible via native
- * checkboxes.
+ * Interactive progress checklist. Readers tick tasks off with mouse or
+ * keyboard; with a storageKey, progress persists locally (offline, no
+ * external services) and can be reset. Gracefully degrades: without
+ * JavaScript the static list still renders.
  */
-export default function ProgressChecklist({ title = "Progress", items = [] }: ProgressChecklistProps) {
-  const [checked, setChecked] = useState(() => items.map((i) => Boolean(i.done)));
+export default function ProgressChecklist({ title = "Progress", items = [], storageKey }: ProgressChecklistProps) {
+  const defaults = items.map((i) => Boolean(i.done));
+  const [checked, setChecked] = useState<boolean[]>(defaults);
+  const lsKey = storageKey ? `adl-checklist:${storageKey}` : null;
+
+  useEffect(() => {
+    if (!lsKey) return;
+    try {
+      const saved = window.localStorage.getItem(lsKey);
+      if (saved) {
+        const parsed = JSON.parse(saved) as boolean[];
+        if (Array.isArray(parsed) && parsed.length === items.length) setChecked(parsed);
+      }
+    } catch {
+      /* private mode or storage disabled — degrade to in-memory state */
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lsKey]);
+
+  const persist = (next: boolean[]) => {
+    setChecked(next);
+    if (lsKey) {
+      try {
+        window.localStorage.setItem(lsKey, JSON.stringify(next));
+      } catch {
+        /* ignore */
+      }
+    }
+  };
+
+  const toggle = (idx: number) => persist(checked.map((v, i) => (i === idx ? !v : v)));
+  const reset = () => {
+    persist(defaults.map(() => false));
+    if (lsKey) {
+      try {
+        window.localStorage.removeItem(lsKey);
+      } catch {
+        /* ignore */
+      }
+    }
+  };
+
   const completed = checked.filter(Boolean).length;
   const pct = items.length ? Math.round((completed / items.length) * 100) : 0;
-
-  const toggle = (idx: number) =>
-    setChecked((prev) => prev.map((v, i) => (i === idx ? !v : v)));
 
   return (
     <div className={`adl-progress-checklist ${styles.panel}`}>
@@ -30,6 +74,11 @@ export default function ProgressChecklist({ title = "Progress", items = [] }: Pr
         <span className={styles.title}>{title}</span>
         <span className={styles.count}>
           {completed}/{items.length} ({pct}%)
+          {completed > 0 && (
+            <button type="button" onClick={reset} className={styles.reset}>
+              Reset
+            </button>
+          )}
         </span>
       </div>
       <div

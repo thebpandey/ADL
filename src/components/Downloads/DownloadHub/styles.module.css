@@ -1,0 +1,91 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  border: 1px solid var(--adl-border-color, var(--ifm-color-emphasis-200));
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  background: var(--adl-card-bg, transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.icon {
+  font-size: 1.25rem;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 0.9375rem;
+}
+
+.version {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  background: var(--adl-badge-bg, var(--ifm-color-emphasis-100));
+  color: var(--adl-badge-color, var(--ifm-color-emphasis-800));
+  padding: 0.15rem 0.5rem;
+  border-radius: 100px;
+}
+
+.description {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-600));
+  margin: 0;
+  flex: 1;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.primary,
+.secondary {
+  border-radius: 8px;
+  padding: 0.35rem 0.8rem;
+  text-decoration: none;
+}
+
+.primary {
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+
+.primary:hover {
+  background: var(--ifm-color-primary-dark);
+  color: #fff;
+  text-decoration: none;
+}
+
+.secondary {
+  border: 1px solid var(--adl-border-color, var(--ifm-color-emphasis-300));
+  color: var(--ifm-color-primary);
+}
+
+.secondary:hover {
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.primary:focus-visible,
+.secondary:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}

@@ -2,11 +2,46 @@
 sidebar_position: 6
 title: "Samsung DeX Setup"
 description: "Configuring your Linux desktop with Samsung DeX for external display output"
+difficulty: Beginner
 estimated_time: "10 minutes"
-difficulty: "Beginner"
+prerequisites:
+  - /docs/quick-start/first-launch
+next_topics:
+  - /docs/samsung/dex-overview
+related_topics:
+  - /docs/learn/hardware/usb-c-hubs
+  - /docs/samsung/dex-optimization
+tested_device: "Samsung Galaxy S22+"
+tested_android_version: "Android 16"
+tested_date: "July 2026"
+last_verified: "2026-07-10"
+documentation_version: "1.0"
+compatibility:
+  - samsung-dex
+  - displayport
+  - keyboard
+  - mouse
+  - tested
+keywords:
+  - samsung dex
+  - dex
+  - external monitor
+  - usb-c hub
+  - displayport alt mode
+  - hdmi
 ---
 
 # Samsung DeX Setup
+
+
+<div>
+  <CompatibilityBadge type="samsung-dex" />
+  <CompatibilityBadge type="displayport" />
+  <CompatibilityBadge type="keyboard" />
+  <CompatibilityBadge type="mouse" />
+  <CompatibilityBadge type="tested" label="Tested on Galaxy S22+" />
+</div>
+
 
 Samsung DeX turns your Galaxy phone or tablet into a desktop workstation by connecting to an external monitor. Combined with ADL, you get a full Linux desktop on a big screen with keyboard and mouse support.
 
@@ -92,4 +127,10 @@ For a comprehensive DeX guide including advanced display configuration, multi-mo
   }
 ]} />
 
-You now have a complete Linux desktop workstation powered by your Samsung Galaxy device. For more Samsung-specific features and optimizations, visit the [Samsung](/docs/samsung/dex-overview) section.
+You now have a complete Linux desktop workstation powered by your Samsung Galaxy device.
+
+<NextSteps items={[
+  { title: "Samsung DeX Overview", description: "Go deeper: wired vs wireless DeX, optimization, and Galaxy-specific features.", to: "/docs/samsung/dex-overview" },
+  { title: "Recommended hardware", description: "Hubs, monitors, and peripherals that work well with DeX.", to: "/docs/learn/hardware/recommended-setup" },
+  { title: "Install applications", description: "Fill your new workstation with browsers, editors, and tools.", to: "/docs/applications/overview" },
+]} />

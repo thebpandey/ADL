@@ -22,7 +22,7 @@ When something goes wrong with ADL, the key to fixing it quickly is understandin
 
 This page explains how to approach diagnosing issues systematically. Start with the decision flow below to jump straight to the right page:
 
-<TroubleshootingDecisionTree />
+<TroubleshootingNavigator />
 
 ## The ADL Stack
 

@@ -2,11 +2,26 @@
 sidebar_position: 5
 title: "First Launch"
 description: "Launching your Linux desktop for the first time"
+difficulty: Beginner
 estimated_time: "5 minutes"
-difficulty: "Beginner"
+prerequisites:
+  - /docs/quick-start/install-desktop
+next_topics:
+  - /docs/quick-start/samsung-dex
+  - /docs/applications/overview
+related_topics:
+  - /docs/troubleshooting/display
+  - /docs/desktop-environments/overview
+keywords:
+  - first launch
+  - start desktop
+  - termux:x11
+  - xfce session
 ---
 
 # First Launch
+
+
 
 <SvgDiagram
   src="/img/diagrams/concepts/diagram-desktop-session.svg"
@@ -60,11 +75,13 @@ You now have a complete Linux desktop running on your Android device. You can in
 
 Now that your desktop is running, here's where to go next:
 
-- **Customize your desktop**: See [Desktop Environments](/docs/desktop-environments/overview) for themes, panels, and alternative desktops
-- **Install applications**: See [Applications](/docs/applications/overview) for installing browsers, editors, development tools, and more
-- **Samsung DeX users**: Continue to [Samsung DeX Quick Setup](/docs/quick-start/samsung-dex) to connect to external displays
-- **Learn how it works**: Visit the [Learn](/docs/category/learn) track to understand the technology stack
-- **Troubleshoot issues**: Check [Troubleshooting](/docs/troubleshooting/overview) if anything goes wrong
+<NextSteps items={[
+  { title: "Samsung DeX Setup", description: "Connect an external monitor for a full workstation experience.", to: "/docs/quick-start/samsung-dex" },
+  { title: "Install applications", description: "Browsers, editors, office tools, and development environments.", to: "/docs/applications/overview" },
+  { title: "Customize your desktop", description: "Themes, panels, and alternative desktop environments.", to: "/docs/desktop-environments/overview" },
+  { title: "Learn how it works", description: "The concepts behind Termux, proot, and display servers.", to: "/docs/category/learn" },
+  { title: "Troubleshooting", description: "If anything went wrong, start with the triage guide.", to: "/docs/troubleshooting/overview" },
+]} />
 
 <BestPractice title="Stopping the Desktop">
 To cleanly stop your desktop session, log out from XFCE (Applications > Log Out) or switch back to Termux and press Ctrl+C. Avoid just closing the Termux app, as this can leave orphaned processes.

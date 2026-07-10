@@ -1,0 +1,62 @@
+.section {
+  margin: 1.5rem 0;
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 0.9rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border: 1px solid var(--adl-border-color, var(--ifm-color-emphasis-200));
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+  background: var(--adl-card-bg, transparent);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: var(--ifm-global-shadow-md);
+  text-decoration: none;
+  color: inherit;
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+.category {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ifm-color-primary);
+}
+
+.title {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.description {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--adl-text-muted, var(--ifm-color-emphasis-600));
+}
