@@ -1,0 +1,95 @@
+{
+  "$schema": "adl-script-manifest",
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-11T03:27:26.487Z",
+  "scripts": [
+    {
+      "name": "adl-backup.sh",
+      "version": "1.0.0",
+      "sha256": "0a029a0bfe440ca97a482aa4cef1f52c32b188aa5c3059282adc88b9994ffa4f",
+      "sizeBytes": 2044,
+      "environment": "Termux host",
+      "description": "adl-backup.sh — back up an installed Linux distribution to an archive."
+    },
+    {
+      "name": "adl-configure-audio.sh",
+      "version": "1.0.0",
+      "sha256": "a4fd7a45f390a0ec29d65e31fff0ac61f77dc42af9f365056389e9883454d27b",
+      "sizeBytes": 2958,
+      "environment": "Termux host",
+      "description": "adl-configure-audio.sh — start PulseAudio forwarding for the Linux desktop."
+    },
+    {
+      "name": "adl-create-launcher.sh",
+      "version": "1.0.0",
+      "sha256": "aabd336664d552754bcad24acc2d85c497863b8435aaf918f4ed2f7b1eb1d9c6",
+      "sizeBytes": 3524,
+      "environment": "Termux host",
+      "description": "adl-create-launcher.sh — generate a one-command desktop launcher."
+    },
+    {
+      "name": "adl-create-user.sh",
+      "version": "1.0.0",
+      "sha256": "99f9a5f67fd1ef27e3d6296984667354c19017f4733abb252f7b4c87b5f58608",
+      "sizeBytes": 3971,
+      "environment": "Inside the Linux distro",
+      "description": "adl-create-user.sh — create a normal (non-root) Linux user inside the distro."
+    },
+    {
+      "name": "adl-device-report.sh",
+      "version": "1.0.0",
+      "sha256": "2f0040d0d80a5f98031e7315335dbaf975fc5c490ca9ffb84cad08403dfda690",
+      "sizeBytes": 5793,
+      "environment": "Termux host",
+      "description": "adl-device-report.sh — collect non-sensitive device facts for the ADL wizard."
+    },
+    {
+      "name": "adl-doctor.sh",
+      "version": "1.0.0",
+      "sha256": "e50b72db06f60e3800db3990bb7be471cf9b35b9a92aee346166b1cdf3d87a12",
+      "sizeBytes": 5611,
+      "environment": "Termux host",
+      "description": "adl-doctor.sh — diagnose an ADL installation. Diagnoses only; changes nothing."
+    },
+    {
+      "name": "adl-install-base.sh",
+      "version": "1.0.0",
+      "sha256": "331456c6c39f5cece972f862f1759ca0bc8869d8c740c41aa4c790fa6535e72c",
+      "sizeBytes": 2891,
+      "environment": "Termux host",
+      "description": "adl-install-base.sh — install the Termux-side base packages for ADL."
+    },
+    {
+      "name": "adl-install-desktop.sh",
+      "version": "1.0.0",
+      "sha256": "c0c0eb50d4ce9acc8b0f4489c77d658e7d04c747c1cc11f547f7851ed64346ab",
+      "sizeBytes": 3937,
+      "environment": "Inside the Linux distro",
+      "description": "adl-install-desktop.sh — install a desktop environment inside the distro."
+    },
+    {
+      "name": "adl-install-distro.sh",
+      "version": "1.0.0",
+      "sha256": "22affcce06b8eec78ea2602ed3f7be9e4fee770d9dcd43306956c56647a244b9",
+      "sizeBytes": 3223,
+      "environment": "Termux host",
+      "description": "adl-install-distro.sh — install a Linux distribution with proot-distro."
+    },
+    {
+      "name": "adl-preflight.sh",
+      "version": "1.0.0",
+      "sha256": "bfa43bbd376d77b6bbb0a1fa2f79dabe11ba76268b0309da212b4844ad83c05e",
+      "sizeBytes": 4642,
+      "environment": "Termux host",
+      "description": "adl-preflight.sh — check that this device is ready for an ADL installation."
+    },
+    {
+      "name": "adl-remove-installation.sh",
+      "version": "1.0.0",
+      "sha256": "0278390c65ff75aafc6a88971fb30eaa05115e4df1cd0d9390251f1e66b9eab3",
+      "sizeBytes": 4304,
+      "environment": "Termux host",
+      "description": "adl-remove-installation.sh — remove ADL-managed pieces, with confirmation."
+    }
+  ]
+}

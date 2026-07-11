@@ -1,0 +1,292 @@
+{
+  "$schema": "adl-wizard-issues",
+  "schemaVersion": 1,
+  "comment": "Structured known-issue records used by the wizard, device pages, and troubleshooting index. confidence uses ADL evidence levels; severity 'blocker' stops the path, 'high' produces a required warning.",
+  "issues": [
+    {
+      "id": "samsung-auto-blocker-blocks-apk",
+      "title": "Samsung Auto Blocker prevents installing the Termux:X11 APK",
+      "symptoms": ["Installation of the Termux:X11 APK is silently blocked or shows an Auto Blocker notice on One UI 6+"],
+      "affectedManufacturers": ["Samsung"],
+      "affectedManufacturerVersions": "One UI 6.0 and later",
+      "severity": "high",
+      "confidence": "adl-verified",
+      "cause": "One UI 6 ships Auto Blocker enabled by default; it blocks app installs from 'unauthorized sources' including sideloaded APKs.",
+      "diagnostics": ["Settings > Security and privacy > Auto Blocker — check whether it is On"],
+      "safeFix": "Temporarily disable Auto Blocker, install the official Termux:X11 APK, then re-enable Auto Blocker. Do not leave it disabled.",
+      "rollback": "Re-enable Auto Blocker in Settings after installation.",
+      "securityImpact": "Temporarily reduces install-source protection; restore immediately after installing.",
+      "sources": [
+        { "url": "https://www.samsung.com/us/support/answer/ANS10002082/", "title": "Samsung — Auto Blocker", "accessedAt": "2026-07-10" }
+      ],
+      "lastVerified": "2026-07-11",
+      "relatedPages": ["/docs/learn/software/termux-x11", "/docs/troubleshooting/display"]
+    },
+    {
+      "id": "termux-source-signature-mismatch",
+      "title": "Termux add-on signature mismatch between install sources",
+      "symptoms": ["Installing Termux:X11 or another add-on fails with 'App not installed' / signatures do not match previously installed version"],
+      "severity": "high",
+      "confidence": "official-doc",
+      "cause": "Termux builds from F-Droid, GitHub, and Google Play are signed with different keys; the app and all add-ons must come from the same source.",
+      "diagnostics": ["Check where Termux was installed from; TERMUX_APK_RELEASE inside Termux reports the release source"],
+      "safeFix": "Back up your data (proot-distro backup), fully uninstall Termux and all companion apps, then reinstall everything from one source (F-Droid recommended).",
+      "rollback": "Restore the backup after reinstalling.",
+      "securityImpact": "None beyond reinstalling from the official source.",
+      "sources": [
+        { "url": "https://github.com/termux/termux-app", "title": "termux-app README — installation source warnings", "accessedAt": "2026-07-11" }
+      ],
+      "lastVerified": "2026-07-11",
+      "relatedPages": ["/docs/quick-start/install-termux"]
+    },
+    {
+      "id": "phantom-process-killer",
+      "title": "Android 12+ kills background Termux processes (signal 9)",
+      "symptoms": ["[Process completed (signal 9) - press Enter] appears in Termux", "Desktop session dies when Termux goes to the background"],
+      "affectedAndroidVersions": ">=12",
+      "severity": "high",
+      "confidence": "official-doc",
+      "cause": "Android 12+ limits 'phantom' child processes (default cap 32 system-wide) and kills background children using excessive CPU.",
+      "diagnostics": ["Session dies without an error while Termux is backgrounded; Termux shows signal 9"],
+      "safeFix": "Exempt Termux from battery optimization and keep it in the foreground (notification pinned) during long installs.",
+      "workaround": "Advanced (ADB, reversible): on Android 12L/13+, 'adb shell settings put global settings_enable_monitor_phantom_procs false'. On Android 12.0, raise max_phantom_processes via device_config with sync disabled. Both are optional, documented with risks, and never run automatically by ADL.",
+      "rollback": "Re-run the same settings commands with the default values (or reset developer options).",
+      "securityImpact": "Disabling device_config sync also disables RescueParty auto-recovery until re-enabled; re-enable before OS updates.",
+      "sources": [
+        { "url": "https://github.com/agnostic-apollo/Android-Docs/blob/master/en/docs/apps/processes/phantom-cached-and-empty-processes.md", "title": "Android-Docs — phantom, cached and empty processes", "accessedAt": "2026-07-11" },
+        { "url": "https://github.com/termux/termux-app/issues/2366", "title": "termux-app #2366 — signal 9 on Android 12", "accessedAt": "2026-07-11" }
+      ],
+      "lastVerified": "2026-07-11",
+      "relatedPages": ["/docs/troubleshooting/symptom-index"]
+    },
+    {
+      "id": "audio-not-forwarded-by-default",
+      "title": "No sound in the Linux desktop until PulseAudio forwarding is configured",
+      "symptoms": ["Desktop launches but applications play no audio", "Volume controls in the desktop appear disconnected"],
+      "severity": "medium",
+      "confidence": "reproduced-community",
+      "cause": "Sound must be forwarded from the Linux environment to a PulseAudio server running in Termux; installing a desktop or PulseAudio inside the distro alone does nothing.",
+      "diagnostics": ["pgrep -f pulseaudio in Termux", "echo $PULSE_SERVER inside the distro (should be 127.0.0.1)"],
+      "safeFix": "Run PulseAudio in Termux with the localhost-only TCP module and set PULSE_SERVER=127.0.0.1 in the Linux environment (the ADL audio guide and adl-configure-audio.sh do this).",
+      "securityImpact": "The TCP module is restricted to 127.0.0.1 (device-local only); do not widen the ACL.",
+      "sources": [
+        { "url": "https://github.com/termux/termux-packages/issues/12289", "title": "termux-packages #12289 — PulseAudio in proot", "accessedAt": "2026-07-11" }
+      ],
+      "lastVerified": "2026-07-11",
+      "relatedPages": ["/docs/troubleshooting/audio"]
+    },
+    {
+      "id": "audio-broken-android-16",
+      "title": "PulseAudio output reported broken on Android 16",
+      "symptoms": ["Audio forwarding configured correctly but no sound on Android 16"],
+      "affectedAndroidVersions": "16",
+      "severity": "medium",
+      "confidence": "reproduced-community",
+      "cause": "Open upstream report of the Termux PulseAudio OpenSL ES sink failing on Android 16; not yet resolved at last verification.",
+      "diagnostics": ["Confirm the same setup works on an Android ≤15 device; check the upstream issue for status"],
+      "workaround": "Track the upstream issue; wired/Bluetooth routing changes may help in some reports.",
+      "sources": [
+        { "url": "https://github.com/termux/termux-packages/issues/27978", "title": "termux-packages #27978 — audio broken on Android 16", "accessedAt": "2026-07-11" }
+      ],
+      "lastVerified": "2026-07-11",
+      "relatedPages": ["/docs/troubleshooting/audio"]
+    },
+    {
+      "id": "proot-defaults-to-root",
+      "title": "Linux session starts as the (simulated) root user by default",
+      "symptoms": ["whoami prints root after proot-distro login", "Browsers refuse to start or warn about running as root"],
+      "severity": "medium",
+      "confidence": "official-doc",
+      "cause": "proot-distro logs in as the container's root user unless --user is passed. This is simulated root inside the container, not Android root.",
+      "safeFix": "Create a normal user and log in with 'proot-distro login <distro> --user <name>' (the guide and adl-create-user.sh do this).",
+      "sources": [
+        { "url": "https://github.com/termux/proot-distro", "title": "proot-distro README — login --user", "accessedAt": "2026-07-11" }
+      ],
+      "lastVerified": "2026-07-11",
+      "relatedPages": ["/docs/learn/concepts/linux-on-android-explained"]
+    },
+    {
+      "id": "chromium-fails-under-proot",
+      "title": "Chromium fails to start under proot (sandbox / GPU process)",
+      "symptoms": ["'Running as root without --no-sandbox is not supported'", "Chromium window never appears or crashes at startup"],
+      "affectedApps": ["chromium"],
+      "severity": "medium",
+      "confidence": "reproduced-community",
+      "cause": "Chromium's sandbox needs user namespaces that proot cannot provide as root; its GPU process also fails on the software GL stack.",
+      "safeFix": "Use Firefox (Debian firefox-esr or Mozilla's apt repo on Ubuntu). If you must try Chromium, run it as a non-root user — never adopt --no-sandbox as a default.",
+      "securityImpact": "--no-sandbox removes the browser's main security boundary; ADL does not recommend it.",
+      "sources": [
+        { "url": "https://chromium.googlesource.com/chromium/src/+/main/docs/design/sandbox_faq.md", "title": "Chromium sandbox FAQ", "accessedAt": "2026-07-11" },
+        { "url": "https://packages.debian.org/trixie/chromium", "title": "Debian chromium (real arm64 package)", "accessedAt": "2026-07-11" }
+      ],
+      "lastVerified": "2026-07-11",
+      "relatedPages": ["/docs/applications/browsers"]
+    },
+    {
+      "id": "firefox-needs-software-rendering",
+      "title": "Firefox misrenders or crashes until hardware acceleration is disabled",
+      "symptoms": ["Black or corrupted page content", "Firefox crashes on startup or when opening pages"],
+      "affectedApps": ["firefox", "firefox-esr"],
+      "severity": "medium",
+      "confidence": "field-report",
+      "cause": "The GL stack under proot + Termux:X11 is software-only and unusual; Firefox's hardware acceleration path can fail on it.",
+      "safeFix": "Settings > General > Performance: uncheck 'Use recommended performance settings', then uncheck 'Use hardware acceleration when available'. Or set gfx.webrender.software=true in about:config. Restart Firefox.",
+      "rollback": "Re-enable the same checkboxes.",
+      "sources": [
+        { "url": "https://fedoraproject.org/wiki/Firefox_Hardware_acceleration", "title": "Fedora wiki — Firefox hardware acceleration prefs", "accessedAt": "2026-07-11" }
+      ],
+      "lastVerified": "2026-07-11",
+      "relatedPages": ["/docs/applications/browsers"]
+    },
+    {
+      "id": "ubuntu-firefox-snap-stub",
+      "title": "Ubuntu's firefox/chromium packages are Snap stubs that cannot run under proot",
+      "symptoms": ["apt install firefox succeeds but Firefox does not start", "Package description says 'Transitional package - firefox -> firefox snap'"],
+      "affectedDistros": ["ubuntu"],
+      "affectedApps": ["firefox", "chromium-browser"],
+      "severity": "high",
+      "confidence": "official-doc",
+      "cause": "Ubuntu ships browser debs that only install a Snap, and snapd cannot run under proot.",
+      "safeFix": "Install Firefox from Mozilla's official apt repository (packages.mozilla.org, serves arm64), or use Debian with firefox-esr.",
+      "sources": [
+        { "url": "https://packages.ubuntu.com/noble/firefox", "title": "Ubuntu noble firefox — transitional snap package", "accessedAt": "2026-07-11" },
+        { "url": "https://packages.mozilla.org/apt/dists/mozilla/Release", "title": "Mozilla apt repo Release file (arm64 listed)", "accessedAt": "2026-07-11" }
+      ],
+      "lastVerified": "2026-07-11",
+      "relatedPages": ["/docs/applications/browsers"]
+    },
+    {
+      "id": "termux-x11-black-screen",
+      "title": "Termux:X11 shows a black screen",
+      "symptoms": ["Black screen with cursor", "Black screen without cursor"],
+      "displayMethods": ["termux-x11"],
+      "severity": "medium",
+      "confidence": "official-doc",
+      "cause": "Desktop session not started, DISPLAY not set, missing --shared-tmp, or a device-specific drawing issue.",
+      "diagnostics": ["Was the session started with the correct DISPLAY (:1)?", "Was proot-distro started with --shared-tmp?"],
+      "safeFix": "Start the session as 'termux-x11 :1 -xstartup \"dbus-launch --exit-with-session xfce4-session\"' and log in with --shared-tmp. If still black, try the -legacy-drawing flag (documented for this symptom).",
+      "sources": [
+        { "url": "https://github.com/termux/termux-x11", "title": "termux-x11 README — flags and shared tmp requirement", "accessedAt": "2026-07-11" }
+      ],
+      "lastVerified": "2026-07-11",
+      "relatedPages": ["/docs/troubleshooting/display"]
+    },
+    {
+      "id": "termux-x11-swapped-colors",
+      "title": "Termux:X11 shows swapped red/blue colors",
+      "symptoms": ["Everything renders with red and blue channels exchanged"],
+      "displayMethods": ["termux-x11"],
+      "severity": "low",
+      "confidence": "official-doc",
+      "safeFix": "Start termux-x11 with the -force-bgra flag (documented for exactly this symptom). Do not apply it preemptively.",
+      "sources": [
+        { "url": "https://github.com/termux/termux-x11", "title": "termux-x11 README — -force-bgra", "accessedAt": "2026-07-11" }
+      ],
+      "lastVerified": "2026-07-11",
+      "relatedPages": ["/docs/troubleshooting/display"]
+    },
+    {
+      "id": "hidpi-tiny-text",
+      "title": "Tiny text / wrong scaling on high-DPI screens",
+      "symptoms": ["Desktop renders with unreadably small text on the phone screen"],
+      "displayMethods": ["termux-x11"],
+      "severity": "low",
+      "confidence": "official-doc",
+      "safeFix": "Pass '-dpi 120' (or higher) to termux-x11, and/or raise the desktop's own scaling settings (Xfce: Settings > Appearance > Fonts > Custom DPI).",
+      "sources": [
+        { "url": "https://github.com/termux/termux-x11", "title": "termux-x11 README — -dpi flag", "accessedAt": "2026-07-11" }
+      ],
+      "lastVerified": "2026-07-11",
+      "relatedPages": ["/docs/troubleshooting/display"]
+    },
+    {
+      "id": "dbus-launch-failure",
+      "title": "Desktop session fails with D-Bus errors",
+      "symptoms": ["'Failed to connect to session bus'", "Session exits immediately after starting"],
+      "severity": "medium",
+      "confidence": "reproduced-community",
+      "cause": "Desktops expect a session D-Bus; under proot it must be started with the session (dbus-launch) and the dbus package must be installed.",
+      "safeFix": "Install dbus (and dbus-x11 on Debian/Ubuntu) in the distro and start the session via 'dbus-launch --exit-with-session <session-command>'.",
+      "sources": [
+        { "url": "https://github.com/termux/termux-x11", "title": "termux-x11 README — dbus-launch session examples", "accessedAt": "2026-07-11" }
+      ],
+      "lastVerified": "2026-07-11",
+      "relatedPages": ["/docs/troubleshooting/display"]
+    },
+    {
+      "id": "gnome-unsupported-proot",
+      "title": "GNOME does not work under proot",
+      "symptoms": ["gnome-session fails to start or immediately exits", "Errors about logind/systemd user session"],
+      "affectedDesktops": ["gnome"],
+      "severity": "high",
+      "confidence": "official-doc",
+      "cause": "GNOME hard-depends on logind and (since GNOME 49) the systemd user service manager; GNOME 50 removed X11 session support entirely. proot provides none of these.",
+      "safeFix": "Use Xfce, MATE, LXQt, or KDE Plasma (X11) instead. ADL documents GNOME as unsupported under proot.",
+      "sources": [
+        { "url": "https://blogs.gnome.org/adrianvovk/2025/06/10/gnome-systemd-dependencies/", "title": "GNOME development blog — systemd dependencies", "accessedAt": "2026-07-11" },
+        { "url": "https://blogs.gnome.org/alatiera/2025/06/08/the-x11-session-removal/", "title": "GNOME blog — X11 session removal", "accessedAt": "2026-07-11" }
+      ],
+      "lastVerified": "2026-07-11",
+      "relatedPages": ["/docs/desktop-environments/overview"]
+    },
+    {
+      "id": "plasma-x11-deprecation",
+      "title": "KDE Plasma is removing its X11 session (Plasma 6.8)",
+      "symptoms": ["Future distro releases shipping Plasma 6.8+ will have no startplasma-x11"],
+      "affectedDesktops": ["plasma"],
+      "severity": "low",
+      "confidence": "official-doc",
+      "cause": "KDE announced Plasma 6.8 (expected Oct 2026) ships Wayland-only; Plasma ≤6.7 keeps the X11 session. Current Debian stable (Plasma 6.3) is unaffected.",
+      "workaround": "Stay on distro releases with Plasma ≤6.7 for X11 sessions, or choose Xfce/MATE.",
+      "sources": [
+        { "url": "https://blogs.kde.org/2025/11/26/going-all-in-on-a-wayland-future/", "title": "KDE blog — Wayland future / X11 session removal", "accessedAt": "2026-07-11" }
+      ],
+      "lastVerified": "2026-07-11",
+      "relatedPages": ["/docs/desktop-environments/overview"]
+    },
+    {
+      "id": "storage-exhaustion-mid-install",
+      "title": "Installation fails partway with 'No space left on device'",
+      "symptoms": ["apt/pkg errors mentioning disk space", "Partial desktop install that will not start"],
+      "severity": "high",
+      "confidence": "adl-verified",
+      "cause": "Desktop installations download and unpack several gigabytes; running out mid-install leaves a broken package state.",
+      "diagnostics": ["df -h in Termux and inside the distro"],
+      "safeFix": "Free space, then run 'apt --fix-broken install' (Debian/Ubuntu) and retry. The wizard's storage estimate includes a safety reserve to avoid this.",
+      "sources": [
+        { "url": "https://github.com/termux/proot-distro", "title": "proot-distro README", "accessedAt": "2026-07-11" }
+      ],
+      "lastVerified": "2026-07-11",
+      "relatedPages": ["/docs/troubleshooting/symptom-index"]
+    },
+    {
+      "id": "package-manager-lock",
+      "title": "Package manager lock after an interrupted install",
+      "symptoms": ["'Could not get lock /var/lib/dpkg/lock-frontend'", "apt refuses to run"],
+      "affectedDistros": ["debian", "ubuntu"],
+      "severity": "medium",
+      "confidence": "reproduced-community",
+      "cause": "A previous apt/dpkg run was interrupted (often by Android killing the process).",
+      "safeFix": "Make sure no apt process is running (pgrep apt), then run 'dpkg --configure -a' followed by 'apt --fix-broken install'. Do not delete lock files as a first step.",
+      "sources": [
+        { "url": "https://wiki.debian.org/Teams/Dpkg/FAQ", "title": "Debian dpkg FAQ", "accessedAt": "2026-07-11" }
+      ],
+      "lastVerified": "2026-07-11",
+      "relatedPages": ["/docs/troubleshooting/symptom-index"]
+    },
+    {
+      "id": "keyboard-shortcuts-intercepted",
+      "title": "Android intercepts keyboard shortcuts meant for Linux",
+      "symptoms": ["Alt-Tab, Home, or other shortcuts act on Android instead of the desktop"],
+      "severity": "low",
+      "confidence": "field-report",
+      "cause": "Android's system shortcuts take priority over the Termux:X11 window on some devices/keyboards.",
+      "workaround": "Remap conflicting shortcuts inside the desktop, use the Termux:X11 fullscreen preference, or change Samsung DeX keyboard settings where applicable.",
+      "sources": [
+        { "url": "https://github.com/termux/termux-x11", "title": "termux-x11 README — preferences", "accessedAt": "2026-07-11" }
+      ],
+      "lastVerified": "2026-07-11",
+      "relatedPages": ["/docs/troubleshooting/symptom-index"]
+    }
+  ]
+}

@@ -153,6 +153,11 @@ const config: Config = {
       },
       items: [
         {
+          to: "/get-started",
+          position: "left",
+          label: "Get Started",
+        },
+        {
           type: "doc",
           docId: "quick-start/overview",
           position: "left",
@@ -195,6 +200,7 @@ const config: Config = {
         {
           title: "Get Started",
           items: [
+            { label: "Guided installer", to: "/get-started" },
             { label: "Quick Start", to: "/docs/quick-start/overview" },
             { label: "Learn", to: "/docs/category/learn" },
             { label: "Reference", to: "/docs/category/reference" },

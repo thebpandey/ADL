@@ -5,6 +5,17 @@ const sidebars: SidebarsConfig = {
     "intro",
     {
       type: "category",
+      label: "Get Started",
+      collapsed: false,
+      link: {
+        type: "generated-index",
+        description:
+          "The guided installer and compatibility wizard: what it does, how compatibility is assessed, and the disclaimer for personalized instructions.",
+      },
+      items: ["get-started/start-here", "get-started/methodology", "get-started/disclaimer"],
+    },
+    {
+      type: "category",
       label: "Quick Start",
       collapsed: false,
       link: { type: "doc", id: "quick-start/overview" },

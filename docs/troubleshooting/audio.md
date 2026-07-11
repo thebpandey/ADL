@@ -37,7 +37,11 @@ Confirm PulseAudio is running in Termux:
 
 If it is not running, start it with TCP module support:
 
-<CopyCommand command="pulseaudio --start --load='module-native-protocol-tcp auth-anonymous=1'" />
+<CopyCommand command="pulseaudio --start --load='module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1'" />
+
+<Note>The `auth-ip-acl=127.0.0.1` option matters: it restricts connections to this device only. Anonymous authentication is acceptable **only** because of that localhost restriction --- never widen the ACL. This forwarding recipe is the community standard (documented in Termux issue trackers), not part of official Termux documentation.</Note>
+
+<Warning>Known issue: audio output on **Android 16** has an open upstream report ([termux-packages #27978](https://github.com/termux/termux-packages/issues/27978)) affecting the PulseAudio Android sink. If your setup is correct but silent on Android 16, check that issue's status before debugging further.</Warning>
 
 Inside the proot environment, set the server address:
 
@@ -88,7 +92,7 @@ To force a lower sample rate for stability:
 
 Restart PulseAudio after making changes:
 
-<CopyCommand command="pulseaudio --kill && pulseaudio --start --load='module-native-protocol-tcp auth-anonymous=1'" />
+<CopyCommand command="pulseaudio --kill && pulseaudio --start --load='module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1'" />
 
 <Warning>
 Do not set fragment sizes below 10ms. Very small fragments increase CPU usage significantly and are more likely to cause underruns on mobile hardware, making the crackling worse rather than better.
@@ -160,7 +164,7 @@ Disable D-Bus integration if it causes startup failures (comment it out in defau
 
 Kill all existing PulseAudio instances before restarting:
 
-<CopyCommand command="pkill -9 pulseaudio; sleep 1; pulseaudio --start --load='module-native-protocol-tcp auth-anonymous=1'" />
+<CopyCommand command="pkill -9 pulseaudio; sleep 1; pulseaudio --start --load='module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1'" />
 
 Reinstall PulseAudio if modules are corrupted:
 
