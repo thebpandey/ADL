@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Check external links in docs
         uses: lycheeverse/lychee-action@v2

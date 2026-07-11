@@ -33,7 +33,7 @@ jobs:
             echo "SPONSORS_TOKEN secret not set — skipping sponsor sync."
           fi
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         if: steps.check.outputs.has_token == 'true'
 
       - name: Fetch sponsors and update files
