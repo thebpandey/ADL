@@ -176,6 +176,24 @@
   text-decoration: none;
 }
 
+.btnHero {
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 1rem 2.6rem;
+  box-shadow: 0 6px 20px rgba(62, 92, 118, 0.35);
+}
+
+.heroImageWrap {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.heroMicrocopy {
+  font-size: 0.875rem;
+  color: var(--adl-text-muted);
+  margin-top: 1rem;
+}
+
 .btnPrimary:hover {
   background: var(--ifm-color-primary-dark);
   transform: translateY(-1px);

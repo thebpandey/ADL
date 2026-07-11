@@ -6,21 +6,40 @@ description: "Install and optimize Firefox and Chromium for ARM-based Android de
 
 # Web Browsers
 
-A web browser is one of the first things most people install after setting up their ADL desktop. Both Firefox and Chromium run well on ARM processors through Ubuntu's package repositories, though each requires some tuning to get the best performance in a proot environment.
+A web browser is one of the first things most people install after setting up their ADL desktop. **Firefox is the recommended browser** on this stack; Chromium is possible on some configurations but commonly fails under proot. Two facts shape everything on this page:
 
-This guide covers installation, configuration, and optimization for both browsers.
+1. **Ubuntu's own `firefox` and `chromium-browser` packages are Snap stubs** — they only install a Snap, and Snaps cannot run under proot. On Ubuntu, Firefox must come from Mozilla's official apt repository instead. Debian is unaffected: its `firefox-esr` and `chromium` packages are real builds.
+2. **Run browsers as a normal (non-root) user.** Browsers misbehave — and Chromium refuses to start — as root. The [guided installer](/get-started) creates a non-root user as a standard step; log in with `proot-distro login <distro> --user <name> --shared-tmp`.
 
-## Firefox ESR
+## Firefox
 
-Firefox ESR (Extended Support Release) is the version available in the Ubuntu repositories. It receives security updates and major bug fixes without the rapid feature churn of mainline Firefox, which makes it a stable choice for ADL.
+### Installation on Debian
 
-### Installation
+Debian ships a real Firefox ESR (Extended Support Release) package — security updates without rapid feature churn:
 
-<CopyCommand command="apt install firefox-esr -y" />
+<CopyCommand command="sudo apt install firefox-esr -y" />
 
 After installation, Firefox appears in the XFCE applications menu under **Internet**, or you can launch it from the terminal:
 
 <CopyCommand command="firefox-esr &" />
+
+### Installation on Ubuntu (Mozilla's official apt repository)
+
+Ubuntu's `firefox` deb is a transitional Snap stub that cannot work under proot. Install from Mozilla's official repository (it serves real ARM64 builds):
+
+<CopyCommand command="sudo install -d -m 0755 /etc/apt/keyrings" />
+<CopyCommand command="wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null" />
+<CopyCommand command={'echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | sudo tee /etc/apt/sources.list.d/mozilla.list > /dev/null'} />
+<CopyCommand command={"printf 'Package: *\nPin: origin packages.mozilla.org\nPin-Priority: 1000\n' | sudo tee /etc/apt/preferences.d/mozilla > /dev/null"} />
+<CopyCommand command="sudo apt update && sudo apt install firefox -y" />
+
+### Hardware acceleration: disable it if pages break
+
+The GL stack under proot + Termux:X11 is software-only and unusual; Firefox's hardware-acceleration path can crash or render black/corrupted pages here. If that happens: **Settings → General → Performance** — uncheck *Use recommended performance settings*, then uncheck *Use hardware acceleration when available*, and restart Firefox. (Equivalent `about:config` switch: `gfx.webrender.software` = `true`.) This was exactly the fix in the [Galaxy S22+ field report](/docs/compatibility/devices/galaxy-s22-plus).
+
+### Backing up your profile
+
+Your bookmarks, passwords, and settings live in `~/.mozilla/firefox/`. Back it up with `tar czf ~/firefox-profile-backup.tar.gz ~/.mozilla/firefox/` and restore by unpacking it into your home directory.
 
 ### First Launch
 
@@ -28,40 +47,35 @@ The first launch takes longer than subsequent starts. Firefox needs to build its
 
 <PerformanceNote>Firefox's first launch is slow because it builds its profile and compiles cached data. Subsequent launches are much faster --- be patient the first time.</PerformanceNote>
 
-## Chromium
+## Chromium (experimental under proot)
 
-Chromium is the open-source project behind Google Chrome. It provides a familiar interface for anyone coming from Chrome on Android or desktop.
+Chromium is the open-source project behind Google Chrome. **Treat it as experimental on this stack** — its sandbox and GPU process commonly fail under proot, and it is not the default recommendation.
 
-### Installation
+### Availability
 
-<CopyCommand command="apt install chromium-browser -y" />
+- **Debian:** ships a real `chromium` package on ARM64: `sudo apt install chromium -y`
+- **Ubuntu:** `chromium-browser` is a Snap stub — it cannot work under proot. There is no supported Chromium path on Ubuntu here; use Firefox from Mozilla's repository instead.
 
-Launch from the applications menu or terminal:
+### Why not `--no-sandbox`
 
-<CopyCommand command="chromium-browser --no-sandbox &" />
+Running as root, Chromium exits with *"Running as root without --no-sandbox is not supported."* The sandbox is Chromium's **main security boundary** — it is what limits the damage a malicious web page can do if it exploits the renderer. Launching with `--no-sandbox` removes that boundary, so ADL does not recommend it, and never as a default or in desktop entries.
 
-<Warning>The `--no-sandbox` flag is required because Chromium's sandbox relies on kernel features that proot cannot provide. This is standard for proot environments and does not affect stability.</Warning>
-
-To make this permanent, edit the Chromium desktop entry so it always launches with the correct flag:
-
-<CopyCommand command="sed -i 's/Exec=chromium-browser/Exec=chromium-browser --no-sandbox/' /usr/share/applications/chromium-browser.desktop" />
+The correct response to that error is to **run as a normal user** (`proot-distro login <distro> --user <name>`). As a non-root user, Chromium may still fail under proot (namespace and GPU-process limitations) — if it does, that configuration is simply unsupported; use Firefox.
 
 ## Firefox vs. Chromium on ARM
 
 Both browsers work, but they have different strengths in the ADL environment.
 
-| Feature | Firefox ESR | Chromium |
+| Feature | Firefox | Chromium |
 |---|---|---|
 | RAM usage (5 tabs) | ~400-600 MB | ~600-900 MB |
 | Startup time (warm) | ~8-15 seconds | ~10-20 seconds |
-| JavaScript performance | Good | Slightly better |
-| Video playback | Better software decoding | Acceptable |
-| Extension support | Full (Add-ons) | Full (Chrome Web Store) |
-| Sandbox requirement | None | Requires `--no-sandbox` |
+| Works under proot | Yes (disable hardware acceleration if needed) | Unreliable — sandbox/GPU failures common |
+| Real package on Debian | Yes (`firefox-esr`) | Yes (`chromium`) |
+| Real package on Ubuntu | Via Mozilla's apt repo | No (Snap stub only) |
 | Tab unloading | Built-in | Extension needed |
-| Default in Ubuntu repos | Yes | Yes |
 
-<Tip>Firefox is the recommended browser for ADL. It uses less memory, handles tab unloading natively, and does not require sandbox workarounds. Use Chromium if you need Chrome-specific web app compatibility.</Tip>
+<Tip>Firefox is the recommended browser for ADL: it has the most reliable field results, real packages on both Debian and Ubuntu (via Mozilla's repository), and a documented fix (software rendering) for its one common failure mode.</Tip>
 
 ## Recommended Extensions
 
@@ -85,8 +99,7 @@ Open `about:config` in the Firefox address bar, accept the warning, and search f
 
 | Setting | Value | Purpose |
 |---|---|---|
-| `layers.acceleration.force-enabled` | `true` | Enables compositing layers even without GPU support |
-| `gfx.webrender.all` | `true` | Activates WebRender for smoother page rendering |
+| `gfx.webrender.software` | `true` | Forces software WebRender — the reliable renderer on this GL stack |
 | `browser.tabs.unloadOnLowMemory` | `true` | Automatically unloads background tabs when RAM runs low |
 | `browser.cache.disk.capacity` | `51200` | Limits disk cache to 50 MB to reduce storage writes |
 | `browser.sessionstore.interval` | `30000` | Reduces session save frequency to every 30 seconds |
@@ -95,16 +108,15 @@ Open `about:config` in the Firefox address bar, accept the warning, and search f
 
 <PerformanceNote>The `browser.tabs.unloadOnLowMemory` setting is critical for ADL. Since browser memory is shared with Android, aggressive tab management prevents Android from killing Termux when the system runs low on RAM.</PerformanceNote>
 
-### Chromium Launch Flags
+### Chromium Launch Flags (non-root user, Debian)
 
-Add these flags when launching Chromium to improve performance on ARM:
+If you experiment with Chromium as a non-root user on Debian, these flags reduce GPU-related failures — note that none of them is `--no-sandbox`:
 
-<CopyCommand command="chromium-browser --no-sandbox --disable-gpu --disable-software-rasterizer --process-per-site --disable-features=TranslateUI &" />
+<CopyCommand command="chromium --disable-gpu --process-per-site --disable-features=TranslateUI &" />
 
 | Flag | Purpose |
 |---|---|
 | `--disable-gpu` | Prevents GPU calls that fail under proot |
-| `--disable-software-rasterizer` | Reduces CPU-heavy fallback rendering |
 | `--process-per-site` | Uses one process per site instead of per tab, saving RAM |
 | `--disable-features=TranslateUI` | Removes the translate popup that wastes resources |
 
@@ -131,8 +143,8 @@ Despite these limitations, both browsers handle standard web browsing, web apps,
 />
 
 <Troubleshooting
-  problem="Chromium crashes immediately on launch"
-  solution="Chromium requires the --no-sandbox flag in proot. Launch with: chromium-browser --no-sandbox. If it still crashes, try adding --disable-gpu to the command."
+  problem="Chromium refuses to start: 'Running as root without --no-sandbox is not supported'"
+  solution="You are running as root. Do not add --no-sandbox (it removes the browser's main security boundary). Log in as a normal user instead: proot-distro login <distro> --user <name>. If Chromium still fails as a non-root user, that configuration is unsupported under proot --- use Firefox."
 />
 
 <Troubleshooting
@@ -151,8 +163,8 @@ Despite these limitations, both browsers handle standard web browsing, web apps,
 />
 
 <Troubleshooting
-  problem="Chromium shows 'Running without the SUID sandbox' warnings"
-  solution="This warning is expected in proot and does not affect browser functionality. It appears because the kernel namespace sandbox is unavailable. The --no-sandbox flag acknowledges this environment limitation."
+  problem="Firefox installed on Ubuntu but nothing launches"
+  solution="Ubuntu's firefox deb is a Snap transitional stub, and Snaps cannot run under proot. Remove it (apt remove firefox) and install from Mozilla's official apt repository as shown above."
 />
 
 ## Next Steps

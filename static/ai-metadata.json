@@ -58,8 +58,8 @@
       "category": "applications",
       "difficulty": null,
       "estimatedTime": null,
-      "readingTimeMinutes": 4,
-      "words": 954,
+      "readingTimeMinutes": 6,
+      "words": 1273,
       "testedDevice": null,
       "testedAndroidVersion": null,
       "testedDate": null,
@@ -84,12 +84,12 @@
       "communityVerified": null,
       "compatibilityLevel": null,
       "commands": [
-        "apt install firefox-esr -y",
+        "sudo apt install firefox-esr -y",
         "firefox-esr &",
-        "apt install chromium-browser -y",
-        "chromium-browser --no-sandbox &",
-        "sed -i 's/Exec=chromium-browser/Exec=chromium-browser --no-sandbox/' /usr/share/applications/chromium-browser.desktop",
-        "chromium-browser --no-sandbox --disable-gpu --disable-software-rasterizer --process-per-site --disable-features=TranslateUI &"
+        "sudo install -d -m 0755 /etc/apt/keyrings",
+        "wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null",
+        "sudo apt update && sudo apt install firefox -y",
+        "chromium --disable-gpu --process-per-site --disable-features=TranslateUI &"
       ],
       "previousTopics": [],
       "computedRelated": [
@@ -696,8 +696,8 @@
       "category": "compatibility",
       "difficulty": null,
       "estimatedTime": null,
-      "readingTimeMinutes": 1,
-      "words": 47,
+      "readingTimeMinutes": 2,
+      "words": 518,
       "testedDevice": null,
       "testedAndroidVersion": null,
       "testedDate": null,
@@ -1904,6 +1904,47 @@
       ]
     },
     {
+      "id": "developer/guided-installer-implementation-plan",
+      "permalink": "/docs/developer/guided-installer-implementation-plan",
+      "title": "Guided Installer — Implementation Plan",
+      "description": "Architecture, data model, and decisions behind the ADL guided installer and compatibility wizard.",
+      "category": "developer",
+      "difficulty": null,
+      "estimatedTime": null,
+      "readingTimeMinutes": 3,
+      "words": 731,
+      "testedDevice": null,
+      "testedAndroidVersion": null,
+      "testedDate": null,
+      "lastVerified": null,
+      "documentationVersion": null,
+      "status": null,
+      "keywords": [],
+      "tags": [],
+      "compatibility": [],
+      "requiredHardware": [],
+      "requiredSoftware": [],
+      "prerequisites": [],
+      "nextTopics": [],
+      "relatedTopics": [],
+      "device": null,
+      "androidVersion": null,
+      "linuxDistribution": null,
+      "desktopEnvironment": null,
+      "verified": null,
+      "verificationDate": null,
+      "maintainer": null,
+      "communityVerified": null,
+      "compatibilityLevel": null,
+      "commands": [],
+      "previousTopics": [],
+      "computedRelated": [
+        "/docs/developer/compatibility-system",
+        "/docs/developer/design-system",
+        "/docs/developer/github-metadata"
+      ]
+    },
+    {
       "id": "downloads/recommended",
       "permalink": "/docs/downloads/recommended",
       "title": "Recommended Downloads",
@@ -1943,7 +1984,8 @@
       ],
       "previousTopics": [],
       "computedRelated": [
-        "/docs/downloads/required"
+        "/docs/downloads/required",
+        "/docs/downloads/scripts"
       ]
     },
     {
@@ -1986,7 +2028,61 @@
       ],
       "previousTopics": [],
       "computedRelated": [
-        "/docs/downloads/recommended"
+        "/docs/downloads/recommended",
+        "/docs/downloads/scripts"
+      ]
+    },
+    {
+      "id": "downloads/scripts",
+      "permalink": "/docs/downloads/scripts",
+      "title": "ADL Scripts",
+      "description": "Optional, inspectable helper scripts: device report, preflight checks, installers, audio setup, launcher generator, doctor, backup, and removal — with SHA-256 checksums.",
+      "category": "downloads",
+      "difficulty": "Beginner",
+      "estimatedTime": "10 minutes",
+      "readingTimeMinutes": 2,
+      "words": 544,
+      "testedDevice": null,
+      "testedAndroidVersion": null,
+      "testedDate": null,
+      "lastVerified": "2026-07-11",
+      "documentationVersion": null,
+      "status": null,
+      "keywords": [
+        "scripts",
+        "device report",
+        "doctor",
+        "checksums"
+      ],
+      "tags": [],
+      "compatibility": [],
+      "requiredHardware": [],
+      "requiredSoftware": [],
+      "prerequisites": [],
+      "nextTopics": [],
+      "relatedTopics": [],
+      "device": null,
+      "androidVersion": null,
+      "linuxDistribution": null,
+      "desktopEnvironment": null,
+      "verified": null,
+      "verificationDate": null,
+      "maintainer": null,
+      "communityVerified": null,
+      "compatibilityLevel": null,
+      "commands": [
+        "cd ~",
+        "curl -fLO https://thebpandey.github.io/ADL/downloads/scripts/adl-preflight.sh",
+        "curl -fLO https://thebpandey.github.io/ADL/downloads/scripts/SHA256SUMS",
+        "sha256sum -c --ignore-missing SHA256SUMS",
+        "less adl-preflight.sh    # read it",
+        "bash adl-preflight.sh",
+        "proot-distro login debian -- bash ~/adl-create-user.sh --username myname"
+      ],
+      "previousTopics": [],
+      "computedRelated": [
+        "/docs/downloads/recommended",
+        "/docs/downloads/required"
       ]
     },
     {
@@ -2065,6 +2161,135 @@
       "previousTopics": [],
       "computedRelated": [
         "/docs/faq/general"
+      ]
+    },
+    {
+      "id": "get-started/disclaimer",
+      "permalink": "/docs/get-started/disclaimer",
+      "title": "Disclaimer & Risk Acknowledgment",
+      "description": "The disclaimer that applies to ADL's compatibility assessments and personalized installation instructions.",
+      "category": "get-started",
+      "difficulty": null,
+      "estimatedTime": null,
+      "readingTimeMinutes": 2,
+      "words": 365,
+      "testedDevice": null,
+      "testedAndroidVersion": null,
+      "testedDate": null,
+      "lastVerified": "2026-07-11",
+      "documentationVersion": null,
+      "status": null,
+      "keywords": [],
+      "tags": [],
+      "compatibility": [],
+      "requiredHardware": [],
+      "requiredSoftware": [],
+      "prerequisites": [],
+      "nextTopics": [],
+      "relatedTopics": [],
+      "device": null,
+      "androidVersion": null,
+      "linuxDistribution": null,
+      "desktopEnvironment": null,
+      "verified": null,
+      "verificationDate": null,
+      "maintainer": null,
+      "communityVerified": null,
+      "compatibilityLevel": null,
+      "commands": [],
+      "previousTopics": [],
+      "computedRelated": [
+        "/docs/get-started/methodology",
+        "/docs/get-started/start-here"
+      ]
+    },
+    {
+      "id": "get-started/methodology",
+      "permalink": "/docs/get-started/methodology",
+      "title": "Compatibility Methodology",
+      "description": "How ADL assesses device compatibility: dimensions, confidence levels, resource heuristics, and what 'tested' actually means.",
+      "category": "get-started",
+      "difficulty": "Beginner",
+      "estimatedTime": "10 minutes",
+      "readingTimeMinutes": 3,
+      "words": 743,
+      "testedDevice": null,
+      "testedAndroidVersion": null,
+      "testedDate": null,
+      "lastVerified": "2026-07-11",
+      "documentationVersion": null,
+      "status": null,
+      "keywords": [
+        "compatibility",
+        "methodology",
+        "confidence",
+        "evidence"
+      ],
+      "tags": [],
+      "compatibility": [],
+      "requiredHardware": [],
+      "requiredSoftware": [],
+      "prerequisites": [],
+      "nextTopics": [],
+      "relatedTopics": [],
+      "device": null,
+      "androidVersion": null,
+      "linuxDistribution": null,
+      "desktopEnvironment": null,
+      "verified": null,
+      "verificationDate": null,
+      "maintainer": null,
+      "communityVerified": null,
+      "compatibilityLevel": null,
+      "commands": [],
+      "previousTopics": [],
+      "computedRelated": [
+        "/docs/get-started/disclaimer",
+        "/docs/get-started/start-here"
+      ]
+    },
+    {
+      "id": "get-started/start-here",
+      "permalink": "/docs/get-started/start-here",
+      "title": "Start Here",
+      "description": "What the ADL guided installer does, what it cannot guarantee, and the basic terms you'll meet along the way.",
+      "category": "get-started",
+      "difficulty": "Beginner",
+      "estimatedTime": "5 minutes",
+      "readingTimeMinutes": 2,
+      "words": 521,
+      "testedDevice": null,
+      "testedAndroidVersion": null,
+      "testedDate": null,
+      "lastVerified": "2026-07-11",
+      "documentationVersion": null,
+      "status": null,
+      "keywords": [
+        "get started",
+        "guided installer",
+        "compatibility wizard"
+      ],
+      "tags": [],
+      "compatibility": [],
+      "requiredHardware": [],
+      "requiredSoftware": [],
+      "prerequisites": [],
+      "nextTopics": [],
+      "relatedTopics": [],
+      "device": null,
+      "androidVersion": null,
+      "linuxDistribution": null,
+      "desktopEnvironment": null,
+      "verified": null,
+      "verificationDate": null,
+      "maintainer": null,
+      "communityVerified": null,
+      "compatibilityLevel": null,
+      "commands": [],
+      "previousTopics": [],
+      "computedRelated": [
+        "/docs/get-started/disclaimer",
+        "/docs/get-started/methodology"
       ]
     },
     {
@@ -2683,6 +2908,52 @@
       "computedRelated": []
     },
     {
+      "id": "learn/concepts/linux-on-android-explained",
+      "permalink": "/docs/learn/concepts/linux-on-android-explained",
+      "title": "What Linux on Android Means in ADL",
+      "description": "What actually runs when you follow ADL: Android keeps running, proot provides a Linux user space, simulated root is not Android root, and some things behave differently.",
+      "category": "learn",
+      "difficulty": "Beginner",
+      "estimatedTime": "8 minutes",
+      "readingTimeMinutes": 2,
+      "words": 422,
+      "testedDevice": null,
+      "testedAndroidVersion": null,
+      "testedDate": null,
+      "lastVerified": "2026-07-11",
+      "documentationVersion": null,
+      "status": null,
+      "keywords": [
+        "proot",
+        "linux on android",
+        "expectations",
+        "simulated root"
+      ],
+      "tags": [],
+      "compatibility": [],
+      "requiredHardware": [],
+      "requiredSoftware": [],
+      "prerequisites": [],
+      "nextTopics": [],
+      "relatedTopics": [],
+      "device": null,
+      "androidVersion": null,
+      "linuxDistribution": null,
+      "desktopEnvironment": null,
+      "verified": null,
+      "verificationDate": null,
+      "maintainer": null,
+      "communityVerified": null,
+      "compatibilityLevel": null,
+      "commands": [],
+      "previousTopics": [],
+      "computedRelated": [
+        "/docs/learn/concepts/what-is-a-desktop-environment",
+        "/docs/learn/concepts/what-is-a-package-manager",
+        "/docs/learn/concepts/what-is-a-shell"
+      ]
+    },
+    {
       "id": "learn/concepts/what-is-a-desktop-environment",
       "permalink": "/docs/learn/concepts/what-is-a-desktop-environment",
       "title": "What is a Desktop Environment?",
@@ -2718,9 +2989,9 @@
       "commands": [],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-package-manager",
-        "/docs/learn/concepts/what-is-a-shell",
-        "/docs/learn/concepts/what-is-a-terminal"
+        "/docs/learn/concepts/what-is-a-shell"
       ]
     },
     {
@@ -2764,9 +3035,9 @@
       ],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-desktop-environment",
-        "/docs/learn/concepts/what-is-a-shell",
-        "/docs/learn/concepts/what-is-a-terminal"
+        "/docs/learn/concepts/what-is-a-shell"
       ]
     },
     {
@@ -2815,9 +3086,9 @@
       ],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-desktop-environment",
-        "/docs/learn/concepts/what-is-a-package-manager",
-        "/docs/learn/concepts/what-is-a-terminal"
+        "/docs/learn/concepts/what-is-a-package-manager"
       ]
     },
     {
@@ -2867,9 +3138,9 @@
       ],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-desktop-environment",
-        "/docs/learn/concepts/what-is-a-package-manager",
-        "/docs/learn/concepts/what-is-a-shell"
+        "/docs/learn/concepts/what-is-a-package-manager"
       ]
     },
     {
@@ -2908,9 +3179,9 @@
       "commands": [],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-desktop-environment",
-        "/docs/learn/concepts/what-is-a-package-manager",
-        "/docs/learn/concepts/what-is-a-shell"
+        "/docs/learn/concepts/what-is-a-package-manager"
       ]
     },
     {
@@ -2949,9 +3220,9 @@
       "commands": [],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-desktop-environment",
-        "/docs/learn/concepts/what-is-a-package-manager",
-        "/docs/learn/concepts/what-is-a-shell"
+        "/docs/learn/concepts/what-is-a-package-manager"
       ]
     },
     {
@@ -2995,9 +3266,9 @@
       ],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-desktop-environment",
-        "/docs/learn/concepts/what-is-a-package-manager",
-        "/docs/learn/concepts/what-is-a-shell"
+        "/docs/learn/concepts/what-is-a-package-manager"
       ]
     },
     {
@@ -3036,9 +3307,9 @@
       "commands": [],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-desktop-environment",
-        "/docs/learn/concepts/what-is-a-package-manager",
-        "/docs/learn/concepts/what-is-a-shell"
+        "/docs/learn/concepts/what-is-a-package-manager"
       ]
     },
     {
@@ -3079,9 +3350,9 @@
       ],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-desktop-environment",
-        "/docs/learn/concepts/what-is-a-package-manager",
-        "/docs/learn/concepts/what-is-a-shell"
+        "/docs/learn/concepts/what-is-a-package-manager"
       ]
     },
     {
@@ -3120,9 +3391,9 @@
       "commands": [],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-desktop-environment",
-        "/docs/learn/concepts/what-is-a-package-manager",
-        "/docs/learn/concepts/what-is-a-shell"
+        "/docs/learn/concepts/what-is-a-package-manager"
       ]
     },
     {
@@ -3163,9 +3434,9 @@
       ],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-desktop-environment",
-        "/docs/learn/concepts/what-is-a-package-manager",
-        "/docs/learn/concepts/what-is-a-shell"
+        "/docs/learn/concepts/what-is-a-package-manager"
       ]
     },
     {
@@ -3204,9 +3475,56 @@
       "commands": [],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-desktop-environment",
-        "/docs/learn/concepts/what-is-a-package-manager",
-        "/docs/learn/concepts/what-is-a-shell"
+        "/docs/learn/concepts/what-is-a-package-manager"
+      ]
+    },
+    {
+      "id": "learn/hardware/external-displays",
+      "permalink": "/docs/learn/hardware/external-displays",
+      "title": "External Displays",
+      "description": "USB-C video output, DisplayPort Alt Mode, adapters, hubs, wireless display, and what to do when your phone has no wired video out.",
+      "category": "learn",
+      "difficulty": "Beginner",
+      "estimatedTime": "12 minutes",
+      "readingTimeMinutes": 2,
+      "words": 540,
+      "testedDevice": null,
+      "testedAndroidVersion": null,
+      "testedDate": null,
+      "lastVerified": "2026-07-11",
+      "documentationVersion": null,
+      "status": null,
+      "keywords": [
+        "external display",
+        "displayport alt mode",
+        "usb-c",
+        "hdmi",
+        "miracast"
+      ],
+      "tags": [],
+      "compatibility": [],
+      "requiredHardware": [],
+      "requiredSoftware": [],
+      "prerequisites": [],
+      "nextTopics": [],
+      "relatedTopics": [],
+      "device": null,
+      "androidVersion": null,
+      "linuxDistribution": null,
+      "desktopEnvironment": null,
+      "verified": null,
+      "verificationDate": null,
+      "maintainer": null,
+      "communityVerified": null,
+      "compatibilityLevel": null,
+      "commands": [],
+      "previousTopics": [],
+      "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
+        "/docs/learn/concepts/what-is-a-desktop-environment",
+        "/docs/learn/concepts/what-is-a-package-manager"
       ]
     },
     {
@@ -3245,9 +3563,9 @@
       "commands": [],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-desktop-environment",
-        "/docs/learn/concepts/what-is-a-package-manager",
-        "/docs/learn/concepts/what-is-a-shell"
+        "/docs/learn/concepts/what-is-a-package-manager"
       ]
     },
     {
@@ -3286,9 +3604,9 @@
       "commands": [],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-desktop-environment",
-        "/docs/learn/concepts/what-is-a-package-manager",
-        "/docs/learn/concepts/what-is-a-shell"
+        "/docs/learn/concepts/what-is-a-package-manager"
       ]
     },
     {
@@ -3327,9 +3645,9 @@
       "commands": [],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-desktop-environment",
-        "/docs/learn/concepts/what-is-a-package-manager",
-        "/docs/learn/concepts/what-is-a-shell"
+        "/docs/learn/concepts/what-is-a-package-manager"
       ]
     },
     {
@@ -3409,9 +3727,9 @@
       ],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-desktop-environment",
-        "/docs/learn/concepts/what-is-a-package-manager",
-        "/docs/learn/concepts/what-is-a-shell"
+        "/docs/learn/concepts/what-is-a-package-manager"
       ]
     },
     {
@@ -3456,9 +3774,9 @@
       ],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-desktop-environment",
-        "/docs/learn/concepts/what-is-a-package-manager",
-        "/docs/learn/concepts/what-is-a-shell"
+        "/docs/learn/concepts/what-is-a-package-manager"
       ]
     },
     {
@@ -3508,9 +3826,9 @@
       ],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-desktop-environment",
-        "/docs/learn/concepts/what-is-a-package-manager",
-        "/docs/learn/concepts/what-is-a-shell"
+        "/docs/learn/concepts/what-is-a-package-manager"
       ]
     },
     {
@@ -3556,9 +3874,9 @@
       ],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-desktop-environment",
-        "/docs/learn/concepts/what-is-a-package-manager",
-        "/docs/learn/concepts/what-is-a-shell"
+        "/docs/learn/concepts/what-is-a-package-manager"
       ]
     },
     {
@@ -3607,9 +3925,9 @@
       ],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-desktop-environment",
-        "/docs/learn/concepts/what-is-a-package-manager",
-        "/docs/learn/concepts/what-is-a-shell"
+        "/docs/learn/concepts/what-is-a-package-manager"
       ]
     },
     {
@@ -3658,9 +3976,9 @@
       ],
       "previousTopics": [],
       "computedRelated": [
+        "/docs/learn/concepts/linux-on-android-explained",
         "/docs/learn/concepts/what-is-a-desktop-environment",
-        "/docs/learn/concepts/what-is-a-package-manager",
-        "/docs/learn/concepts/what-is-a-shell"
+        "/docs/learn/concepts/what-is-a-package-manager"
       ]
     },
     {
@@ -4988,7 +5306,7 @@
       "difficulty": null,
       "estimatedTime": null,
       "readingTimeMinutes": 4,
-      "words": 838,
+      "words": 918,
       "testedDevice": null,
       "testedAndroidVersion": null,
       "testedDate": null,
@@ -5014,7 +5332,7 @@
       "compatibilityLevel": null,
       "commands": [
         "pulseaudio --check && echo 'PulseAudio is running' || echo 'PulseAudio is NOT running'",
-        "pulseaudio --start --load='module-native-protocol-tcp auth-anonymous=1'",
+        "pulseaudio --start --load='module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1'",
         "export PULSE_SERVER=tcp:127.0.0.1:4713",
         "echo 'export PULSE_SERVER=tcp:127.0.0.1:4713' >> ~/.bashrc",
         "paplay /usr/share/sounds/freedesktop/stereo/bell.oga",
@@ -5022,14 +5340,14 @@
         "sed -i 's/; default-fragment-size-msec = .*/default-fragment-size-msec = 25/' ~/.config/pulse/daemon.conf",
         "sed -i 's/; default-fragments = .*/default-fragments = 4/' ~/.config/pulse/daemon.conf",
         "sed -i 's/; default-sample-rate = .*/default-sample-rate = 44100/' ~/.config/pulse/daemon.conf",
-        "pulseaudio --kill && pulseaudio --start --load='module-native-protocol-tcp auth-anonymous=1'",
+        "pulseaudio --kill && pulseaudio --start --load='module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1'",
         "sed -i 's/default-fragment-size-msec = .*/default-fragment-size-msec = 15/' ~/.config/pulse/daemon.conf",
         "mpv --audio-delay=-0.15 your_video_file.mp4",
         "sed -i 's/load-module module-udev-detect.*/load-module module-detect tsched=0/' /etc/pulse/default.pa",
         "mkdir -p /run/user/$(id -u)/pulse && touch /run/user/$(id -u)/pulse/cookie",
         "chmod 700 /run/user/$(id -u)/pulse",
         "sed -i 's/^load-module module-dbus-protocol/#load-module module-dbus-protocol/' /etc/pulse/default.pa",
-        "pkill -9 pulseaudio; sleep 1; pulseaudio --start --load='module-native-protocol-tcp auth-anonymous=1'",
+        "pkill -9 pulseaudio; sleep 1; pulseaudio --start --load='module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1'",
         "sudo apt install --reinstall pulseaudio pulseaudio-utils",
         "pulseaudio -vvv --log-target=stderr 2>&1 | head -50",
         "sudo apt install libasound2-plugins",
@@ -5340,6 +5658,52 @@
         "sudo dpkg --clear-avail",
         "sudo apt purge <broken-package> && sudo apt autoremove -y && sudo apt install <broken-package>"
       ],
+      "previousTopics": [],
+      "computedRelated": [
+        "/docs/troubleshooting/audio",
+        "/docs/troubleshooting/display",
+        "/docs/troubleshooting/network"
+      ]
+    },
+    {
+      "id": "troubleshooting/symptom-index",
+      "permalink": "/docs/troubleshooting/symptom-index",
+      "title": "Symptom Index",
+      "description": "Symptom-first troubleshooting: find what you're seeing, jump straight to the fix.",
+      "category": "troubleshooting",
+      "difficulty": "Beginner",
+      "estimatedTime": "2 minutes",
+      "readingTimeMinutes": 3,
+      "words": 715,
+      "testedDevice": null,
+      "testedAndroidVersion": null,
+      "testedDate": null,
+      "lastVerified": "2026-07-11",
+      "documentationVersion": null,
+      "status": null,
+      "keywords": [
+        "troubleshooting",
+        "symptoms",
+        "signal 9",
+        "black screen"
+      ],
+      "tags": [],
+      "compatibility": [],
+      "requiredHardware": [],
+      "requiredSoftware": [],
+      "prerequisites": [],
+      "nextTopics": [],
+      "relatedTopics": [],
+      "device": null,
+      "androidVersion": null,
+      "linuxDistribution": null,
+      "desktopEnvironment": null,
+      "verified": null,
+      "verificationDate": null,
+      "maintainer": null,
+      "communityVerified": null,
+      "compatibilityLevel": null,
+      "commands": [],
       "previousTopics": [],
       "computedRelated": [
         "/docs/troubleshooting/audio",

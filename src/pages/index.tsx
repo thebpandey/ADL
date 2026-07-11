@@ -262,35 +262,93 @@ function Hero() {
         <p className={styles.heroTagline}>
           The Open Knowledge Base for Desktop Linux on Android
         </p>
-        <HeroImage
-          image="hero-home.webp"
-          alt="Friendly robot mascot at a desk running a full Linux desktop from an Android phone connected to a monitor, keyboard, and mouse"
-        />
+        <div className={styles.heroImageWrap}>
+          <HeroImage
+            image="hero-home.webp"
+            alt="Friendly robot mascot at a desk running a full Linux desktop from an Android phone connected to a monitor, keyboard, and mouse"
+          />
+        </div>
         <p className={styles.heroSubtitle}>
-          Android Desktop Linux (ADL) is an open-source knowledge base that
-          helps you turn a modern Android phone into a practical Linux desktop
-          workstation — documenting the whole ecosystem, not a single install
-          method.
+          Use Android Desktop Linux to <strong>determine whether your Android
+          phone can run a Linux desktop</strong>, choose the right distribution
+          and desktop environment, and follow a personalized step-by-step guide
+          from the first app installation to a working Linux desktop — no root
+          required, and Android keeps running.
         </p>
         <div className={styles.heroButtons}>
-          <Link className={styles.btnPrimary} to="/docs/quick-start/overview">
-            Get Started
+          <Link
+            className={`${styles.btnPrimary} ${styles.btnHero}`}
+            to="/get-started"
+            aria-label="Get Started with your personalized Linux installation guide"
+          >
+            Get Started →
           </Link>
           <Link className={styles.btnSecondary} to="/docs/intro">
-            Browse Documentation
+            Browse the Knowledge Base
           </Link>
-          <Link className={styles.btnSecondary} to="/docs/compatibility/overview">
-            Compatibility
-          </Link>
+        </div>
+        <p className={styles.heroMicrocopy}>
+          Answer a few questions, check your device, and receive a tailored
+          installation path. Free, local, no account.
+        </p>
+      </div>
+    </header>
+  );
+}
+
+const processSteps = [
+  {
+    step: 1,
+    title: "Check your device",
+    description:
+      "Identify your phone, Android version, hardware resources, display capabilities, and planned peripherals. “I don't know” is always a valid answer.",
+  },
+  {
+    step: 2,
+    title: "Choose your setup",
+    description:
+      "Receive a transparent recommendation for a Linux distribution, desktop environment, display method, and required accessories — with the reasoning for every choice.",
+  },
+  {
+    step: 3,
+    title: "Follow the guide",
+    description:
+      "Complete an app-by-app, command-by-command installation with checkpoints, optional scripts, troubleshooting, and rollback instructions.",
+  },
+];
+
+function HowItWorks() {
+  return (
+    <section className={`${styles.section} ${styles.sectionAlt}`}>
+      <div className={styles.sectionInner}>
+        <span className={styles.sectionLabel}>How it works</span>
+        <h2 className={styles.sectionTitle}>Three steps to your Linux desktop</h2>
+        <p className={styles.sectionDescription}>
+          You don't need to understand distributions, desktop environments,
+          Termux, proot, X11, or VNC before you begin — the wizard explains
+          each choice as it makes it. Compatibility is assessed honestly, not
+          guaranteed.
+        </p>
+        <div className={styles.quickStartGrid}>
+          {processSteps.map((s) => (
+            <div key={s.step} className={styles.stepCard}>
+              <div className={styles.stepNumber}>{s.step}</div>
+              <h3 className={styles.stepTitle}>{s.title}</h3>
+              <p className={styles.stepDescription}>{s.description}</p>
+            </div>
+          ))}
+        </div>
+        <div style={{ marginTop: "2rem" }}>
           <Link
-            className={styles.btnSecondary}
-            href="https://github.com/thebpandey/ADL"
+            className={styles.btnPrimary}
+            to="/get-started"
+            aria-label="Get Started with your personalized Linux installation guide"
           >
-            GitHub Repository
+            Start the questionnaire →
           </Link>
         </div>
       </div>
-    </header>
+    </section>
   );
 }
 
@@ -559,6 +617,27 @@ function Community() {
   );
 }
 
+function FinalCta() {
+  return (
+    <section className={`${styles.section} ${styles.sectionAlt}`}>
+      <div className={`${styles.sectionInner} ${styles.sectionCenter}`}>
+        <h2 className={styles.sectionTitle}>Ready to see what your phone can do?</h2>
+        <p className={styles.sectionDescription} style={{ marginBottom: "1.5rem" }}>
+          Answer a few questions, check your device, and receive a tailored
+          installation path.
+        </p>
+        <Link
+          className={styles.btnPrimary}
+          to="/get-started"
+          aria-label="Get Started with your personalized Linux installation guide"
+        >
+          Get Started →
+        </Link>
+      </div>
+    </section>
+  );
+}
+
 export default function Home(): React.JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
@@ -569,6 +648,7 @@ export default function Home(): React.JSX.Element {
       <Hero />
       <SponsorsBanner />
       <main>
+        <HowItWorks />
         <WhatIsADL />
         <WhyExists />
         <Mission />
@@ -578,6 +658,7 @@ export default function Home(): React.JSX.Element {
         <BuiltInTheOpen />
         <Roadmap />
         <Community />
+        <FinalCta />
       </main>
     </Layout>
   );
