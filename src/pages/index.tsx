@@ -271,9 +271,10 @@ function Hero() {
         <p className={styles.heroSubtitle}>
           Use Android Desktop Linux to <strong>determine whether your Android
           phone can run a Linux desktop</strong>, choose the right distribution
-          and desktop environment, and follow a personalized step-by-step guide
-          from the first app installation to a working Linux desktop — no root
-          required, and Android keeps running.
+          and desktop environment, <strong>and follow a personalized
+          step-by-step guide from the first app installation to a working
+          Linux desktop</strong> — no root required, and Android keeps
+          running.
         </p>
         <div className={styles.heroButtons}>
           <Link
