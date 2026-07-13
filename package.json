@@ -31,20 +31,20 @@
     "validate:data": "node scripts/validate-wizard-data.mjs"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.7.0",
-    "@docusaurus/preset-classic": "^3.7.0",
-    "@docusaurus/theme-mermaid": "^3.7.0",
+    "@docusaurus/core": "^3.10.2",
+    "@docusaurus/preset-classic": "^3.10.2",
+    "@docusaurus/theme-mermaid": "^3.10.2",
     "@easyops-cn/docusaurus-search-local": "^0.46.0",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.1.0",
-    "docusaurus-plugin-image-zoom": "^2.0.0",
+    "docusaurus-plugin-image-zoom": "^3.0.1",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.7.0",
-    "@docusaurus/tsconfig": "^3.7.0",
+    "@docusaurus/tsconfig": "^3.10.2",
     "@docusaurus/types": "^3.7.0",
     "typescript": "~5.5.0",
     "vitest": "^4.1.10"
